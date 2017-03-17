@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.app.Fragment;
+
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 
@@ -37,7 +38,6 @@ public class Mapa extends Fragment {
         parentActivity = (MainActivity) this.getActivity();
 
     }
-
 
 
     @Override

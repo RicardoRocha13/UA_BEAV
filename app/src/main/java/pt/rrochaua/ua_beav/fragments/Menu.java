@@ -1,16 +1,17 @@
 package pt.rrochaua.ua_beav.fragments;
 
 
-        import android.content.Context;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Button;
-        import android.app.Fragment;
-        import pt.rrochaua.ua_beav.MainActivity;
-        import pt.rrochaua.ua_beav.R;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.app.Fragment;
+
+import pt.rrochaua.ua_beav.MainActivity;
+import pt.rrochaua.ua_beav.R;
 
 public class Menu extends Fragment {
 
@@ -35,7 +36,6 @@ public class Menu extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_menu, container, false);
@@ -57,12 +57,8 @@ public class Menu extends Fragment {
         });
 
 
-
-
         return v;
     }
-
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
