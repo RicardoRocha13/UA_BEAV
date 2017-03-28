@@ -1,5 +1,9 @@
 package pt.rrochaua.ua_beav.fragments;
 
+
+
+import android.app.Dialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,9 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.app.Fragment;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TimePicker;
+
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+
+
+
 
 //tens de por o seguinte frag
 
@@ -52,14 +65,13 @@ public class Form1 extends Fragment {
             }
         });
 
-        /*
+
         Button btnChangeDate = (Button) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
         final EditText eTHora  = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
-
 
 
 
@@ -133,7 +145,48 @@ public class Form1 extends Fragment {
 
             }
         });
-*/
+
+        Button btnNumCond = (Button) v.findViewById(R.id.btnokNCon);
+        final EditText etNumCond = (EditText) v.findViewById(R.id.eTNumCond);
+
+        btnNumCond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.setNumbCond(Integer.parseInt(String.valueOf(etNumCond.getText())));
+                LinearLayout ll = (LinearLayout) parentActivity.findViewById(R.id.llRadio);
+                ll.removeAllViews();
+                for (int x=1; x<=parentActivity.getNumbCond(); x++){
+                    RadioGroup rg = new RadioGroup(parentActivity);
+                    rg.setOrientation(LinearLayout.HORIZONTAL);
+                    rg.setId(x);
+
+                    RadioButton rdbtn0 = new RadioButton(parentActivity);
+                    rdbtn0.setId(Integer.parseInt(x+"0"));
+                    rdbtn0.setText("Masculino");
+                    rg.addView(rdbtn0);
+
+                    RadioButton rdbtn1 = new RadioButton(parentActivity);
+                    rdbtn1.setId(Integer.parseInt(x+"1"));
+                    rdbtn1.setText("Feminino");
+                    rg.addView(rdbtn1);
+
+                    ll.addView(rg);
+
+                }
+            }
+        });
+
+        Button btnResult = (Button) v.findViewById(R.id.btnGetResult);
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // RadioGroup rd1 = (RadioGroup) v.findViewById(R.id.);
+            }
+        });
+
+
+
+
         return v;
     }
 

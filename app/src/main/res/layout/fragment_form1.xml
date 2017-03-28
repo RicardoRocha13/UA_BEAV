@@ -2,6 +2,7 @@
 
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +25,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                android:layout_marginStart="20dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -36,67 +38,105 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="15dp" />
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:inputType="time"
-                android:textAlignment="center"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
 
             // Inserção da Data do Acidente
-            <EditText
-                android:id="@+id/editText3"
-                android:layout_width="100dp"
+
+            <Button
+                android:id="@+id/btnDate"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:inputType="date"
-                android:textAlignment="center"
+                android:text="Change date"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                android:layout_marginLeft="25dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                android:layout_marginStart="25dp"/>
+
+            <EditText
+                android:id="@+id/eTDia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Dia"
+                app:layout_constraintTop_toBottomOf="@+id/btnDate"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="50dp" />
+
+            <EditText
+                android:id="@+id/eTMes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Mes"
+                app:layout_constraintTop_toBottomOf="@+id/eTDia"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="50dp" />
+
+            <EditText
+                android:id="@+id/eTAno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Ano"
+                app:layout_constraintTop_toBottomOf="@+id/eTMes"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="50dp" />
+
 
             // Inserção da hora do Acidente
-            <TextView
-                android:id="@+id/textView6"
+            <Button
+                android:id="@+id/btnTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="10dp"
+                android:text="Change Time"
+                app:layout_constraintTop_toBottomOf="@+id/eTAno"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="25dp"/>
+
+            <EditText
+                android:id="@+id/eTHora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
                 android:text="Hora"
-                app:layout_constraintLeft_toRightOf="@+id/editText"
-                app:layout_constraintTop_toTopOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/btnTime"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="50dp" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/eTMin"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:text="Data"
-                app:layout_constraintLeft_toRightOf="@+id/editText"
-                app:layout_constraintTop_toTopOf="@+id/editText3"
-                android:layout_marginTop="10dp" />
+                android:ems="10"
+                android:text="Minutos"
+                app:layout_constraintTop_toBottomOf="@+id/eTHora"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="50dp"/>
 
+
+
+
+
+            // Botao para avançar para a próxima página
             <Button
                 android:id="@+id/btnForm2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="4dp"
                 android:text="Seguinte"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="1200dp"
-                app:layout_constraintVertical_bias="0.0" />
+                android:layout_marginEnd="5dp"
+                app:layout_constraintTop_toTopOf="@+id/btnGetResult"
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -105,21 +145,23 @@
                 android:text="A2 - Localização"
                 android:textStyle="bold"
                 android:layout_marginTop="14dp"
-                app:layout_constraintTop_toBottomOf="@+id/editText"
-                android:layout_marginLeft="25dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/eTMin"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="20dp"/>
 
 
             //controlo de localidade
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="7dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView8"
                 android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:id="@+id/radioGroup">
+                android:id="@+id/radioGroup"
+                android:layout_marginStart="50dp">
 
                 <RadioButton
                     android:id="@+id/radioButton"
@@ -153,7 +195,8 @@
                 android:text="2.Local do acidente"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                android:layout_marginStart="35dp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -164,7 +207,8 @@
                 android:text="1."
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+                app:layout_constraintTop_toTopOf="@+id/radioGroup"
+                android:layout_marginStart="35dp" />
 
 
             // Inserção do Local de Acidente
@@ -178,13 +222,13 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintLeft_toLeftOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                android:layout_marginStart="20dp" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="7dp"
                 android:text="3.Coordenadas"
                 android:textStyle="bold"
@@ -199,10 +243,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:layout_marginTop="-10dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView11"
                 android:layout_marginLeft="54dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="54dp" />
 
             // Inserção da Longitude do Acidente
             <EditText
@@ -211,7 +255,6 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:layout_marginLeft="0dp"
                 app:layout_constraintLeft_toLeftOf="@+id/editText4"
                 android:layout_marginTop="7dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText4" />
@@ -225,7 +268,8 @@
                 android:text="A3 - Tipo de Acidente"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                app:layout_constraintTop_toBottomOf="@+id/editText5"
+                android:layout_marginStart="20dp" />
 
 
             <TextView
@@ -237,17 +281,19 @@
                 android:text="A4 - Natureza do Acidente"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText8" />
+                app:layout_constraintTop_toBottomOf="@+id/editText8"
+                android:layout_marginStart="25dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroup1"
-                android:layout_width="fill_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="7dp"
                 android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12">
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                android:layout_marginStart="50dp">
 
                 <RadioButton
                     android:id="@+id/radioButton2"
@@ -275,7 +321,6 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="25dp"
                 android:text="Feridos Leves"
                 android:textStyle="bold"
@@ -286,7 +331,6 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="25dp"
                 android:text="Feridos Graves"
                 android:textStyle="bold"
@@ -302,7 +346,8 @@
                 android:text="Mortos"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@+id/radioGroup1"
-                app:layout_constraintTop_toTopOf="@+id/editText6" />
+                app:layout_constraintTop_toTopOf="@+id/editText6"
+                android:layout_marginStart="25dp" />
 
             <EditText
                 android:id="@+id/editText6"
@@ -313,7 +358,8 @@
                 android:layout_marginLeft="150dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textView14"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+                android:layout_marginStart="150dp" />
 
             <EditText
                 android:id="@+id/editText8"
@@ -323,8 +369,8 @@
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textView14"
-                android:layout_marginTop="-1dp"
-                app:layout_constraintTop_toBottomOf="@+id/editText7" />
+                app:layout_constraintTop_toBottomOf="@+id/editText7"
+                android:layout_marginStart="150dp" />
 
             <EditText
                 android:id="@+id/editText7"
@@ -335,19 +381,21 @@
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textView14"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+                android:layout_marginStart="150dp" />
 
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView16"
                 android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:id="@+id/radioGroup2">
+                android:id="@+id/radioGroup2"
+                android:layout_marginStart="50dp">
 
                 <RadioButton
                     android:id="@+id/radioButton4"
@@ -391,7 +439,8 @@
                 android:text="A5 - Número de Veículos Intervenientes"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+                android:layout_marginStart="25dp" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -402,7 +451,8 @@
                 android:text="Ciclomotor e Motociclo"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                android:layout_marginStart="50dp" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -413,7 +463,8 @@
                 android:text="Veículo Ligeiro"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+                app:layout_constraintTop_toBottomOf="@+id/textView26"
+                android:layout_marginStart="50dp" />
 
             <TextView
                 android:id="@+id/textView29"
@@ -424,7 +475,8 @@
                 android:text="Veículo Pesado"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                android:layout_marginStart="50dp" />
 
             <TextView
                 android:id="@+id/textView30"
@@ -435,7 +487,8 @@
                 android:text="Outros"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                app:layout_constraintTop_toBottomOf="@+id/textView29"
+                android:layout_marginStart="50dp" />
 
             <EditText
                 android:id="@+id/editText16"
@@ -446,7 +499,8 @@
                 android:layout_marginTop="25dp"
                 app:layout_constraintTop_toBottomOf="@+id/textView18"
                 android:layout_marginLeft="175dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView26" />
+                app:layout_constraintLeft_toLeftOf="@+id/textView26"
+                android:layout_marginStart="175dp" />
 
             <EditText
                 android:id="@+id/editText18"
@@ -456,8 +510,8 @@
                 android:inputType="number"
                 android:layout_marginLeft="175dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textView27"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/editText16" />
+                app:layout_constraintTop_toBottomOf="@+id/editText16"
+                android:layout_marginStart="175dp" />
 
             <EditText
                 android:id="@+id/editText19"
@@ -465,10 +519,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText18"
                 android:layout_marginLeft="175dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView29" />
+                app:layout_constraintLeft_toLeftOf="@+id/textView29"
+                android:layout_marginStart="175dp" />
 
             <EditText
                 android:id="@+id/editText20"
@@ -476,11 +530,63 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText19"
                 android:layout_marginLeft="175dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView30" />
+                app:layout_constraintLeft_toLeftOf="@+id/textView30"
+                android:layout_marginStart="175dp" />
+
+            <TextView
+                android:id="@+id/textViewCond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="25dp"
+                android:text="A6 - Numero Condutores"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+            <EditText
+                android:id="@+id/eTNumCond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCond"
+                android:layout_marginStart="50dp" />
+
+            <Button
+                android:id="@+id/btnokNCon"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:text="Ok"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eTNumCond"
+                android:layout_marginStart="50dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:id="@+id/llRadio"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnokNCon"
+                android:layout_marginStart="50dp">
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGetResult"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llRadio"
+                android:layout_marginStart="50dp"/>
+
 
         </android.support.constraint.ConstraintLayout>
+
 
 </ScrollView>
