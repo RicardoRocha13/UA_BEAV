@@ -1,7 +1,6 @@
 package pt.rrochaua.ua_beav.fragments;
 
 
-
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
@@ -20,8 +19,6 @@ import android.widget.TimePicker;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
-
-
 
 
 //tens de por o seguinte frag
