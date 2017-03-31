@@ -21,9 +21,6 @@ import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 
 
-//tens de por o seguinte frag
-
-
 public class Form1 extends Fragment {
 
     MainActivity parentActivity;
@@ -58,7 +55,7 @@ public class Form1 extends Fragment {
         btnForm2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToMenuFragment();
+                parentActivity.goToForm2Fragment();
             }
         });
 
@@ -217,4 +214,7 @@ public class Form1 extends Fragment {
         // TODO: Update argument type and name
         void goToForm1Fragment();
     }
+
+
+
 }
