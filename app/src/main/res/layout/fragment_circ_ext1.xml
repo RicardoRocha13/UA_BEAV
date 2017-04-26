@@ -1,0 +1,498 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pt.rrochaua.ua_beav.fragments.CircExt1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Circunstâncias Externas I"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewPav"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Características Técnicas da Via"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Estrada com Separador"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="              Autoestrada - nº de vias de trânsito no sentido"
+            android:textAlignment="viewStart"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextAutonVias"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="              Outra via - nº de vias de trânsito no sentido"
+            android:textAlignment="viewStart"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextOutranVias"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Estrada sem Separador - nº de vias no sentido"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextSemSnVias"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Via de Trânsito"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupViaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonViaT1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esquerda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonViaT2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Direita" />
+
+            <RadioButton
+                android:id="@+id/radioButtonViaT3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Central" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Traçado da Via"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Em planta"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupPlant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonPlant1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reta" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPlant2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curva" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Em Perfil"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupPerf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonPerf1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em patamar" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPerf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Com inclinação" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPerf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em lomba" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Berma"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupBerm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonBerm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sem berma ou impraticável" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBerm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berma não pavimentada" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBerm3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berma pavimentada" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Situação do Acidente"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupSDA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonSDA1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em plena via" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSDA2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Na berma" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSDA3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No passeio" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSDA4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em via ou pista reservada" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSDA5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em parque de estacionamento" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Interseção de Vias"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupIDV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fora da interseção"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Em interseção de nível"
+                android:textAlignment="viewStart"
+                android:textStyle="bold" />
+
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em cruzamento" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em entrocamento" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em rotunda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em passagem de nível" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Em interseção desnivelada"
+                android:textAlignment="viewStart"
+                android:textStyle="bold" />
+
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em via de acelaração" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em via de desacelaração" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em ramo de ligação - entrada" />
+
+            <RadioButton
+                android:id="@+id/radioButtonIDV9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em ramo de ligação - saída" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Acidente em Obras de Arte"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupAEODA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonAEODA1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Túnel" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAEODA2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Viaduto/Ponte" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAEODA3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passagem estreita" />
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Regime de Circulação"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Faixa de Rodagem com"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupFDRC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonFDRC1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sentido Único" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFDRC2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dois sentidos" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFDRC3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reversível" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Velocidade permitida no Lanço"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="              Limite Geral(km/h)"
+            android:textAlignment="viewStart"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextLimG"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="              Limite Local (km/h)"
+            android:textAlignment="viewStart"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextLimL"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav"/>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

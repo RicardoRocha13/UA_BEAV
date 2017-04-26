@@ -1,0 +1,303 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pt.rrochaua.ua_beav.fragments.CondInt2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Condutores Intervenientes II"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Ações e Manobras Antes do Acidente"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupAMAA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Início de marcha" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saída de parquemanto ou rua particular" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em marcha normal" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ultrapassagem pela esquerda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ultrapassagem pela direita" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mudança de direção para a esquerda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mudança de direção para a direita" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marcha atrás" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Circulação em sentido oposto ao estabelecido" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Travagem brusca" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parado ou estacionado" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inversão do sentido de marcha" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trânsito em filas paralelas" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mudança de via de trânsito para a esquerda" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mudança de via de trânsito para a direita" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desvio brusco/saída de fila de trânsito" />
+
+            <RadioButton
+                android:id="@+id/radioButtonAMAA17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atravessando a via" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Informação Complementar a Ações e Manobras"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupICAM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desrespeito da sinalização vertical" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desrespeito das marcas rodoviárias" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desrespeito da sinalização semafórica" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manobra irregular" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Velocidade excessiva para as condições existentes" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não sinalização da manobra" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desrespeito das distâncias de segurança" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Circulação afastada da berma ou passeio" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rebenteamento penumático" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Queda de carga ou objeto" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Falha mecânica do veículo" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ausência de luzes quando obrigatórias" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obstáculo imprevisto na faixa de rodagem" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abertura de porta" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Encadeamento" />
+
+            <RadioButton
+                android:id="@+id/radioButtonICAM16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não identificada" />
+
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Acessórios de Segurança"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupAS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+        <RadioButton
+            android:id="@+id/radioButtonAS1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacete" />
+
+        <RadioButton
+            android:id="@+id/radioButtonAS2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cinto de segurança" />
+
+        <RadioButton
+            android:id="@+id/radioButtonAS3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sem uso de cinto/capacete" />
+
+        <RadioButton
+            android:id="@+id/radioButtonAS4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isento" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</FrameLayout>
