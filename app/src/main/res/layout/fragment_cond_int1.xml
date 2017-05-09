@@ -12,6 +12,7 @@
         android:orientation="vertical"
         android:weightSum="1">
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="34dp"
@@ -21,13 +22,82 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          Sexo"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonSex1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSex2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feminino" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Idade"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Change date"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+        <EditText
+            android:id="@+id/eTDia"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Dia"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+        <EditText
+            android:id="@+id/eTMes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Mes"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+        <EditText
+            android:id="@+id/eTAno"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Ano"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+
+        <TextView
+            android:id="@+id/textViewPav"
+            android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:text="Características da habilitação de Condução"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewPav"/>
-
-
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,8 +154,6 @@
         </RadioGroup>
 
 
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,17 +170,17 @@
             android:layout_marginLeft="50dp"
             app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-        <RadioButton
-            android:id="@+id/radioButtonPE1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Portugal" />
+            <RadioButton
+                android:id="@+id/radioButtonPE1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portugal" />
 
-        <RadioButton
-            android:id="@+id/radioButtonPE2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Outro" />
+            <RadioButton
+                android:id="@+id/radioButtonPE2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outro" />
 
 
             <EditText
@@ -147,8 +215,7 @@
             android:layout_height="34dp"
             android:text="Condições Psico/Físicas"
             android:textSize="18sp"
-            android:textStyle="bold"/>
-
+            android:textStyle="bold" />
 
 
         <TextView
@@ -172,7 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submetido ao teste de alcoolemia, com taxa:"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <EditText
@@ -249,7 +316,7 @@
                 android:id="@+id/radioButtonOF1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Normal"/>
+                android:text="Normal" />
 
 
             <RadioButton
@@ -305,7 +372,7 @@
                 android:id="@+id/radioButtonTDCC1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menos de 1 hora"/>
+                android:text="Menos de 1 hora" />
 
 
             <RadioButton

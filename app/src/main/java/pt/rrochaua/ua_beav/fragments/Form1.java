@@ -4,6 +4,7 @@ package pt.rrochaua.ua_beav.fragments;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 
+import pt.rrochaua.ua_beav.Classes.MyLocation;
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 
@@ -171,16 +173,26 @@ public class Form1 extends Fragment {
             }
         });
 
-        Button btnResult = (Button) v.findViewById(R.id.btnGetResult);
-        btnResult.setOnClickListener(new View.OnClickListener() {
+
+
+
+        Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
+        buttonCoor.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                // RadioGroup rd1 = (RadioGroup) v.findViewById(R.id.);
+                MyLocation.LocationResult locationResult = new MyLocation.LocationResult() {
+                    @Override
+                    public void gotLocation(Location location) {
+                        //Got the location!
+                    }
+                };
+                MyLocation myLocation = new MyLocation();
+                myLocation.getLocation("@+id/editTextCoor",locationResult);
+
             }
-        });
 
-
-
+        }
 
         return v;
     }

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pt.rrochaua.ua_beav.fragments.ConsPass">
-
+    tools:context="pt.rrochaua.ua_beav.fragments.CondIntSem">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -13,13 +12,13 @@
         android:orientation="vertical"
         android:weightSum="1">
 
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consequências do Acidente nos Passageiros"
+            android:layout_height="34dp"
+            android:text="Condutores Intervenientes I"
             android:textSize="20sp"
             android:textStyle="bold" />
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,20 +30,20 @@
 
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSexPa"
+            android:id="@+id/radioGroupSex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
             <RadioButton
-                android:id="@+id/radioButtonSexPa1"
+                android:id="@+id/radioButtonSex1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Masculino" />
 
             <RadioButton
-                android:id="@+id/radioButtonSexPa2"
+                android:id="@+id/radioButtonSex2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Feminino" />
@@ -52,12 +51,12 @@
 
         </RadioGroup>
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:text="Idade"
-            android:textSize="20sp"
+            android:text="          Idade"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <Button
@@ -92,135 +91,51 @@
             android:text="Ano"
             app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="          Posição no veículo"
+            android:text="          Veículo"
             android:textAlignment="viewStart"
             android:textSize="16sp"
             android:textStyle="bold" />
 
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupPNV"
+            android:id="@+id/radioGroupVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
             <RadioButton
-                android:id="@+id/radioButtonPNV1"
+                android:id="@+id/radioButtonVI1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Á frente" />
+                android:text="Ciclomotor ou Motociclo" />
 
             <RadioButton
-                android:id="@+id/radioButtonPNV2"
+                android:id="@+id/radioButtonVI2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Á retaguarda" />
+                android:text="Veículo Ligeiro" />
 
             <RadioButton
-                android:id="@+id/radioButtonPNV3"
+                android:id="@+id/radioButtonVI3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Desconhecido" />
+                android:text="Veículo Pesado" />
 
+            <RadioButton
+                android:id="@+id/radioButtonVI4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outro" />
 
 
         </RadioGroup>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Uso de acessórios de segurança"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupUDADS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonUDADS1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C/ capacete/cinto de segurança" />
-
-            <RadioButton
-                android:id="@+id/radioButtonUDADS2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C/ sistema de retenção de crianças" />
-
-            <RadioButton
-                android:id="@+id/radioButtonUDADS3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S/ capacete/cinto de segurança" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonUDADS4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S/ sistema de retenção de crianças" />
-
-
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Grau de gravidade das lesões"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupGDGDL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonGDGDL1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Morto" />
-
-            <RadioButton
-                android:id="@+id/radioButtonGDGDL2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ferido Grave" />
-
-            <RadioButton
-                android:id="@+id/radioButtonGDGDL3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ferido Leve" />
-
-            <RadioButton
-                android:id="@+id/radioButtonGDGDL4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ileso" />
-
-
-        </RadioGroup>
 
 
     </LinearLayout>
-
 
 </FrameLayout>

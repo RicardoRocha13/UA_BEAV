@@ -184,21 +184,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="
-
-            Esquema de Acidente"
+            android:text="            Número de peões vítimas"
             android:textAlignment="viewStart"
             android:textSize="16sp"
             android:textStyle="bold"
             android:id="@+id/textViewEsqAci"/>
 
-        <Button
-            android:id="@+id/btnEsqAci"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selecionar Esquema"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc"/>
+            android:ems="10"
+            android:inputType="number" />
+
 
     </LinearLayout>
 

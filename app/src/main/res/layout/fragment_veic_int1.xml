@@ -20,12 +20,12 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textViewPav"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:text="Categoria/Classe"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewPav"/>
+            android:textStyle="bold" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroupCat"
@@ -199,7 +199,7 @@
             android:layout_height="34dp"
             android:text="Tipo de Serviço"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroupTDS"
@@ -208,17 +208,17 @@
             android:layout_marginLeft="50dp"
             app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-        <RadioButton
-            android:id="@+id/radioButtonTipTDS1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Particular" />
+            <RadioButton
+                android:id="@+id/radioButtonTipTDS1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Particular" />
 
-        <RadioButton
-            android:id="@+id/radioButtonTipTDS2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Público" />
+            <RadioButton
+                android:id="@+id/radioButtonTipTDS2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Público" />
 
         </RadioGroup>
 
@@ -227,7 +227,7 @@
             android:layout_height="34dp"
             android:text="Ano de Matrícula"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextADM"
@@ -237,13 +237,12 @@
             android:inputType="number" />
 
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:text="Inspeção Periódica"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroupIP"
@@ -277,7 +276,7 @@
             android:layout_height="34dp"
             android:text="Certificado ADR"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -335,7 +334,7 @@
             android:layout_height="34dp"
             android:text="Carga/Lotação/Pneus"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -449,7 +448,7 @@
             android:layout_height="34dp"
             android:text="Seguro"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/radioGroupSeg"
@@ -475,6 +474,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Isento" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Incêndio Posterior"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupInPo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonInPo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Com incêndio" />
+
+            <RadioButton
+                android:id="@+id/radioButtonInPo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sem incêndio" />
 
         </RadioGroup>
 

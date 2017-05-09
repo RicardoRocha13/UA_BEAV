@@ -298,6 +298,49 @@
         </RadioGroup>
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Grau de Gravidade das Lesões"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroupGDGDL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+            <RadioButton
+                android:id="@+id/radioButtonGDGDL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Morto" />
+
+            <RadioButton
+                android:id="@+id/radioButtonGDGDL2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ferido grave" />
+
+            <RadioButton
+                android:id="@+id/radioButtonGDGDL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ferido leve" />
+
+            <RadioButton
+                android:id="@+id/radioButtonGDGDL4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ileso" />
+
+
+        </RadioGroup>
+
+
     </LinearLayout>
 
 </FrameLayout>
