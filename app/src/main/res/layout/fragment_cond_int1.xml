@@ -6,402 +6,406 @@
     tools:context="pt.rrochaua.ua_beav.fragments.CondInt1">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Condutores Intervenientes I"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Sexo"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonSex1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Masculino" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSex2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feminino" />
-
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Idade"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Change date"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTDia"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Dia"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTMes"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Mes"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTAno"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Ano"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-
-        <TextView
-            android:id="@+id/textViewPav"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Características da habilitação de Condução"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Licença/Carta de Condução"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupLCDC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com licença/carta adequada ao veículo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com licença/carta não adequada ao veículo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Em stiaução de instrução/exame" />
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caducada/suspensa" />
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem licença/carta" />
-
-            <RadioButton
-                android:id="@+id/radioButtonLCDC6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não necessária ao veículo que conduz" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          País de Emissão"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupPE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonPE1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Portugal" />
-
-            <RadioButton
-                android:id="@+id/radioButtonPE2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outro" />
-
-
-            <EditText
-                android:id="@+id/editTextLig"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Ano de Habilitação"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <EditText
-            android:id="@+id/editTextAnoHab"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Condições Psico/Físicas"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Controlo do Nível de Alcoolemia"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCDNDA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA1"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Submetido ao teste de alcoolemia, com taxa:"
+                android:layout_height="34dp"
+                android:text="Condutores Intervenientes I"
+                android:textSize="20sp"
                 android:textStyle="bold" />
-
-
-            <EditText
-                android:id="@+id/editTextPes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Não submetido por:"
+                android:text="          Sexo"
                 android:textAlignment="viewStart"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA2"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doença" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA3"
+                <RadioButton
+                    android:id="@+id/radioButtonSex1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSex2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feminino" />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Idade"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesão ou morte decorrente do acidente" />
+                android:layout_marginLeft="50dp"
+                android:text="Change date"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA4"
+            <EditText
+                android:id="@+id/eTDia"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Dia"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <EditText
+                android:id="@+id/eTMes"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Mes"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <EditText
+                android:id="@+id/eTAno"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Ano"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+
+            <TextView
+                android:id="@+id/textViewPav"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Características da habilitação de Condução"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condutor não contactado na altura do acidente" />
+                android:text="          Licença/Carta de Condução"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA5"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupLCDC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fuga" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA6"
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com licença/carta adequada ao veículo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com licença/carta não adequada ao veículo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Em stiaução de instrução/exame" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Caducada/suspensa" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem licença/carta" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonLCDC6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não necessária ao veículo que conduz" />
+
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recusa" />
+                android:text="          País de Emissão"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCDNDA7"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupPE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Outra" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonPE1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Portugal" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPE2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outro" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Outros Fatores"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/editTextLig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </RadioGroup>
 
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupOF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonOF1"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Normal" />
+                android:text="          Ano de Habilitação"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
-            <RadioButton
-                android:id="@+id/radioButtonOF2"
+            <EditText
+                android:id="@+id/editTextAnoHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Condições Psico/Físicas"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Droga por despistagem" />
+                android:text="          Controlo do Nível de Alcoolemia"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonOF3"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCDNDA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sono/sonolência" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonOF4"
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submetido ao teste de alcoolemia, com taxa:"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/editTextPes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="          Não submetido por:"
+                    android:textAlignment="viewStart"
+                    android:textStyle="bold" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doença" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lesão ou morte decorrente do acidente" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Condutor não contactado na altura do acidente" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuga" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recusa" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCDNDA7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outra" />
+
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Distração" />
+                android:text="          Outros Fatores"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonOF5"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupOF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doença súbita" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonOF6"
+                <RadioButton
+                    android:id="@+id/radioButtonOF1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonOF2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Droga por despistagem" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOF3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sono/sonolência" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOF4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distração" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOF5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doença súbita" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOF6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fadiga" />
+
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fadiga" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Tempo de Condução Continuada"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                android:text="          Tempo de Condução Continuada"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupTDCC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonTDCC1"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTDCC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menos de 1 hora" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonTDCC1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menos de 1 hora" />
 
 
-            <RadioButton
-                android:id="@+id/radioButtonTDCC2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="De 1 a 3 horas" />
+                <RadioButton
+                    android:id="@+id/radioButtonTDCC2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De 1 a 3 horas" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTDCC3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="De 3 a 5 horas" />
+                <RadioButton
+                    android:id="@+id/radioButtonTDCC3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De 3 a 5 horas" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTDCC4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mais de 5 horas" />
+                <RadioButton
+                    android:id="@+id/radioButtonTDCC4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mais de 5 horas" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTDCC5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ignorada" />
+                <RadioButton
+                    android:id="@+id/radioButtonTDCC5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ignorada" />
 
-        </RadioGroup>
+            </RadioGroup>
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

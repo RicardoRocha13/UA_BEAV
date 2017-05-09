@@ -6,141 +6,326 @@
     tools:context="pt.rrochaua.ua_beav.fragments.VeicInt1">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Veículos Intervenientes I"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Veículos Intervenientes I"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewPav"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Categoria/Classe"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewPav"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Categoria/Classe"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonTipCat1"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Velocipede" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat2"
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Velocipede" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Velocipede com motor" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ciclomotor" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motociclo cilindrada com 125cc ou menos" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motociclo cilindrada com mais de 125cc" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo agrícola" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Máquina industrial" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo sobre carris" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo de tração animal" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quadriciclo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="          Veículo Ligeiro"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passageiros" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mercadorias" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misto" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trator" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo especial. Qual?" />
+
+                <EditText
+                    android:id="@+id/editTextLig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="          Veículo Pesado"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passageiros" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mercadorias" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misto" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trator" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipCat21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo especial. Qual?" />
+
+                <EditText
+                    android:id="@+id/editTextPes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Tipo de Serviço"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTDS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Velocipede com motor" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ciclomotor" />
+                <RadioButton
+                    android:id="@+id/radioButtonTipTDS1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Particular" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motociclo cilindrada <= 125cc" />
+                <RadioButton
+                    android:id="@+id/radioButtonTipTDS2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Público" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motociclo cilindrada > 125cc" />
+            </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat6"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Veículo agrícola" />
+                android:layout_height="34dp"
+                android:text="Ano de Matrícula"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat7"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editTextADM"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Máquina industrial" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipCat8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Veículo sobre carris" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipCat9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Veículo de tração animal" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipCat10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quadriciclo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipCat11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desconhecido" />
+                android:ems="10"
+                android:inputType="number" />
 
 
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Inspeção Periódica"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupIP"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Veículo Ligeiro"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipIP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não obrigatória" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipIP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Válida" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipIP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem validade" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Certificado ADR"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Preencher apenas no caso de transporte de mercadorias perigosas"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat12"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCADR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Passageiros" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mercadorias" />
+                <RadioButton
+                    android:id="@+id/radioButtonCADR1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Válido" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Misto" />
+                <RadioButton
+                    android:id="@+id/radioButtonCADR2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem validade" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Trator" />
+                <RadioButton
+                    android:id="@+id/radioButtonCADR3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inexistente" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat16"
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Veículo especial. Qual?" />
+                android:text="          Matéria/objeto perigoso transportado"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextLig"
+                android:id="@+id/editTextCADR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -149,364 +334,183 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Carga/Lotação/Pneus"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Veículo Pesado"
+                android:text="          Carga/Lotação"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat17"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Passageiros" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat18"
+                <RadioButton
+                    android:id="@+id/radioButtonCL1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem carga" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCL2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com excesso de carga" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCL3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carga bem acondicionada" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCL4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carga mal acondicionada" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCL5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com lotação excedida" />
+
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mercadorias" />
+                android:text="          Pneus"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat19"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupPneu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Misto" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat20"
+                <RadioButton
+                    android:id="@+id/radioButtonPneu1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem deficiência" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOneu2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com deficiência" />
+
+
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Trator" />
+                android:text="          Tacógrafo"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipCat21"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTaco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Veículo especial. Qual?" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <EditText
-                android:id="@+id/editTextPes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text" />
+                <RadioButton
+                    android:id="@+id/radioButtonTaco1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem tacógrafo ou destivado" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonTaco2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com tacógrafo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Tipo de Serviço"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            </RadioGroup>
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupTDS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Seguro"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipTDS1"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupSeg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Particular" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipTDS2"
+                <RadioButton
+                    android:id="@+id/radioButtonSeg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com seguro" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSeg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem seguro" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSeg3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isento" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Incêndio Posterior"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupInPo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Público" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonInPo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com incêndio" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Ano de Matrícula"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <RadioButton
+                    android:id="@+id/radioButtonInPo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem incêndio" />
 
-        <EditText
-            android:id="@+id/editTextADM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Inspeção Periódica"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupIP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonTipIP1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não obrigatória" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipIP2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Válida" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTipIP3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem validade" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Certificado ADR"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Preencher apenas no caso de transporte de mercadorias perigosas"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCADR"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonCADR1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Válido" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCADR2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem validade" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCADR3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inexistente" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Matéria/objeto perigoso transportado"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/editTextCADR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text" />
+            </RadioGroup>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Carga/Lotação/Pneus"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Carga/Lotação"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonCL1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem carga" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCL2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com excesso de carga" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCL3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Carga bem acondicionada" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCL4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Carga mal acondicionada" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCL5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com lotação excedida" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Pneus"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupPneu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonPneu1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem deficiência" />
-
-            <RadioButton
-                android:id="@+id/radioButtonOneu2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com deficiência" />
-
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Tacógrafo"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupTaco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonTaco1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem tacógrafo ou destivado" />
-
-            <RadioButton
-                android:id="@+id/radioButtonTaco2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com tacógrafo" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Seguro"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonSeg1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com seguro" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSeg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem seguro" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSeg3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Isento" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Incêndio Posterior"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupInPo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonInPo1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com incêndio" />
-
-            <RadioButton
-                android:id="@+id/radioButtonInPo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem incêndio" />
-
-        </RadioGroup>
-
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

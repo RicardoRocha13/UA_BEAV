@@ -7,469 +7,473 @@
 
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Circunstâncias Externas II"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Circunstâncias Externas II"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Pavimento"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewPav"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Pavimento"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/textViewPav"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Tipo de Piso"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupPis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonTipPis1"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Terra batida" />
+                android:text="          Tipo de Piso"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTipPis2"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupPis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Betuminoso" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonTipPis3"
+                <RadioButton
+                    android:id="@+id/radioButtonTipPis1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terra batida" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipPis2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Betuminoso" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipPis3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Betão de cimento" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipPis4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calçada" />
+
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Betão de cimento" />
+                android:text="          Estado de Conservação"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-
-            <RadioButton
-                android:id="@+id/radioButtonTipPis4"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupEst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calçada" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonEst1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Em bom estado" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Estado de Conservação"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                <RadioButton
+                    android:id="@+id/radioButtonEst2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Em estado regular" />
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupEst"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+                <RadioButton
+                    android:id="@+id/radioButtonEst3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Em mau estado" />
 
-            <RadioButton
-                android:id="@+id/radioButtonEst1"
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em bom estado" />
+                android:text="          Obstáculos ou Obras"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonEst2"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupObs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em estado regular" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonEst3"
+                <RadioButton
+                    android:id="@+id/radioButtonObs1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inexistentes" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonObs2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não sinalizados" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonObs3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insuficientemente sinalizados" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonObs4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Corretamente sinalizados" />
+
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em mau estado" />
+                android:text="          Condições de Aderência"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Obstáculos ou Obras"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupObs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonObs1"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCondAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Inexistentes" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonObs2"
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seco e limpo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Húmido" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Molhado" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com água acumulada na faixa de rodagem" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com gelo, geada ou neve" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com lama" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com gravilha ou areia" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondAd8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com óleo" />
+
+            </RadioGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Sinalização"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Não sinalizados" />
+                android:text="          Marcas no Pavimento"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonObs3"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupMarPav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insuficientemente sinalizados" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonObs4"
+                <RadioButton
+                    android:id="@+id/radioButtonMarPav1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem marcas rodoviárias ou pouco visíveis" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarPav2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com marcas - separadoras de sentido de trânsito" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarPav3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com marcas - separadoras de sentido e de vias de trânsito" />
+
+
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Corretamente sinalizados" />
+                android:text="          Sinalização luminosa"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Condições de Aderência"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCondAd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonCondAd1"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupSinLum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Seco e limpo" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd2"
+                <RadioButton
+                    android:id="@+id/radioButtonSinLum1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inexistentes" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSinLum2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A funcionar normalmente" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSinLum3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intermitente" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSinLum4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desligada" />
+
+            </RadioGroup>
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Húmido" />
+                android:text="          Sinais"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd3"
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupSin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Molhado" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd4"
+                <RadioButton
+                    android:id="@+id/radioButtonSin1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stop" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSin2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cedência de passagem" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSin3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proibição de ultrapassagem" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSin4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passagem de peões" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSin5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outros" />
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Luminosidade"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupLum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Com água acumulada na faixa de rodagem" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd5"
+                <RadioButton
+                    android:id="@+id/radioButtonMarLum1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Em pleno dia" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarLum2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sol endandeante" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarLum3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aurora ou crepúsculo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarLum4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Noite, sem iluminação" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMarLum5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Noite, com iluminação" />
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Fatores Atmosféricos"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupFatAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Com gelo, geada ou neve" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com lama" />
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bom tempo" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com gravilha ou areia" />
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chuva" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCondAd8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com óleo" />
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vento Forte" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nevoeiro" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Neve" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nuvem de fumo" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonFatAt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Granizo" />
 
 
+            </RadioGroup>
 
 
 
 
 
-
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Sinalização"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Marcas no Pavimento"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupMarPav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonMarPav1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem marcas rodoviárias ou pouco visíveis" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarPav2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com marcas - separadoras de sentido de trânsito" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarPav3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com marcas - separadoras de sentido e de vias de trânsito" />
-
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Sinalização luminosa"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSinLum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonSinLum1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inexistentes" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSinLum2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A funcionar normalmente" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSinLum3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Intermitente" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSinLum4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desligada" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Sinais"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonSin1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Stop" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSin2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cedência de passagem" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSin3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Proibição de ultrapassagem" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSin4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Passagem de peões" />
-
-            <RadioButton
-                android:id="@+id/radioButtonSin5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outros" />
-
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Luminosidade"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupLum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonMarLum1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Em pleno dia" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarLum2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sol endandeante" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarLum3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Aurora ou crepúsculo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarLum4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Noite, sem iluminação" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMarLum5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Noite, com iluminação" />
-
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Fatores Atmosféricos"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupFatAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bom tempo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chuva" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vento Forte" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nevoeiro" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Neve" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nuvem de fumo" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFatAt7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Granizo" />
-
-
-        </RadioGroup>
-
-
-
-
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

@@ -1,6 +1,5 @@
 package pt.rrochaua.ua_beav.fragments;
 
-
 import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;

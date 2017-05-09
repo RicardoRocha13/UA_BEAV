@@ -4,18 +4,19 @@ package pt.rrochaua.ua_beav;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-
 import pt.rrochaua.ua_beav.fragments.Form1;
+import pt.rrochaua.ua_beav.fragments.Form2;
+import pt.rrochaua.ua_beav.fragments.FotoEsquema;
 import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
 import pt.rrochaua.ua_beav.helpers.Util;
-import pt.rrochaua.ua_beav.fragments.Form2;
 
 public class MainActivity extends AppCompatActivity
         implements Menu.OnMenuListener,
         Mapa.OnMapaListener,
         Form1.OnForm1Listener,
-        Form2.OnForm2Listener {
+        Form2.OnForm2Listener,
+        FotoEsquema.OnFotoEsquemaListener{
     int numbCond;
 
     public int getNumbCond() {
@@ -56,6 +57,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void goToForm2Fragment() {
         Util.switchFragment(getFragmentManager(), "Form2", Form2.newInstance());
+    }
+
+    @Override
+    public void goToFotoEsquemaFragment() {
+        Util.switchFragment(getFragmentManager(), "FotoEsquema", FotoEsquema.newInstance());
     }
 }
 

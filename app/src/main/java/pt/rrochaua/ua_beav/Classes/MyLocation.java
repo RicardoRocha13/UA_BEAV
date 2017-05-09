@@ -10,7 +10,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-
+/*
 public class MyLocation {
     Timer timer1;
     LocationManager lm;
@@ -22,21 +22,25 @@ public class MyLocation {
     {
         //I use LocationResult callback class to pass location value from MyLocation to user code.
         locationResult=result;
-        if(lm==null)
+        if(lm==null) {
             lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        }
 
         //exceptions will be thrown if provider is not permitted.
         try{gps_enabled=lm.isProviderEnabled(LocationManager.GPS_PROVIDER);}catch(Exception ex){}
         try{network_enabled=lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);}catch(Exception ex){}
 
         //don't start listeners if no provider is enabled
-        if(!gps_enabled && !network_enabled)
+        if(!gps_enabled && !network_enabled) {
             return false;
+        }
 
-        if(gps_enabled)
+        if(gps_enabled) {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListenerGps);
-        if(network_enabled)
+        }
+        if(network_enabled) {
             lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListenerNetwork);
+        }
         timer1=new Timer();
         timer1.schedule(new GetLastLocation(), 20000);
         return true;
@@ -103,3 +107,5 @@ public class MyLocation {
         public abstract void gotLocation(Location location);
     }
 }
+
+*/

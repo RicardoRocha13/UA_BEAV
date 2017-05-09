@@ -6,54 +6,63 @@
     tools:context="pt.rrochaua.ua_beav.fragments.FotoEsquema">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Fotografias e Esquema do Sinistro"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewPav"/>
-
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fotografar" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Escolher Fotos" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Fotografias e Esquema do Sinistro"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/textViewPav"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Esquema"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fotografar" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolher Fotos" />
 
 
-        <EditText
-            android:id="@+id/editTextEsq"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:ems="10"
-            android:inputType="text|number"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Esquema"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/editTextEsq"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:ems="10"
+                android:inputType="text|number"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <Button
+                android:id="@+id/buttonSeg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seguinte" />
 
 
+        </LinearLayout>
+
+    </ScrollView>
 </FrameLayout>

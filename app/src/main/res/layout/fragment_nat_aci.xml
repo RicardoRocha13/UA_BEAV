@@ -6,198 +6,202 @@
     tools:context="pt.rrochaua.ua_beav.fragments.NatAci">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Natureza do Acidente"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewNatAc"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Despiste"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Despiste simples com transposição do separador central" />
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com dispositivo de retenção" />
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sem dispositivo de retenção" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com transposição do dispositivo de retenção lateral" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com capotamento" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com colisão com veículo imobilizado ou obstáculo" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonDesp7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com fuga" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Colisão"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupCol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
-
-            <RadioButton
-                android:id="@+id/radioButtonCol1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Frontal" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCol2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Traseira com outro veículo em movimento" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCol3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lateral com outro veículo em movimento" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonCol4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com veículo ou obstáculo na faixa de rodagem" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonCol5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choque em cadeia" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCol6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com fuga" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonCol7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outras situações" />
-
-        </RadioGroup>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Atropelamento"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupAtro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
-
-            <RadioButton
-                android:id="@+id/radioButtonAtro1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="De peões" />
-
-            <RadioButton
-                android:id="@+id/radioButtonAtro2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="De animais" />
-
-            <RadioButton
-                android:id="@+id/radioButtonAtro3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Com fuga" />
-
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="            Número de peões vítimas"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:id="@+id/textViewEsqAci"/>
-
-        <EditText
-            android:id="@+id/editText"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Natureza do Acidente"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/textViewNatAc"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Despiste"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
-    </LinearLayout>
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupDesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Despiste simples com transposição do separador central" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com dispositivo de retenção" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem dispositivo de retenção" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com transposição do dispositivo de retenção lateral" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com capotamento" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com colisão com veículo imobilizado ou obstáculo" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonDesp7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com fuga" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Colisão"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frontal" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Traseira com outro veículo em movimento" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lateral com outro veículo em movimento" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com veículo ou obstáculo na faixa de rodagem" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choque em cadeia" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com fuga" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonCol7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outras situações" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          Atropelamento"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupAtro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
+
+                <RadioButton
+                    android:id="@+id/radioButtonAtro1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De peões" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAtro2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De animais" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAtro3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Com fuga" />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="            Número de peões vítimas"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:id="@+id/textViewEsqAci"/>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

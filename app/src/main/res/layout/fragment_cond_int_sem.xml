@@ -6,136 +6,137 @@
     tools:context="pt.rrochaua.ua_beav.fragments.CondIntSem">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="Condutores Intervenientes I"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Condutores Intervenientes I"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Sexo"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupSex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonSex1"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masculino" />
+                android:text="          Sexo"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonSex2"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feminino" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonSex1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSex2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feminino" />
 
 
-        </RadioGroup>
+            </RadioGroup>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="          Idade"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="          Idade"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Change date"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTDia"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Dia"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTMes"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Mes"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <EditText
-            android:id="@+id/eTAno"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Ano"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="          Veículo"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radioGroupVI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-            <RadioButton
-                android:id="@+id/radioButtonVI1"
+            <Button
+                android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ciclomotor ou Motociclo" />
+                android:layout_marginLeft="50dp"
+                android:text="Change date"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
-            <RadioButton
-                android:id="@+id/radioButtonVI2"
+            <EditText
+                android:id="@+id/eTDia"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Dia"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <EditText
+                android:id="@+id/eTMes"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Mes"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <EditText
+                android:id="@+id/eTAno"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Ano"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Veículo Ligeiro" />
+                android:text="          Veículo"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/radioButtonVI3"
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupVI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Veículo Pesado" />
+                android:layout_marginLeft="50dp"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-            <RadioButton
-                android:id="@+id/radioButtonVI4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outro" />
+                <RadioButton
+                    android:id="@+id/radioButtonVI1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ciclomotor ou Motociclo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo Ligeiro" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo Pesado" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outro" />
 
 
-        </RadioGroup>
+            </RadioGroup>
 
-
-
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
