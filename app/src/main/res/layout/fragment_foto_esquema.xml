@@ -25,13 +25,13 @@
 
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonFot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fotografar" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/buttonEFot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Escolher Fotos" />
