@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import pt.rrochaua.ua_beav.MainActivity;
@@ -174,12 +175,19 @@ public class Form1 extends Fragment {
         });
 
 
-/*
 
-        Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
+
+
+        final Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
-*/
+            @Override
+            public void onClick(View v) {
+                TextView coor = (TextView)v.findViewById(R.id.editTextCoor);
+                MainActivity.MyLocation coordinates = new MainActivity.MyLocation();
+                coor.setText((CharSequence) coordinates);
+            }
+        });
         return v;
     }
 
@@ -206,6 +214,7 @@ public class Form1 extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
 
 
