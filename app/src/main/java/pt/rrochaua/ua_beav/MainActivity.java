@@ -3,22 +3,29 @@ package pt.rrochaua.ua_beav;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -60,9 +67,6 @@ public class MainActivity extends AppCompatActivity
         goToMenuFragment();
 
 
-
-
-
     }
 
 
@@ -80,6 +84,10 @@ public class MainActivity extends AppCompatActivity
                 Context.MODE_PRIVATE);
         return (myPrefs.getBoolean(key, false));
     }
+
+
+
+    // Secção de permissões
 
     public void showAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -133,6 +141,8 @@ public class MainActivity extends AppCompatActivity
         alertDialog.show();
     }
 
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -166,6 +176,85 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
+
+// Secção de escolha de fotos
+    int PICK_IMAGE_MULTIPLE = 1;
+        String imageEncoded;
+        List<String> imagesEncodedList;
+
+    public void selectPhoto(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"), PICK_IMAGE_MULTIPLE);
+    };
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        try {
+            // When an Image is picked
+            if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK
+                    && null != data) {
+                // Get the Image from data
+
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                imagesEncodedList = new ArrayList<String>();
+                if(data.getData()!=null){
+
+                    Uri mImageUri=data.getData();
+
+                    // Get the cursor
+                    Cursor cursor = getContentResolver().query(mImageUri,
+                            filePathColumn, null, null, null);
+                    // Move to first row
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    imageEncoded  = cursor.getString(columnIndex);
+                    cursor.close();
+
+                }else {
+                    if (data.getClipData() != null) {
+                        ClipData mClipData = data.getClipData();
+                        ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
+                        for (int i = 0; i < mClipData.getItemCount(); i++) {
+
+                            ClipData.Item item = mClipData.getItemAt(i);
+                            Uri uri = item.getUri();
+                            mArrayUri.add(uri);
+                            // Get the cursor
+                            Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+                            // Move to first row
+                            cursor.moveToFirst();
+
+                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                            imageEncoded  = cursor.getString(columnIndex);
+                            imagesEncodedList.add(imageEncoded);
+                            cursor.close();
+
+                        }
+                        Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
+                    }
+                }
+            } else {
+                Toast.makeText(this, "You haven't picked Image",
+                        Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+
+// Secção para tirar fotos
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -190,10 +279,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE_SECURE");
         startActivity(intent);
     }
-
-
-
-
 
 
     public void dispatchTakePictureIntent() {
@@ -226,6 +311,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
+// Secção de GPS
 
     public static class MyLocation {
         Timer timer1;
@@ -325,10 +411,6 @@ public class MainActivity extends AppCompatActivity
             public abstract void gotLocation(Location location);
         }
     }
-
-
-
-
 
 
 

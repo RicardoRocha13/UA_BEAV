@@ -60,6 +60,13 @@ public class FotoEsquema extends Fragment {
         });
 
 
+        Button buttonEFot = (Button) v.findViewById(R.id.buttonEFot);
+        buttonEFot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.selectPhoto();
+            }
+        });
 
 
         return v;
