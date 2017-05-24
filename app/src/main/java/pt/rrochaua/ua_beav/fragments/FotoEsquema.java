@@ -42,13 +42,21 @@ public class FotoEsquema extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_foto_esquema, container, false);
 
-        Button btnFormSeg = (Button) v.findViewById(R.id.buttonSeg);
+        Button btnFormSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnFormSeg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToMenuFragment();
             }
         });
+        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
+        btnAnt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToForm1Fragment();
+            }
+        });
+
 
         Button buttonFot = (Button) v.findViewById(R.id.buttonFot);
         buttonFot.setOnClickListener(new View.OnClickListener() {

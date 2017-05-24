@@ -55,14 +55,22 @@ public class Form1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegS = (Button) v.findViewById(R.id.ButtonSegS);
+        btnSegS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToFotoEsquemaFragment();
+                parentActivity.goToCondIntSemFragment();
             }
         });
 
+
+        Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
+        btnSegC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToCircExt1Fragment();
+            }
+        });
 
         Button btnChangeDate = (Button) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);

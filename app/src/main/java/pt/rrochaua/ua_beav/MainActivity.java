@@ -29,11 +29,20 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import pt.rrochaua.ua_beav.fragments.CircExt1;
+import pt.rrochaua.ua_beav.fragments.CircExt2;
+import pt.rrochaua.ua_beav.fragments.CondInt1;
+import pt.rrochaua.ua_beav.fragments.CondInt2;
+import pt.rrochaua.ua_beav.fragments.CondIntSem;
+import pt.rrochaua.ua_beav.fragments.ConsPass;
+import pt.rrochaua.ua_beav.fragments.ConsPeo;
 import pt.rrochaua.ua_beav.fragments.Form1;
 import pt.rrochaua.ua_beav.fragments.Form2;
 import pt.rrochaua.ua_beav.fragments.FotoEsquema;
 import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
+import pt.rrochaua.ua_beav.fragments.NatAci;
+import pt.rrochaua.ua_beav.fragments.VeicInt1;
 import pt.rrochaua.ua_beav.helpers.Util;
 
 public class MainActivity extends AppCompatActivity
@@ -41,7 +50,17 @@ public class MainActivity extends AppCompatActivity
         Mapa.OnMapaListener,
         Form1.OnForm1Listener,
         Form2.OnForm2Listener,
-        FotoEsquema.OnFotoEsquemaListener{
+        FotoEsquema.OnFotoEsquemaListener,
+        CircExt1.OnCircExt1Listener,
+        CircExt2.OnCircExt2Listener,
+        CondInt1.OnCondInt1Listener,
+        CondInt2.OnCondInt2Listener,
+        CondIntSem.OnCondIntSemListener,
+        ConsPass.OnConsPassListener,
+        ConsPeo.OnConsPeoListener,
+        NatAci.OnNatAciListener,
+        VeicInt1.OnVeicInt1Listener
+        {
         int numbCond;
 
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
@@ -444,6 +463,47 @@ public class MainActivity extends AppCompatActivity
     public void goToFotoEsquemaFragment() {
         Util.switchFragment(getFragmentManager(), "FotoEsquema", FotoEsquema.newInstance());
     }
+
+
+    @Override
+    public void goToCircExt1Fragment() {
+        Util.switchFragment(getFragmentManager(), "CircExt1", CircExt1.newInstance());
+    }
+
+    @Override
+    public void goToCircExt2Fragment() {
+        Util.switchFragment(getFragmentManager(), "CircExt2", CircExt2.newInstance());
+    }
+    @Override
+    public void goToCondInt1Fragment() {
+        Util.switchFragment(getFragmentManager(), "CondInt1", CondInt1.newInstance());
+    }
+    @Override
+    public void goToCondInt2Fragment() {
+        Util.switchFragment(getFragmentManager(), "CondInt2", CondInt2.newInstance());
+    }
+    @Override
+    public void goToCondIntSemFragment() {
+        Util.switchFragment(getFragmentManager(), "CondIntSem", CondIntSem.newInstance());
+    }
+    @Override
+    public void goToConsPassFragment() {
+        Util.switchFragment(getFragmentManager(), "ConsPass", ConsPass.newInstance());
+    }
+    @Override
+    public void goToConsPeoFragment() {
+        Util.switchFragment(getFragmentManager(), "ConsPeo", ConsPeo.newInstance());
+    }
+    @Override
+    public void goToNatAciFragment() {
+        Util.switchFragment(getFragmentManager(), "NatAci", NatAci.newInstance());
+    }
+    @Override
+    public void goToVeicInt1Fragment() {
+        Util.switchFragment(getFragmentManager(), "VeicInt1", VeicInt1.newInstance());
+    }
+
+
 }
 
 
