@@ -43,7 +43,7 @@ public class CondIntSem extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
+        final View v = inflater.inflate(R.layout.fragment_cond_int_sem, container, false);
 
         Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnSeg.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class CondIntSem extends Fragment {
         btnAnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToForm1Fragment();
+                parentActivity.goToCondIntSemFragment();
             }
         });
 
