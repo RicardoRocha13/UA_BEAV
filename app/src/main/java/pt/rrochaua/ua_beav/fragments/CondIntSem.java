@@ -45,11 +45,12 @@ public class CondIntSem extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int_sem, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
+        Button btnSeg = (Button) v.findViewById(R.id.ButtonSegTeste);
         btnSeg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToFotoEsquemaFragment();
+                System.out.println("##################### HELLOOOOO carrega butão ########################");
             }
         });
 
@@ -63,7 +64,7 @@ public class CondIntSem extends Fragment {
         });
 
 
-        return inflater.inflate(R.layout.fragment_cond_int_sem, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
