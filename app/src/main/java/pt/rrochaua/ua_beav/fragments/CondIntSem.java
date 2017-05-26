@@ -50,7 +50,6 @@ public class CondIntSem extends Fragment {
             @Override
             public void onClick(View v) {
                 parentActivity.goToFotoEsquemaFragment();
-                System.out.println("##################### HELLOOOOO carrega butão ########################");
             }
         });
 

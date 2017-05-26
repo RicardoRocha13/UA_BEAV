@@ -74,6 +74,9 @@
             public static final String CAMERA_PREF = "camera_pref";
             static final int REQUEST_TAKE_PHOTO = 2;
 
+                    int PICK_IMAGE_MULTIPLE = 1;
+                    String imageEncoded;
+                    List<String> imagesEncodedList;
 
 
             public int getNumbCond() {
@@ -89,8 +92,6 @@
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_main);
                 goToMenuFragment();
-                System.out.println("##################### HELOOOOO########################");
-
 
             }
 
@@ -197,9 +198,7 @@
 
 
            // Secção de escolha de fotos
-            int PICK_IMAGE_MULTIPLE = 1;
-                String imageEncoded;
-                List<String> imagesEncodedList;
+
 
             public void selectPhoto(){
                 Intent intent = new Intent();
@@ -303,7 +302,7 @@
                 i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 context.startActivity(i);
             }
-
+                    //Gera um ficheiro vazio para guardar posteriomente a foto
             private File createImageFile() throws IOException {
                         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                         String imageFileName = "JPEG_" + timeStamp + "_";
@@ -320,10 +319,7 @@
             }
 
             public void openCamera() {
-               /* Intent intent = new Intent("android.media.action.IMAGE_CAPTURE_SECURE");
-                startActivity(intent);*/
 
-               //teste
                 Intent takepictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if(takepictureIntent.resolveActivity(getPackageManager())!=null){
                     File photoFile= null;
@@ -333,7 +329,6 @@
                         e.printStackTrace();
                     }
                     if(photoFile != null){
-                        //Uri photoURI = FileProvider.getUriForFile(this, "com.example.android.fileprovider", photoFile);
                         takepictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
                         startActivityForResult(takepictureIntent, REQUEST_TAKE_PHOTO);
                     }
