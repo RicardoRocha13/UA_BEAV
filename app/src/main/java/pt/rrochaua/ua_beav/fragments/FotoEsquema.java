@@ -42,6 +42,7 @@ public class FotoEsquema extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_foto_esquema, container, false);
 
+
         Button btnFormSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnFormSeg.setOnClickListener(new View.OnClickListener() {
             @Override

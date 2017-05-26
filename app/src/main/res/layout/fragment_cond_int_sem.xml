@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
                 <Button
-                    android:id="@+id/ButtonSeg"
+                    android:id="@+id/ButtonSegTeste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Seguinte" />
