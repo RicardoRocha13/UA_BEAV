@@ -93,6 +93,11 @@ public class MainActivity extends AppCompatActivity
         goToMenuFragment();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     public static void saveToPreferences(Context context, String key, Boolean allowed) {
         SharedPreferences myPrefs = context.getSharedPreferences(CAMERA_PREF,
                 Context.MODE_PRIVATE);
@@ -107,8 +112,6 @@ public class MainActivity extends AppCompatActivity
         return (myPrefs.getBoolean(key, false));
     }
 
-
-    // Secção de permissões
     public void showAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("Alert");
@@ -135,6 +138,7 @@ public class MainActivity extends AppCompatActivity
         alertDialog.show();
     }
 
+    // Secção de permissões
     public void showSettingsAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("Alert");
@@ -194,100 +198,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    // Secção de escolha de fotos
-
-    public void selectPhoto() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE);
-    }
-
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case REQUEST_TAKE_PHOTO:
-                if (resultCode == Activity.RESULT_OK) {
-                    galleryAddPic();
-                    Toast.makeText(getApplicationContext(), "Foto Guardada com sucesso", Toast.LENGTH_LONG);
-                } else {
-                    Toast.makeText(this, "Erro ao guardar a foto", Toast.LENGTH_LONG);
-                }
-                break;
-
-        }
-
-        //TRATAR DESTE RESULT
-
-               /* try {
-                    // When an Image is picked
-                    if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK
-                            && null != data) {
-                        // Get the Image from data
-
-                        String[] filePathColumn = { MediaStore.Images.Media.DATA };
-                        imagesEncodedList = new ArrayList<String>();
-                        if(data.getData()!=null){
-
-                            Uri mImageUri=data.getData();
-
-                            // Get the cursor
-                            Cursor cursor = getContentResolver().query(mImageUri,
-                                    filePathColumn, null, null, null);
-                            // Move to first row
-                            cursor.moveToFirst();
-
-                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                            imageEncoded  = cursor.getString(columnIndex);
-                            cursor.close();
-
-                        }else {
-                            if (data.getClipData() != null) {
-                                ClipData mClipData = data.getClipData();
-                                ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
-                                for (int i = 0; i < mClipData.getItemCount(); i++) {
-
-                                    ClipData.Item item = mClipData.getItemAt(i);
-                                    Uri uri = item.getUri();
-                                    mArrayUri.add(uri);
-                                    // Get the cursor
-                                    Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
-                                    // Move to first row
-                                    cursor.moveToFirst();
-
-                                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                    imageEncoded  = cursor.getString(columnIndex);
-                                    imagesEncodedList.add(imageEncoded);
-                                    cursor.close();
-
-                                }
-                                Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
-                            }
-                        }
-                    } else {
-                        Toast.makeText(this, "You haven't picked Image",
-                                Toast.LENGTH_LONG).show();
-                    }
-                } catch (Exception e) {
-                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
-                            .show();
-                }
-
-                super.onActivityResult(requestCode, resultCode, data);*/
-    }
-
-
-    // Secção para tirar fotos
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
     public static void startInstalledAppDetailsActivity(final Activity context) {
         if (context == null) {
             return;
@@ -303,6 +213,16 @@ public class MainActivity extends AppCompatActivity
         context.startActivity(i);
     }
 
+    // Secção de escolha de fotos
+    public void selectPhoto() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE);
+    }
+
+    // Secção para tirar fotos
     private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         File f = new File(mCurrentPhotoPath);
@@ -371,9 +291,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
     // Secção de GPS
-
     public static class MyLocation {
         Timer timer1;
         LocationManager lm;
@@ -489,12 +407,85 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //Resultados dos Intents
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case REQUEST_TAKE_PHOTO:
+                if (resultCode == Activity.RESULT_OK) {
+                    galleryAddPic();
+                    Toast.makeText(getApplicationContext(), "Foto Guardada com sucesso", Toast.LENGTH_LONG);
+                } else {
+                    Toast.makeText(this, "Erro ao guardar a foto", Toast.LENGTH_LONG);
+                }
+                break;
 
+        }
+
+        //TRATAR DESTE RESULT
+
+               /* try {
+                    // When an Image is picked
+                    if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK
+                            && null != data) {
+                        // Get the Image from data
+
+                        String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                        imagesEncodedList = new ArrayList<String>();
+                        if(data.getData()!=null){
+
+                            Uri mImageUri=data.getData();
+
+                            // Get the cursor
+                            Cursor cursor = getContentResolver().query(mImageUri,
+                                    filePathColumn, null, null, null);
+                            // Move to first row
+                            cursor.moveToFirst();
+
+                            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                            imageEncoded  = cursor.getString(columnIndex);
+                            cursor.close();
+
+                        }else {
+                            if (data.getClipData() != null) {
+                                ClipData mClipData = data.getClipData();
+                                ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
+                                for (int i = 0; i < mClipData.getItemCount(); i++) {
+
+                                    ClipData.Item item = mClipData.getItemAt(i);
+                                    Uri uri = item.getUri();
+                                    mArrayUri.add(uri);
+                                    // Get the cursor
+                                    Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+                                    // Move to first row
+                                    cursor.moveToFirst();
+
+                                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                                    imageEncoded  = cursor.getString(columnIndex);
+                                    imagesEncodedList.add(imageEncoded);
+                                    cursor.close();
+
+                                }
+                                Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
+                            }
+                        }
+                    } else {
+                        Toast.makeText(this, "You haven't picked Image",
+                                Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+                            .show();
+                }
+
+                super.onActivityResult(requestCode, resultCode, data);*/
+    }
+
+    //Secção Fragments
     @Override
     public void goToMenuFragment() {
         Util.switchFragment(getFragmentManager(), "MENU", Menu.newInstance());
     }
-
 
     @Override
     public void goToMapaFragment() {
