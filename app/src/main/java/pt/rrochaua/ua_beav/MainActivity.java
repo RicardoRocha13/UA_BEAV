@@ -414,9 +414,9 @@ public class MainActivity extends AppCompatActivity
             case REQUEST_TAKE_PHOTO:
                 if (resultCode == Activity.RESULT_OK) {
                     galleryAddPic();
-                    Toast.makeText(getApplicationContext(), "Foto Guardada com sucesso", Toast.LENGTH_LONG);
+                    Toast.makeText(this, "Fotografia guardada com sucesso", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(this, "Erro ao guardar a foto", Toast.LENGTH_LONG);
+                    Toast.makeText(this, "Erro ao guardar a fotografia", Toast.LENGTH_LONG).show();
                 }
                 break;
 
