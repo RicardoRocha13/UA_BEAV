@@ -71,7 +71,10 @@ public class MainActivity extends AppCompatActivity
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     public static final String ALLOW_KEY = "ALLOWED";
     public static final String CAMERA_PREF = "camera_pref";
+    static final int PICK_IMAGE_MULTIPLE = 1;
     static final int REQUEST_TAKE_PHOTO = 2;
+    String imageEncoded;
+    List<String> imagesEncodedList;
     String mCurrentPhotoPath;
 
 
@@ -88,9 +91,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         goToMenuFragment();
-        System.out.println("##################### HELOOOOO########################");
-
-
     }
 
     public static void saveToPreferences(Context context, String key, Boolean allowed) {
@@ -196,9 +196,6 @@ public class MainActivity extends AppCompatActivity
 
 
     // Secção de escolha de fotos
-    int PICK_IMAGE_MULTIPLE = 1;
-    String imageEncoded;
-    List<String> imagesEncodedList;
 
     public void selectPhoto() {
         Intent intent = new Intent();
@@ -208,7 +205,7 @@ public class MainActivity extends AppCompatActivity
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE);
     }
 
-    ;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -314,6 +311,7 @@ public class MainActivity extends AppCompatActivity
         this.sendBroadcast(mediaScanIntent);
     }
 
+    //Gera um ficheiro vazio para guardar posteriormente a foto
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
