@@ -43,15 +43,15 @@ public class FotoEsquema extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_foto_esquema, container, false);
 
 
-        Button btnFormSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnFormSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnFormSegFotoEsquema = (Button) v.findViewById(R.id.ButtonSegFotoEsquema);
+        btnFormSegFotoEsquema.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToMenuFragment();
             }
         });
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntFotoEsquema = (Button) v.findViewById(R.id.ButtonAntFotoEsquema);
+        btnAntFotoEsquema.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCondIntSemFragment();

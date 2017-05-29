@@ -42,8 +42,8 @@ public class CondInt2 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int2, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegCondInt2 = (Button) v.findViewById(R.id.ButtonSegCondInt2);
+        btnSegCondInt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToConsPassFragment();
@@ -51,8 +51,8 @@ public class CondInt2 extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntCondInt2 = (Button) v.findViewById(R.id.ButtonAntCondInt2);
+        btnAntCondInt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCondInt1Fragment();

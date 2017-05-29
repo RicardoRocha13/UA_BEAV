@@ -47,8 +47,8 @@ public class CircExt2 extends Fragment {
 
         final View v = inflater.inflate(R.layout.fragment_circ_ext2, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegCircExt2 = (Button) v.findViewById(R.id.ButtonSegCircExt2);
+        btnSegCircExt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToNatAciFragment();
@@ -56,8 +56,8 @@ public class CircExt2 extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntCircExt2 = (Button) v.findViewById(R.id.ButtonAntCircExt2);
+        btnAntCircExt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCircExt1Fragment();

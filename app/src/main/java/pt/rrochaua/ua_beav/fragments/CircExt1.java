@@ -42,18 +42,17 @@ public class CircExt1 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_circ_ext1, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSegCircExt1);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegCircExt1 = (Button) v.findViewById(R.id.ButtonSegCircExt1);
+        btnSegCircExt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCircExt2Fragment();
-                System.out.println("##################### HELLOOOOO carrega butão ########################");
             }
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAntCircExt1);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntCircExt1 = (Button) v.findViewById(R.id.ButtonAntCircExt1);
+        btnAntCircExt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToForm1Fragment();

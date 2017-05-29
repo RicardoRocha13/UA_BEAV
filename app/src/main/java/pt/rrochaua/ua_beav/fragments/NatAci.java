@@ -47,8 +47,8 @@ public class NatAci extends Fragment {
 
         final View v = inflater.inflate(R.layout.fragment_nat_aci, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegNatAci = (Button) v.findViewById(R.id.ButtonSegNatAci);
+        btnSegNatAci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToVeicInt1Fragment();
@@ -56,8 +56,8 @@ public class NatAci extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntNatAci = (Button) v.findViewById(R.id.ButtonAntNatAci);
+        btnAntNatAci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCircExt2Fragment();

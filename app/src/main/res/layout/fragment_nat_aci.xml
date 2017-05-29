@@ -206,12 +206,12 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <Button
-                    android:id="@+id/ButtonAnt"
+                    android:id="@+id/ButtonAntNatAci"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
                 <Button
-                    android:id="@+id/ButtonSeg"
+                    android:id="@+id/ButtonSegNatAci"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Seguinte" />

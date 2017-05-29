@@ -45,18 +45,17 @@ public class CondIntSem extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int_sem, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSegTeste);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegCondIntSem = (Button) v.findViewById(R.id.ButtonSegCondIntSem);
+        btnSegCondIntSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToFotoEsquemaFragment();
-                System.out.println("##################### HELLOOOOO carrega butão ########################");
             }
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntCondIntSem = (Button) v.findViewById(R.id.ButtonAntCondIntSem);
+        btnAntCondIntSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToForm1Fragment();

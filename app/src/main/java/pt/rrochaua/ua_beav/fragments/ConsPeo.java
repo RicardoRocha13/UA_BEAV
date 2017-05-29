@@ -46,8 +46,8 @@ public class ConsPeo extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cons_peo, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegConsPeo = (Button) v.findViewById(R.id.ButtonSegConsPeo);
+        btnSegConsPeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToFotoEsquemaFragment();
@@ -55,8 +55,8 @@ public class ConsPeo extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntConsPeo = (Button) v.findViewById(R.id.ButtonAntConsPeo);
+        btnAntConsPeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToConsPassFragment();

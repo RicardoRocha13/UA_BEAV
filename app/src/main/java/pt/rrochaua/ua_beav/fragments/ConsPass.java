@@ -46,8 +46,8 @@ public class ConsPass extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cons_pass, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegConsPass = (Button) v.findViewById(R.id.ButtonSegConsPass);
+        btnSegConsPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToConsPeoFragment();
@@ -55,8 +55,8 @@ public class ConsPass extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntConsPass = (Button) v.findViewById(R.id.ButtonAntConsPass);
+        btnAntConsPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCondInt2Fragment();

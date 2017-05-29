@@ -44,8 +44,8 @@ public class VeicInt1 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_veic_int1, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
-        btnSeg.setOnClickListener(new View.OnClickListener() {
+        Button btnSegVeicInt1 = (Button) v.findViewById(R.id.ButtonSegVeicInt1);
+        btnSegVeicInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCondInt1Fragment();
@@ -53,8 +53,8 @@ public class VeicInt1 extends Fragment {
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
-        btnAnt.setOnClickListener(new View.OnClickListener() {
+        Button btnAntVeicInt1 = (Button) v.findViewById(R.id.ButtonAntVeicInt1);
+        btnAntVeicInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToNatAciFragment();

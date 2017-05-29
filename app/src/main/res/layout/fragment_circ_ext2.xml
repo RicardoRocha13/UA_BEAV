@@ -475,12 +475,12 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <Button
-                    android:id="@+id/ButtonAnt"
+                    android:id="@+id/ButtonAntCircExt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
                 <Button
-                    android:id="@+id/ButtonSeg"
+                    android:id="@+id/ButtonSegCircExt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Seguinte" />
