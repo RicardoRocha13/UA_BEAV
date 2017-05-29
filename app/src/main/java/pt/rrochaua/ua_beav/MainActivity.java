@@ -20,7 +20,6 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -69,6 +68,7 @@ public class MainActivity extends AppCompatActivity
     int numbCond;
 
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
+    public static final int MY_PERMISSIONS_REQUEST_STORAGE = 200;
     public static final String ALLOW_KEY = "ALLOWED";
     public static final String CAMERA_PREF = "camera_pref";
     static final int PICK_IMAGE_MULTIPLE = 1;
@@ -133,6 +133,9 @@ public class MainActivity extends AppCompatActivity
                         ActivityCompat.requestPermissions(MainActivity.this,
                                 new String[]{Manifest.permission.CAMERA},
                                 MY_PERMISSIONS_REQUEST_CAMERA);
+                        ActivityCompat.requestPermissions(MainActivity.this,
+                                new String[]{Manifest.permission.CAMERA},
+                                MY_PERMISSIONS_REQUEST_STORAGE);
                     }
                 });
         alertDialog.show();
@@ -195,6 +198,31 @@ public class MainActivity extends AppCompatActivity
 
             // other 'case' lines to check for other
             // permissions this app might request
+
+            case MY_PERMISSIONS_REQUEST_STORAGE: {
+                for (int i = 0, len = permissions.length; i < len; i++) {
+                    String permission = permissions[i];
+
+                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                        boolean
+                                showRationale =
+                                ActivityCompat.shouldShowRequestPermissionRationale(
+                                        this, permission);
+
+                        if (showRationale) {
+                            showAlert();
+                        } else if (!showRationale) {
+                            // user denied flagging NEVER ASK AGAIN
+                            // you can either enable some fall back,
+                            // disable features of your app
+                            // or open another dialog explaining
+                            // again the permission and directing to
+                            // the app setting
+                            saveToPreferences(MainActivity.this, ALLOW_KEY, true);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -267,7 +295,7 @@ public class MainActivity extends AppCompatActivity
 
     public void dispatchTakePictureIntent() {
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED & ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (getFromPref(this, ALLOW_KEY)) {
                 showSettingsAlert();
             } else if (ContextCompat.checkSelfPermission(this,
@@ -286,6 +314,28 @@ public class MainActivity extends AppCompatActivity
                             MY_PERMISSIONS_REQUEST_CAMERA);
                 }
             }
+
+
+        } else  if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (getFromPref(this, ALLOW_KEY)) {
+                showSettingsAlert();
+            } else if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                // Should we show an explanation?
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                        Manifest.permission.CAMERA)) {
+                    showAlert();
+                } else {
+                    // No explanation needed, we can request the permission.
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_STORAGE);
+                }
+            }
+
         } else {
             openCamera();
         }

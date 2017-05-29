@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.TimePicker;
 
 import pt.rrochaua.ua_beav.MainActivity;
@@ -184,16 +183,16 @@ public class Form1 extends Fragment {
 
 
 
-
-
+//adiciona o valor das coordenadas no EditTextCoor
         final Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                TextView coor = (TextView)v.findViewById(R.id.editTextCoor);
+                EditText coor = (EditText) v.findViewById(R.id.editTextCoor);
                 MainActivity.MyLocation coordinates = new MainActivity.MyLocation();
                 coor.setText((CharSequence) coordinates);
+                System.out.println("##############################################");
             }
         });
         return v;
