@@ -45,7 +45,7 @@ public class CircExt2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
+        final View v = inflater.inflate(R.layout.fragment_circ_ext2, container, false);
 
         Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnSeg.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class CircExt2 extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_circ_ext2, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

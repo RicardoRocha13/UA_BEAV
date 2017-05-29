@@ -42,7 +42,7 @@ public class VeicInt1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
+        final View v = inflater.inflate(R.layout.fragment_veic_int1, container, false);
 
         Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnSeg.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,7 @@ public class VeicInt1 extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_veic_int1, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

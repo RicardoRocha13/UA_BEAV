@@ -59,7 +59,7 @@ public class CondIntSem extends Fragment {
         btnAnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCondIntSemFragment();
+                parentActivity.goToForm1Fragment();
             }
         });
 

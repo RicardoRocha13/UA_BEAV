@@ -45,7 +45,7 @@ public class NatAci extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
+        final View v = inflater.inflate(R.layout.fragment_nat_aci, container, false);
 
         Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
         btnSeg.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class NatAci extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_nat_aci, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

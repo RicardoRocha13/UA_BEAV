@@ -32,8 +32,8 @@ public class CircExt1 extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         parentActivity = (MainActivity) this.getActivity();
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -42,16 +42,17 @@ public class CircExt1 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_circ_ext1, container, false);
 
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSeg);
+        Button btnSeg = (Button) v.findViewById(R.id.ButtonSegCircExt1);
         btnSeg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.goToCircExt2Fragment();
+                System.out.println("##################### HELLOOOOO carrega butão ########################");
             }
         });
 
 
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAnt);
+        Button btnAnt = (Button) v.findViewById(R.id.ButtonAntCircExt1);
         btnAnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +61,7 @@ public class CircExt1 extends Fragment {
         });
 
 
-        return inflater.inflate(R.layout.fragment_circ_ext1, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
