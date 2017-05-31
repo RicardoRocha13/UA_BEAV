@@ -4,6 +4,7 @@ package pt.rrochaua.ua_beav.fragments;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import android.widget.TimePicker;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.helpers.MyLocation;
 
 //import pt.rrochaua.ua_beav.Classes.MyLocation;
 
@@ -78,6 +80,9 @@ public class Form1 extends Fragment {
         final EditText eTHora  = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
 
+        final EditText coor = (EditText) v.findViewById(R.id.editTextCoor);
+        final Context coordinates = null;
+        final Location location = null;
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
@@ -182,6 +187,12 @@ public class Form1 extends Fragment {
         });
 
 
+        final MyLocation.LocationResult locationResult = new MyLocation.LocationResult(){
+            @Override
+            public void gotLocation(Location location) {
+
+            }
+        };
 
 //adiciona o valor das coordenadas no EditTextCoor
         final Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
@@ -189,10 +200,13 @@ public class Form1 extends Fragment {
 
             @Override
             public void onClick(View v) {
-                EditText coor = (EditText) v.findViewById(R.id.editTextCoor);
-                MainActivity.MyLocation coordinates = new MainActivity.MyLocation();
-                coor.setText((CharSequence) coordinates);
-                System.out.println("##############################################");
+                //coor.setText(location);
+                System.out.println(location);
+                //MyLocation myLocation = new MyLocation();
+                //myLocation.getLocation(coordinates, locationResult);
+
+               // coor.setText((CharSequence) coordinates);
+                System.out.println("##########################");
             }
         });
         return v;
