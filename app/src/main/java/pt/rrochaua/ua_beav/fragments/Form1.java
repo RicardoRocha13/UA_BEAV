@@ -4,7 +4,8 @@ package pt.rrochaua.ua_beav.fragments;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
-import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,13 +15,16 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 
+import android.util.Log;
+
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
-import pt.rrochaua.ua_beav.helpers.MyLocation;
+import pt.rrochaua.ua_beav.helpers.GetCurrentLocation;
 
 //import pt.rrochaua.ua_beav.Classes.MyLocation;
 
@@ -29,6 +33,15 @@ public class Form1 extends Fragment {
 
     MainActivity parentActivity;
     private OnForm1Listener mListener;
+
+    private LocationManager locationMangaer=null;
+    private LocationListener locationListener=null;
+
+    private ProgressBar pb =null;
+
+    private static final String TAG = "Debug";
+    private Boolean flag = false;
+
 
 
     public Form1() {
@@ -45,6 +58,8 @@ public class Form1 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         parentActivity = (MainActivity) this.getActivity();
+
+
     }
 
 
@@ -80,9 +95,6 @@ public class Form1 extends Fragment {
         final EditText eTHora  = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
 
-        final EditText coor = (EditText) v.findViewById(R.id.editTextCoor);
-        final Context coordinates = null;
-        final Location location = null;
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
@@ -187,12 +199,6 @@ public class Form1 extends Fragment {
         });
 
 
-        final MyLocation.LocationResult locationResult = new MyLocation.LocationResult(){
-            @Override
-            public void gotLocation(Location location) {
-
-            }
-        };
 
 //adiciona o valor das coordenadas no EditTextCoor
         final Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
@@ -200,12 +206,28 @@ public class Form1 extends Fragment {
 
             @Override
             public void onClick(View v) {
-                //coor.setText(location);
-                System.out.println(location);
-                //MyLocation myLocation = new MyLocation();
-                //myLocation.getLocation(coordinates, locationResult);
 
-               // coor.setText((CharSequence) coordinates);
+
+                flag = GetCurrentLocation.displayGpsStatus();
+                if (flag) {
+
+                    Log.v(TAG, "onClick");
+
+                    //GetCurrentLocation.editLocation.setText("Please!! move your device to"+" see the changes in coordinates."+"\nWait..");
+
+                    pb.setVisibility(View.VISIBLE);
+                    locationListener = new GetCurrentLocation.MyLocationListener();
+
+                    locationMangaer.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10,locationListener);
+
+
+                } else {
+                    GetCurrentLocation.alertbox("Gps Status!!", "Your GPS is: OFF");
+                }
+
+
+
+
                 System.out.println("##########################");
             }
         });
