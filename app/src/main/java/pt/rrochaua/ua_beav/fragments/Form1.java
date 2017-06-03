@@ -4,6 +4,7 @@ package pt.rrochaua.ua_beav.fragments;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -15,18 +16,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 
-import android.util.Log;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
-import pt.rrochaua.ua_beav.helpers.GetCurrentLocation;
-
-//import pt.rrochaua.ua_beav.Classes.MyLocation;
 
 
 public class Form1 extends Fragment {
@@ -34,14 +30,10 @@ public class Form1 extends Fragment {
     MainActivity parentActivity;
     private OnForm1Listener mListener;
 
-    private LocationManager locationMangaer=null;
-    private LocationListener locationListener=null;
-
-    private ProgressBar pb =null;
-
     private static final String TAG = "Debug";
     private Boolean flag = false;
-
+    EditText etCoord = null;
+    LocationManager locationManager = null;
 
 
     public Form1() {
@@ -63,13 +55,11 @@ public class Form1 extends Fragment {
     }
 
 
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_form1, container, false);
+
+        etCoord = (EditText) v.findViewById(R.id.editTextCoor);
 
         Button btnSegS = (Button) v.findViewById(R.id.ButtonSegS);
         btnSegS.setOnClickListener(new View.OnClickListener() {
@@ -92,9 +82,8 @@ public class Form1 extends Fragment {
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
-        final EditText eTHora  = (EditText) v.findViewById(R.id.eTHora);
+        final EditText eTHora = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
-
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +110,7 @@ public class Form1 extends Fragment {
                     public void onClick(View v) {
                         dateDialog.dismiss();
                         eTextDia.setText(Integer.toString(dP.getDayOfMonth()));
-                        eTextMes.setText(Integer.toString(dP.getMonth()+1));
+                        eTextMes.setText(Integer.toString(dP.getMonth() + 1));
                         eTextAno.setText(Integer.toString(dP.getYear()));
 
                     }
@@ -177,18 +166,18 @@ public class Form1 extends Fragment {
                 parentActivity.setNumbCond(Integer.parseInt(String.valueOf(etNumCond.getText())));
                 LinearLayout ll = (LinearLayout) parentActivity.findViewById(R.id.llRadio);
                 ll.removeAllViews();
-                for (int x=1; x<=parentActivity.getNumbCond(); x++){
+                for (int x = 1; x <= parentActivity.getNumbCond(); x++) {
                     RadioGroup rg = new RadioGroup(parentActivity);
                     rg.setOrientation(LinearLayout.HORIZONTAL);
                     rg.setId(x);
 
                     RadioButton rdbtn0 = new RadioButton(parentActivity);
-                    rdbtn0.setId(Integer.parseInt(x+"0"));
+                    rdbtn0.setId(Integer.parseInt(x + "0"));
                     rdbtn0.setText("Masculino");
                     rg.addView(rdbtn0);
 
                     RadioButton rdbtn1 = new RadioButton(parentActivity);
-                    rdbtn1.setId(Integer.parseInt(x+"1"));
+                    rdbtn1.setId(Integer.parseInt(x + "1"));
                     rdbtn1.setText("Feminino");
                     rg.addView(rdbtn1);
 
@@ -199,40 +188,51 @@ public class Form1 extends Fragment {
         });
 
 
-
 //adiciona o valor das coordenadas no EditTextCoor
-        final Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
+        Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-
-                flag = GetCurrentLocation.displayGpsStatus();
-                if (flag) {
-
-                    Log.v(TAG, "onClick");
-
-                    //GetCurrentLocation.editLocation.setText("Please!! move your device to"+" see the changes in coordinates."+"\nWait..");
-
-                    pb.setVisibility(View.VISIBLE);
-                    locationListener = new GetCurrentLocation.MyLocationListener();
-
-                    locationMangaer.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10,locationListener);
-
-
-                } else {
-                    GetCurrentLocation.alertbox("Gps Status!!", "Your GPS is: OFF");
-                }
-
-
-
-
-                System.out.println("##########################");
+                locationManager = (LocationManager) parentActivity.getSystemService(Context.LOCATION_SERVICE);
+                LocationListener locationListener = new MyLocationListener();
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
             }
         });
         return v;
     }
+
+    //Listener do GPS
+    private class MyLocationListener implements LocationListener {
+
+        @Override
+        public void onLocationChanged(Location location) {
+            System.out.println("###################################");
+            System.out.println("LAT: " + location.getLatitude());
+            System.out.println("LOMG: " + location.getLongitude());
+            System.out.println("###################################");
+            etCoord.setText("LAT: " + location.getLatitude() + " LONG: " + location.getLongitude());
+            //deslida updates GPS
+            locationManager.removeUpdates(this);
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -259,13 +259,10 @@ public class Form1 extends Fragment {
     }
 
 
-
-
     public interface OnForm1Listener {
         // TODO: Update argument type and name
         void goToForm1Fragment();
     }
-
 
 
 }
