@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity
         ConsPeo.OnConsPeoListener,
         NatAci.OnNatAciListener,
         VeicInt1.OnVeicInt1Listener {
+
+
     int numbCond;
 
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
@@ -74,14 +77,16 @@ public class MainActivity extends AppCompatActivity
     String mCurrentPhotoPath;
 
 
-    public int getNumbCond() {
-        return numbCond;
-    }
-
+// chamar, por exemplo esta função apartir de um fragment a variável numCond, para guardar na mainactivity o valor
     public void setNumbCond(int numbCond) {
         this.numbCond = numbCond;
     }
 
+
+//chamar esta função para chamar o valor da variável numbCond da main activity para o fragment em questão
+    public int getNumbCond() {
+        return numbCond;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,14 +197,11 @@ public class MainActivity extends AppCompatActivity
         alertDialog.show();
     }
 
-    public void GPSPermission() {
+    public void gPSPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (getFromPref(this, ALLOW_KEY)) {
                 showSettingsAlert();
-            } else if (ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)
-
-                    != PackageManager.PERMISSION_GRANTED) {
+            } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
                 // Should we show an explanation?
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -367,6 +369,8 @@ public class MainActivity extends AppCompatActivity
 
     public void dispatchTakePictureIntent() {
 
+        //fazer os 3 if em separado para a permissao da camara e de armazenamento, assim como para abrir a camara
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED & ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (getFromPref(this, ALLOW_KEY)) {
                 showSettingsAlert();
@@ -412,6 +416,7 @@ public class MainActivity extends AppCompatActivity
             openCamera();
         }
     }
+
 
 
     //Resultados dos Intents

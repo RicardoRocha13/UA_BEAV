@@ -195,7 +195,7 @@ public class Form1 extends Fragment {
 
             @Override
             public void onClick(View v) {
-
+                    parentActivity.gPSPermission();
                     locationManager = (LocationManager) parentActivity.getSystemService(Context.LOCATION_SERVICE);
                     LocationListener locationListener = new MyLocationListener();
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
@@ -213,10 +213,10 @@ public class Form1 extends Fragment {
         public void onLocationChanged(Location location) {
             System.out.println("###################################");
             System.out.println("LAT: " + location.getLatitude());
-            System.out.println("LOMG: " + location.getLongitude());
+            System.out.println("LONG: " + location.getLongitude());
             System.out.println("###################################");
             etCoord.setText("LAT: " + location.getLatitude() + " LONG: " + location.getLongitude());
-            //deslida updates GPS
+            //desliga updates GPS
             locationManager.removeUpdates(this);
         }
 
