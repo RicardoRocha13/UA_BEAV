@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity
 
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     public static final int MY_PERMISSIONS_REQUEST_STORAGE = 200;
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 300;
     public static final String ALLOW_KEY = "ALLOWED";
     public static final String CAMERA_PREF = "camera_pref";
     static final int PICK_IMAGE_MULTIPLE = 1;
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity
         return (myPrefs.getBoolean(key, false));
     }
 
+
+    // Secção de permissões
     public void showAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("Alert");
@@ -136,7 +139,33 @@ public class MainActivity extends AppCompatActivity
         alertDialog.show();
     }
 
-    // Secção de permissões
+    public void showAlertLocation() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("App needs to access the GPS.");
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        ActivityCompat.requestPermissions(MainActivity.this,
+                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                MY_PERMISSIONS_REQUEST_LOCATION);
+                    }
+                });
+        alertDialog.show();
+    }
+
+
     public void showSettingsAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("Alert");
@@ -162,6 +191,30 @@ public class MainActivity extends AppCompatActivity
 
         alertDialog.show();
     }
+
+    public void GPSPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (getFromPref(this, ALLOW_KEY)) {
+                showSettingsAlert();
+            } else if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                // Should we show an explanation?
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    showAlert();
+                } else {
+                    // No explanation needed, we can request the permission.
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                            MY_PERMISSIONS_REQUEST_LOCATION);
+                }
+            }
+        }
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
@@ -206,6 +259,30 @@ public class MainActivity extends AppCompatActivity
 
                         if (showRationale) {
                             showAlert();
+                        } else if (!showRationale) {
+                            // user denied flagging NEVER ASK AGAIN
+                            // you can either enable some fall back,
+                            // disable features of your app
+                            // or open another dialog explaining
+                            // again the permission and directing to
+                            // the app setting
+                            saveToPreferences(MainActivity.this, ALLOW_KEY, true);
+                        }
+                    }
+                }
+            }
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                for (int i = 0, len = permissions.length; i < len; i++) {
+                    String permission = permissions[i];
+
+                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                        boolean
+                                showRationale =
+                                ActivityCompat.shouldShowRequestPermissionRationale(
+                                        this, permission);
+
+                        if (showRationale) {
+                            showAlertLocation();
                         } else if (!showRationale) {
                             // user denied flagging NEVER ASK AGAIN
                             // you can either enable some fall back,
@@ -391,6 +468,9 @@ public class MainActivity extends AppCompatActivity
         }
         
     }
+
+
+
 
     //Secção Fragments
     @Override

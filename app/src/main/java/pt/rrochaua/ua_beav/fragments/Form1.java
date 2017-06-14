@@ -20,7 +20,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 
-
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 
@@ -188,17 +187,21 @@ public class Form1 extends Fragment {
         });
 
 
+
+
 //adiciona o valor das coordenadas no EditTextCoor
         Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                locationManager = (LocationManager) parentActivity.getSystemService(Context.LOCATION_SERVICE);
-                LocationListener locationListener = new MyLocationListener();
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
-            }
+
+                    locationManager = (LocationManager) parentActivity.getSystemService(Context.LOCATION_SERVICE);
+                    LocationListener locationListener = new MyLocationListener();
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
+                }
+
         });
         return v;
     }
