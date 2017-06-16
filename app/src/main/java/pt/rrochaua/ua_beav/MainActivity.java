@@ -15,6 +15,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -24,6 +25,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,9 +71,8 @@ public class MainActivity extends AppCompatActivity
 
     int numbCond;
 
-    public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
-    public static final int MY_PERMISSIONS_REQUEST_STORAGE = 200;
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 300;
+    public static final int PERMISSIONS_MULTIPLE_REQUEST = 123;
     public static final String ALLOW_KEY = "ALLOWED";
     public static final String CAMERA_PREF = "camera_pref";
     static final int PICK_IMAGE_MULTIPLE = 1;
@@ -88,11 +89,11 @@ public class MainActivity extends AppCompatActivity
         this.numbCond = numbCond;
     }
 
-
 //chamar esta função para chamar o valor da variável numbCond da main activity para o fragment em questão
     public int getNumbCond() {
         return numbCond;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,36 +122,7 @@ public class MainActivity extends AppCompatActivity
 
 
     // Secção de permissões
-    public void showAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("Alert");
-        alertDialog.setMessage("The App needs certain permissions.");
-
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        finish();
-                    }
-                });
-
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        ActivityCompat.requestPermissions(MainActivity.this,
-                                new String[]{Manifest.permission.CAMERA},
-                                MY_PERMISSIONS_REQUEST_CAMERA);
-                        ActivityCompat.requestPermissions(MainActivity.this,
-                                new String[]{Manifest.permission.CAMERA},
-                                MY_PERMISSIONS_REQUEST_STORAGE);
-                    }
-                });
-        alertDialog.show();
-    }
-
-    public void showAlertLocation() {
+     public void showAlertLocation() {
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("Alert");
         alertDialog.setMessage("This App needs to access the GPS.");
@@ -207,59 +179,25 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_CAMERA: {
-                for (int i = 0, len = permissions.length; i < len; i++) {
-                    String permission = permissions[i];
+            case PERMISSIONS_MULTIPLE_REQUEST:
+                if(grantResults.length > 0 ){
+                    boolean cameraPermission = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    boolean readExternalFilePermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
 
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        boolean
-                                showRationale =
-                                ActivityCompat.shouldShowRequestPermissionRationale(
-                                        this, permission);
-
-                        if (showRationale) {
-                            showAlert();
-                        } else if (!showRationale) {
-                            // user denied flagging NEVER ASK AGAIN
-                            // you can either enable some fall back,
-                            // disable features of your app
-                            // or open another dialog explaining
-                            // again the permission and directing to
-                            // the app setting
-                            saveToPreferences(MainActivity.this, ALLOW_KEY, true);
+                    if(cameraPermission && readExternalFilePermission){
+                        System.out.println("######################################################");
+                        System.out.println("################# PERMISSIONS on the result########################");
+                        System.out.println("######################################################");
+                        openCamera();
+                    } else {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, PERMISSIONS_MULTIPLE_REQUEST);
                         }
                     }
                 }
-            }
+                break;
 
-            // other 'case' lines to check for other
-            // permissions this app might request
-
-            case MY_PERMISSIONS_REQUEST_STORAGE: {
-                for (int i = 0, len = permissions.length; i < len; i++) {
-                    String permission = permissions[i];
-
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        boolean
-                                showRationale =
-                                ActivityCompat.shouldShowRequestPermissionRationale(
-                                        this, permission);
-
-                        if (showRationale) {
-                            showAlert();
-                        } else if (!showRationale) {
-                            // user denied flagging NEVER ASK AGAIN
-                            // you can either enable some fall back,
-                            // disable features of your app
-                            // or open another dialog explaining
-                            // again the permission and directing to
-                            // the app setting
-                            saveToPreferences(MainActivity.this, ALLOW_KEY, true);
-                        }
-                    }
-                }
-            }
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
+            case MY_PERMISSIONS_REQUEST_LOCATION:
                 for (int i = 0, len = permissions.length; i < len; i++) {
                     String permission = permissions[i];
 
@@ -282,7 +220,9 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                 }
-            }
+            break;
+
+
         }
     }
 
@@ -355,40 +295,27 @@ public class MainActivity extends AppCompatActivity
 
     public void dispatchTakePictureIntent() {
 
-
-        //tentei tanto separar, como abaixo, como colocar em progressão dentro de cada um as condições do seguinte para tentar fazer sequencial, mas nenhuma das formas impede a necessidade de carregar no butao para cada permissão e depois para tirar a foto
-
-         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-             if (getFromPref(this, ALLOW_KEY)) {
-                 showSettingsAlert();
-             } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-
-
-                 // No explanation needed, we can request the permission.
-                 ActivityCompat.requestPermissions(this,
-                         new String[]{Manifest.permission.CAMERA},
-                         MY_PERMISSIONS_REQUEST_CAMERA);
-
-             }
-         }
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            if (getFromPref(this, ALLOW_KEY)) {
-                showSettingsAlert();
-            } else if (ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
-
-
-                    // No explanation needed, we can request the permission.
-                    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_PERMISSIONS_REQUEST_STORAGE);
-
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) +
+                ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
+                    ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, PERMISSIONS_MULTIPLE_REQUEST);
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, PERMISSIONS_MULTIPLE_REQUEST);
+                }
             }
-
-        }
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED & ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            System.out.println("######################################################");
+            System.out.println("################# PERMISSIONS on the dispatch########################");
+            System.out.println("######################################################");
             openCamera();
         }
+
     }
+
 
     /*
         public void gPSPermission() {
