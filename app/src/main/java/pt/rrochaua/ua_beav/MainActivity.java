@@ -9,7 +9,6 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -21,7 +20,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +28,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import pt.rrochaua.ua_beav.fragments.CircExt1;
 import pt.rrochaua.ua_beav.fragments.CircExt2;
@@ -66,13 +63,12 @@ public class MainActivity extends AppCompatActivity
 
 
     int numbCond;
+    ArrayList<Uri> mArrayUri;
 
     public static final int PERMISSIONS_REQUEST_LOCATION = 200;
     public static final int PERMISSIONS_MULTIPLE_REQUEST = 100;
     static final int PICK_IMAGE_MULTIPLE = 1;
     static final int REQUEST_TAKE_PHOTO = 2;
-    String imageEncoded;
-    List<String> imagesEncodedList;
     String mCurrentPhotoPath;
     ProgressDialog dialog;
 
@@ -102,7 +98,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Secção de permissões
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -122,10 +117,10 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case PERMISSIONS_REQUEST_LOCATION:
-                if(grantResults.length > 0){
+                if (grantResults.length > 0) {
                     boolean gPSPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
 
-                    if(gPSPermission){
+                    if (gPSPermission) {
                         dialog = ProgressDialog.show(this, "", "A obter coordenadas GPS. Por favor espere...", true);
                         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                         LocationListener locationListener = new MyLocationListener();
@@ -134,7 +129,7 @@ public class MainActivity extends AppCompatActivity
 
                     } else {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_LOCATION);
+                            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_LOCATION);
                         }
                     }
                 }
@@ -146,11 +141,11 @@ public class MainActivity extends AppCompatActivity
 
     // Secção de escolha de fotos
     public void selectPhoto() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE);
+        Intent intentMultiple = new Intent();
+        intentMultiple.setType("image/*");
+        intentMultiple.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intentMultiple.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intentMultiple, "Select a Picture"), PICK_IMAGE_MULTIPLE);
     }
 
     // Secção para tirar fotos
@@ -279,44 +274,35 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case PICK_IMAGE_MULTIPLE:
-                if (resultCode == RESULT_OK && null != data) {
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-                    imagesEncodedList = new ArrayList<String>();
+                if (resultCode == RESULT_OK && data != null) {
                     if (data.getData() != null) {
                         Uri mImageUri = data.getData();
 
-                        //Get Cursor
-                        Cursor cursor = getContentResolver().query(mImageUri, filePathColumn, null, null, null);
-                        cursor.moveToFirst();
-
-                        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                        imageEncoded = cursor.getString(columnIndex);
-                        cursor.close();
+                        mArrayUri = new ArrayList<Uri>();
+                        mArrayUri.add(mImageUri);
                     } else {
                         if (data.getClipData() != null) {
                             ClipData mClipData = data.getClipData();
-                            ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
+                            mArrayUri = new ArrayList<Uri>();
                             for (int i = 0; i < mClipData.getItemCount(); i++) {
                                 ClipData.Item item = mClipData.getItemAt(i);
                                 Uri uri = item.getUri();
                                 mArrayUri.add(uri);
-                                // Get the cursor
-                                Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
-                                // Move to first row
-                                cursor.moveToFirst();
-
-                                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                imageEncoded = cursor.getString(columnIndex);
-                                imagesEncodedList.add(imageEncoded);
-                                cursor.close();
                             }
-                            Log.v("LOG_TAG", "select Images" + mArrayUri.size());
                         }
                     }
                 } else {
-                    Toast.makeText(this, "You haven't picked Image", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Não selecionou nenhuma fotografia", Toast.LENGTH_LONG).show();
                 }
+                //só para demonstração, enquanto não está a enviar para base de dados
+                System.out.println("##########################################################");
+                System.out.println("NUMBER OF SELECTED FILES: " + mArrayUri.size());
+                for (int p = 0; p < mArrayUri.size(); p++) {
+                    System.out.println("URI PHOTO " + p + ": " + mArrayUri.get(p));
+                }
+                System.out.println("##########################################################");
                 break;
+
             case REQUEST_TAKE_PHOTO:
                 if (resultCode == Activity.RESULT_OK) {
                     galleryAddPic();
