@@ -4,11 +4,10 @@ package pt.rrochaua.ua_beav;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Location;
@@ -19,13 +18,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,25 +67,24 @@ public class MainActivity extends AppCompatActivity
 
     int numbCond;
 
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 300;
-    public static final int PERMISSIONS_MULTIPLE_REQUEST = 123;
-    public static final String ALLOW_KEY = "ALLOWED";
-    public static final String CAMERA_PREF = "camera_pref";
+    public static final int PERMISSIONS_REQUEST_LOCATION = 200;
+    public static final int PERMISSIONS_MULTIPLE_REQUEST = 100;
     static final int PICK_IMAGE_MULTIPLE = 1;
     static final int REQUEST_TAKE_PHOTO = 2;
     String imageEncoded;
     List<String> imagesEncodedList;
     String mCurrentPhotoPath;
+    ProgressDialog dialog;
 
     LocationManager locationManager = null;
 
 
-// chamar, por exemplo esta função apartir de um fragment a variável numCond, para guardar na mainactivity o valor
+    // chamar, por exemplo esta função apartir de um fragment a variável numCond, para guardar na mainactivity o valor
     public void setNumbCond(int numbCond) {
         this.numbCond = numbCond;
     }
 
-//chamar esta função para chamar o valor da variável numbCond da main activity para o fragment em questão
+    //chamar esta função para chamar o valor da variável numbCond da main activity para o fragment em questão
     public int getNumbCond() {
         return numbCond;
     }
@@ -106,88 +101,17 @@ public class MainActivity extends AppCompatActivity
         super.onResume();
     }
 
-    public static void saveToPreferences(Context context, String key, Boolean allowed) {
-        SharedPreferences myPrefs = context.getSharedPreferences(CAMERA_PREF,
-                Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = myPrefs.edit();
-        prefsEditor.putBoolean(key, allowed);
-        prefsEditor.commit();
-    }
-
-    public static Boolean getFromPref(Context context, String key) {
-        SharedPreferences myPrefs = context.getSharedPreferences(CAMERA_PREF,
-                Context.MODE_PRIVATE);
-        return (myPrefs.getBoolean(key, false));
-    }
-
-
     // Secção de permissões
-     public void showAlertLocation() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("Alert");
-        alertDialog.setMessage("This App needs to access the GPS.");
-
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        finish();
-                    }
-                });
-
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        ActivityCompat.requestPermissions(MainActivity.this,
-                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                MY_PERMISSIONS_REQUEST_LOCATION);
-                    }
-                });
-        alertDialog.show();
-    }
-
-
-    public void showSettingsAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("Alert");
-        alertDialog.setMessage("App needs certain permissions.");
-
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        //finish();
-                    }
-                });
-
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "SETTINGS",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        startInstalledAppDetailsActivity(MainActivity.this);
-                    }
-                });
-
-        alertDialog.show();
-    }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case PERMISSIONS_MULTIPLE_REQUEST:
-                if(grantResults.length > 0 ){
+                if (grantResults.length > 0) {
                     boolean cameraPermission = grantResults[1] == PackageManager.PERMISSION_GRANTED;
                     boolean readExternalFilePermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
 
-                    if(cameraPermission && readExternalFilePermission){
-                        System.out.println("######################################################");
-                        System.out.println("################# PERMISSIONS on the result########################");
-                        System.out.println("######################################################");
+                    if (cameraPermission && readExternalFilePermission) {
                         openCamera();
                     } else {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -197,48 +121,27 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
 
-            case MY_PERMISSIONS_REQUEST_LOCATION:
-                for (int i = 0, len = permissions.length; i < len; i++) {
-                    String permission = permissions[i];
+            case PERMISSIONS_REQUEST_LOCATION:
+                if(grantResults.length > 0){
+                    boolean gPSPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
 
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        boolean
-                                showRationale =
-                                ActivityCompat.shouldShowRequestPermissionRationale(
-                                        this, permission);
+                    if(gPSPermission){
+                        dialog = ProgressDialog.show(this, "", "A obter coordenadas GPS. Por favor espere...", true);
+                        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                        LocationListener locationListener = new MyLocationListener();
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
 
-                        if (showRationale) {
-                            showAlertLocation();
-                        } else if (!showRationale) {
-                            // user denied flagging NEVER ASK AGAIN
-                            // you can either enable some fall back,
-                            // disable features of your app
-                            // or open another dialog explaining
-                            // again the permission and directing to
-                            // the app setting
-                            saveToPreferences(MainActivity.this, ALLOW_KEY, true);
+                    } else {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_LOCATION);
                         }
                     }
                 }
-            break;
+                break;
 
 
         }
-    }
-
-    public static void startInstalledAppDetailsActivity(final Activity context) {
-        if (context == null) {
-            return;
-        }
-
-        final Intent i = new Intent();
-        i.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        i.addCategory(Intent.CATEGORY_DEFAULT);
-        i.setData(Uri.parse("package:" + context.getPackageName()));
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        context.startActivity(i);
     }
 
     // Secção de escolha de fotos
@@ -295,9 +198,9 @@ public class MainActivity extends AppCompatActivity
 
     public void dispatchTakePictureIntent() {
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) +
-                ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) +
+                ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
                     ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, PERMISSIONS_MULTIPLE_REQUEST);
@@ -308,50 +211,26 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         } else {
-            System.out.println("######################################################");
-            System.out.println("################# PERMISSIONS on the dispatch########################");
-            System.out.println("######################################################");
             openCamera();
         }
 
     }
 
-
-    /*
-        public void gPSPermission() {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                if (getFromPref(this, ALLOW_KEY)) {
-                    showSettingsAlert();
-                } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-                    // Should we show an explanation?
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                            Manifest.permission.ACCESS_FINE_LOCATION)) {
-                        showAlert();
-                    } else {
-                        // No explanation needed, we can request the permission.
-                        ActivityCompat.requestPermissions(this,
-                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                MY_PERMISSIONS_REQUEST_LOCATION);
-                    }
-                }
-            }
-        }
-    */
     public void dispatchGetCoorIntent() {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (getFromPref(this, ALLOW_KEY)) {
-                showSettingsAlert();
-            } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-                    // No explanation needed, we can request the permission.
-                    ActivityCompat.requestPermissions(this,
-                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                            MY_PERMISSIONS_REQUEST_LOCATION);
-
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_LOCATION);
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_LOCATION);
+                }
             }
-        }else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+        } else {
+            dialog = ProgressDialog.show(this, "", "A obter coordenadas GPS. Por favor espere...", true);
             locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             LocationListener locationListener = new MyLocationListener();
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
@@ -359,23 +238,22 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
+
     //Listener do GPS
     private class MyLocationListener implements LocationListener {
 
         @Override
         public void onLocationChanged(Location location) {
+
             System.out.println("###################################");
             System.out.println("LAT: " + location.getLatitude());
             System.out.println("LONG: " + location.getLongitude());
             System.out.println("###################################");
+            dialog.dismiss();
 
-
-            //No exemplo que vi, usava "id" em vez de layout para identificar o fragment.xml desejado, mas o android não o estava a aceitar (https://stackoverflow.com/questions/16295101/how-to-change-fragments-textviews-text-from-activity, resposta com 7 votos)
-            //Mas não insere o texto no editTextCoor
-            Fragment fragCoor = getFragmentManager().findFragmentById(R.layout.fragment_form1);
+            Fragment fragCoor = getFragmentManager().findFragmentByTag("Form1");
             ((TextView) fragCoor.getView().findViewById(R.id.editTextCoor)).setText("LAT: " + location.getLatitude() + " LONG: " + location.getLongitude());
 
-            //etCoord.setText("LAT: " + location.getLatitude() + " LONG: " + location.getLongitude());
             //desliga updates GPS
             locationManager.removeUpdates(this);
         }
@@ -401,10 +279,10 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case PICK_IMAGE_MULTIPLE:
-                if(resultCode == RESULT_OK && null!= data){
+                if (resultCode == RESULT_OK && null != data) {
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
                     imagesEncodedList = new ArrayList<String>();
-                    if(data.getData()!= null){
+                    if (data.getData() != null) {
                         Uri mImageUri = data.getData();
 
                         //Get Cursor
@@ -414,11 +292,11 @@ public class MainActivity extends AppCompatActivity
                         int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                         imageEncoded = cursor.getString(columnIndex);
                         cursor.close();
-                    } else  {
-                        if (data.getClipData() != null){
+                    } else {
+                        if (data.getClipData() != null) {
                             ClipData mClipData = data.getClipData();
                             ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
-                            for(int i=0; i < mClipData.getItemCount(); i++){
+                            for (int i = 0; i < mClipData.getItemCount(); i++) {
                                 ClipData.Item item = mClipData.getItemAt(i);
                                 Uri uri = item.getUri();
                                 mArrayUri.add(uri);
@@ -428,7 +306,7 @@ public class MainActivity extends AppCompatActivity
                                 cursor.moveToFirst();
 
                                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                imageEncoded  = cursor.getString(columnIndex);
+                                imageEncoded = cursor.getString(columnIndex);
                                 imagesEncodedList.add(imageEncoded);
                                 cursor.close();
                             }
@@ -448,10 +326,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
         }
-        
+
     }
-
-
 
 
     //Secção Fragments
