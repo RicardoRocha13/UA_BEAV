@@ -295,12 +295,14 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(this, "Não selecionou nenhuma fotografia", Toast.LENGTH_LONG).show();
                 }
                 //só para demonstração, enquanto não está a enviar para base de dados
-                System.out.println("##########################################################");
-                System.out.println("NUMBER OF SELECTED FILES: " + mArrayUri.size());
-                for (int p = 0; p < mArrayUri.size(); p++) {
-                    System.out.println("URI PHOTO " + p + ": " + mArrayUri.get(p));
+                if(mArrayUri!=null) {
+                    System.out.println("##########################################################");
+                    System.out.println("NUMBER OF SELECTED FILES: " + mArrayUri.size());
+                    for (int p = 0; p < mArrayUri.size(); p++) {
+                        System.out.println("URI PHOTO " + p + ": " + mArrayUri.get(p));
+                    }
+                    System.out.println("##########################################################");
                 }
-                System.out.println("##########################################################");
                 break;
 
             case REQUEST_TAKE_PHOTO:
