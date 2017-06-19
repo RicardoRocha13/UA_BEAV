@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
 
             <TextView
@@ -26,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Sexo"
+                android:text="Sexo"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -36,7 +37,6 @@
                 android:id="@+id/radioGroupSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="          Idade"
+                android:text="Idade"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -66,7 +66,6 @@
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:text="Change date"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
@@ -74,7 +73,6 @@
                 android:id="@+id/eTDia"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:text="Dia"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
@@ -82,7 +80,6 @@
                 android:id="@+id/eTMes"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:text="Mes"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
@@ -90,14 +87,13 @@
                 android:id="@+id/eTAno"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:text="Ano"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Veículo"
+                android:text="Veículo"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -107,7 +103,6 @@
                 android:id="@+id/radioGroupVI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -140,7 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:gravity="center">
                 <Button
                     android:id="@+id/ButtonAntCondIntSem"
                     android:layout_width="wrap_content"

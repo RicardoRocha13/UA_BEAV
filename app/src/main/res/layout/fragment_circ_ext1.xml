@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Estrada com Separador"
+                android:text="Estrada com Separador"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -44,7 +45,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="              Autoestrada - nº de vias de trânsito no sentido"
+                android:text="Autoestrada - nº de vias de trânsito no sentido"
                 android:textAlignment="viewStart"
                 android:textSize="14sp" />
 
@@ -52,7 +53,6 @@
                 android:id="@+id/editTextAutonVias"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -60,7 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="              Outra via - nº de vias de trânsito no sentido"
+                android:text="Outra via - nº de vias de trânsito no sentido"
                 android:textAlignment="viewStart"
                 android:textSize="14sp" />
 
@@ -68,7 +68,6 @@
                 android:id="@+id/editTextOutranVias"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -76,7 +75,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Estrada sem Separador - nº de vias no sentido"
+                android:text="Estrada sem Separador - nº de vias no sentido"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -85,7 +84,6 @@
                 android:id="@+id/editTextSemSnVias"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -94,7 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Via de Trânsito"
+                android:text="Via de Trânsito"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -103,7 +101,6 @@
                 android:id="@+id/radioGroupViaT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -137,7 +134,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Em planta"
+                android:text="Em planta"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -146,7 +143,6 @@
                 android:id="@+id/radioGroupPlant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -167,7 +163,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Em Perfil"
+                android:text="Em Perfil"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -176,7 +172,6 @@
                 android:id="@+id/radioGroupPerf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -203,7 +198,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Berma"
+                android:text="Berma"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -212,7 +207,6 @@
                 android:id="@+id/radioGroupBerm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -239,7 +233,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Situação do Acidente"
+                android:text="Situação do Acidente"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -248,7 +242,6 @@
                 android:id="@+id/radioGroupSDA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -287,7 +280,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Interseção de Vias"
+                android:text="Interseção de Vias"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -296,7 +289,6 @@
                 android:id="@+id/radioGroupIDV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -309,7 +301,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="          Em interseção de nível"
+                    android:text="Em interseção de nível"
                     android:textAlignment="viewStart"
                     android:textStyle="bold" />
 
@@ -342,7 +334,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="          Em interseção desnivelada"
+                    android:text="Em interseção desnivelada"
                     android:textAlignment="viewStart"
                     android:textStyle="bold" />
 
@@ -377,7 +369,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Acidente em Obras de Arte"
+                android:text="Acidente em Obras de Arte"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -387,7 +379,6 @@
                 android:id="@+id/radioGroupAEODA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -421,7 +412,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Faixa de Rodagem com"
+                android:text="Faixa de Rodagem com"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -431,7 +422,6 @@
                 android:id="@+id/radioGroupFDRC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -458,7 +448,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Velocidade permitida no Lanço"
+                android:text="Velocidade permitida no Lanço"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -466,7 +456,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="              Limite Geral(km/h)"
+                android:text="Limite Geral(km/h)"
                 android:textAlignment="viewStart"
                 android:textSize="14sp" />
 
@@ -474,7 +464,6 @@
                 android:id="@+id/editTextLimG"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -482,7 +471,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="              Limite Local (km/h)"
+                android:text="Limite Local (km/h)"
                 android:textAlignment="viewStart"
                 android:textSize="14sp" />
 
@@ -490,7 +479,6 @@
                 android:id="@+id/editTextLimL"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -500,7 +488,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:gravity="center">
                 <Button
                     android:id="@+id/ButtonAntCircExt1"
                     android:layout_width="wrap_content"
