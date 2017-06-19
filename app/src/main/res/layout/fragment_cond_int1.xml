@@ -68,12 +68,24 @@
                 android:text="Change date"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center">
+
             <EditText
                 android:id="@+id/eTDia"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Dia"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+
 
             <EditText
                 android:id="@+id/eTMes"
@@ -81,6 +93,11 @@
                 android:layout_height="wrap_content"
                 android:text="Mes"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+
 
             <EditText
                 android:id="@+id/eTAno"
@@ -88,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ano"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+            </LinearLayout>
 
 
             <TextView
@@ -201,7 +219,7 @@
 
             <EditText
                 android:id="@+id/editTextAnoHab"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
