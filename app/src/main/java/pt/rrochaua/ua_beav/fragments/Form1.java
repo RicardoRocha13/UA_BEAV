@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -75,7 +76,7 @@ public class Form1 extends Fragment {
             }
         });
 
-        Button btnChangeDate = (Button) v.findViewById(R.id.btnDate);
+        ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
@@ -116,7 +117,7 @@ public class Form1 extends Fragment {
             }
         });
 
-        Button btnTime = (Button) v.findViewById(R.id.btnTime);
+        ImageButton btnTime = (ImageButton) v.findViewById(R.id.btnTime);
         btnTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,7 +189,7 @@ public class Form1 extends Fragment {
 
 
 //adiciona o valor das coordenadas no EditTextCoor
-        Button buttonCoor = (Button) v.findViewById(R.id.buttonCoor);
+        ImageButton buttonCoor = (ImageButton) v.findViewById(R.id.buttonCoor);
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
             @Override
