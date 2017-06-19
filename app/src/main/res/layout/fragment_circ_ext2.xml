@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Tipo de Piso"
+                android:text="Tipo de Piso"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -44,7 +45,6 @@
                 android:id="@+id/radioGroupPis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -77,7 +77,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Estado de Conservação"
+                android:text="Estado de Conservação"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -85,7 +85,6 @@
                 android:id="@+id/radioGroupEst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -112,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Obstáculos ou Obras"
+                android:text="Obstáculos ou Obras"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -120,7 +119,6 @@
                 android:id="@+id/radioGroupObs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -152,7 +150,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Condições de Aderência"
+                android:text="Condições de Aderência"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -160,7 +158,6 @@
                 android:id="@+id/radioGroupCondAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -215,17 +212,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
@@ -236,7 +222,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Marcas no Pavimento"
+                android:text="Marcas no Pavimento"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -246,7 +232,6 @@
                 android:id="@+id/radioGroupMarPav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -273,7 +258,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Sinalização luminosa"
+                android:text="Sinalização luminosa"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -281,7 +266,6 @@
                 android:id="@+id/radioGroupSinLum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -314,7 +298,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Sinais"
+                android:text="Sinais"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -322,7 +306,6 @@
                 android:id="@+id/radioGroupSin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -372,7 +355,6 @@
                 android:id="@+id/radioGroupLum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -421,7 +403,6 @@
                 android:id="@+id/radioGroupFatAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -473,7 +454,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:gravity="center">
                 <Button
                     android:id="@+id/ButtonAntCircExt2"
                     android:layout_width="wrap_content"

@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +35,6 @@
                 android:id="@+id/radioGroupCat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -208,7 +208,6 @@
                 android:id="@+id/radioGroupTDS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -251,7 +250,6 @@
                 android:id="@+id/radioGroupIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -284,7 +282,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Preencher apenas no caso de transporte de mercadorias perigosas"
+                android:text="Preencher apenas no caso de transporte de mercadorias perigosas"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -293,7 +291,6 @@
                 android:id="@+id/radioGroupCADR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -319,7 +316,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Matéria/objeto perigoso transportado"
+                android:text="Matéria/objeto perigoso transportado"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -342,7 +339,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Carga/Lotação"
+                android:text="Carga/Lotação"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -351,7 +348,6 @@
                 android:id="@+id/radioGroupCL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -389,7 +385,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Pneus"
+                android:text="Pneus"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -398,7 +394,6 @@
                 android:id="@+id/radioGroupPneu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -420,7 +415,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Tacógrafo"
+                android:text="Tacógrafo"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -429,7 +424,6 @@
                 android:id="@+id/radioGroupTaco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -457,7 +451,6 @@
                 android:id="@+id/radioGroupSeg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -492,7 +485,6 @@
                 android:id="@+id/radioGroupInPo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -512,7 +504,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:gravity="center">
                 <Button
                     android:id="@+id/ButtonAntVeicInt1"
                     android:layout_width="wrap_content"

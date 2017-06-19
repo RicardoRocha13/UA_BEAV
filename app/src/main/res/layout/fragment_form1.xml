@@ -14,7 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
+
+
 
             <TextView
                 android:id="@+id/textView5"
@@ -22,12 +25,13 @@
                 android:layout_height="34dp"
                 android:text="Identificação do Acidente"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="          Data/Hora"
+                android:text="Data/Hora"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -40,25 +44,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Change date" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center">
+                <EditText
+                    android:id="@+id/eTDia"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dia" />
 
-            <EditText
-                android:id="@+id/eTDia"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Dia" />
+                <EditText
+                    android:id="@+id/eTMes"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mes" />
 
-            <EditText
-                android:id="@+id/eTMes"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Mes" />
-
-            <EditText
-                android:id="@+id/eTAno"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Ano" />
-
+                <EditText
+                    android:id="@+id/eTAno"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ano" />
+            </LinearLayout>
 
             // Inserção da hora do Acidente
 
@@ -69,27 +78,35 @@
                 android:text="Change Time"
                 app:layout_constraintTop_toBottomOf="@+id/eTAno" />
 
-            <EditText
-                android:id="@+id/eTHora"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="Hora" />
-
-
-            <EditText
-                android:id="@+id/eTMin"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="Minutos" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center">
 
+                <EditText
+                    android:id="@+id/eTHora"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="Hora" />
+
+
+                <EditText
+                    android:id="@+id/eTMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="Minutos" />
+
+            </LinearLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Localização"
+                android:text="Localização"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -128,7 +145,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Local do acidente(Informação Opcional)"
+                android:text="Local do acidente(Informação Opcional)"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -146,7 +163,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Coordenadas"
+                android:text="Coordenadas"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -171,7 +188,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Tipo de Acidente"
+                android:text="Tipo de Acidente"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -201,7 +218,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Natureza do Acidente"
+                android:text="Natureza do Acidente"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -238,7 +255,7 @@
                 android:id="@+id/textViewCond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Número de Condutores"
+                android:text="Número de Condutores"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold"  />

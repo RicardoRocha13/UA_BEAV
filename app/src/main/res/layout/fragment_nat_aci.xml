@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Despiste"
+                android:text="Despiste"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -36,7 +37,6 @@
                 android:id="@+id/radioGroupDesp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
 
                 <RadioButton
@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Colisão"
+                android:text="Colisão"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -98,7 +98,6 @@
                 android:id="@+id/radioGroupCol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
 
                 <RadioButton
@@ -152,7 +151,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="          Atropelamento"
+                android:text="Atropelamento"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -160,7 +159,6 @@
                 android:id="@+id/radioGroupAtro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
 
                 <RadioButton
@@ -187,7 +185,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="            Número de peões vítimas"
+                android:text="Número de peões vítimas"
                 android:textAlignment="viewStart"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -204,7 +202,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:gravity="center">
                 <Button
                     android:id="@+id/ButtonAntNatAci"
                     android:layout_width="wrap_content"
