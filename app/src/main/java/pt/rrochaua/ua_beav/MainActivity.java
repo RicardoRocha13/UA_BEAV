@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -17,8 +18,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -225,11 +228,36 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else {
-            dialog = ProgressDialog.show(this, "", "A obter coordenadas GPS. Por favor espere...", true);
+
             locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            LocationListener locationListener = new MyLocationListener();
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
+            if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+                System.out.println("###################################");
+                System.out.println("################ ERROR ############");
+                System.out.println("###################################");
+                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                dialog.setTitle("Localização desligada");
+                dialog.setMessage("Para utilizar esta funcionalidade tem de ter o serviço de localização activo. Carregue no botão definições e active essa funcionalidade. Este texto está horrivel, é favor de o melhorar.");
+                dialog.setPositiveButton("Defenições", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                            }
+                        });
+                dialog.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                dialog.show();
+
+
+            }else{
+                dialog = ProgressDialog.show(this, "", "A obter coordenadas GPS. Por favor espere...", true);
+                LocationListener locationListener = new MyLocationListener();
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
+            }
 
         }
     }

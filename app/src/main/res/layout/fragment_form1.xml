@@ -39,11 +39,12 @@
 
             // Inserção da Data do Acidente
 
-          
+
             <ImageButton
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 android:src="@mipmap/ic_launcher_today" />
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -189,12 +190,13 @@
 
             // Inserção da Latitude do Acidente
 
-           
+
             <ImageButton
                 android:id="@+id/buttonCoor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher_gps_fixed"/>
+                android:background="@android:color/transparent"
+                android:src="@mipmap/ic_launcher_gps_fixed" />
 
             <EditText
                 android:id="@+id/editTextCoor"
