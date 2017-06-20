@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/UAgreen"
     tools:context="pt.rrochaua.ua_beav.fragments.CircExt2">
 
 
@@ -19,25 +20,27 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:text="Circunstâncias Externas II"
-                android:textSize="20sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Pavimento"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:id="@+id/textViewPav"/>
+                android:layout_height="wrap_content"
+                android:text="\nPavimento"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="23sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tipo de Piso"
+                android:text="\nTipo de Piso"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -77,8 +80,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Estado de Conservação"
-                android:textSize="16sp"
+                android:text="\nEstado de Conservação"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -111,8 +115,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Obstáculos ou Obras"
-                android:textSize="16sp"
+                android:text="\nObstáculos ou Obras"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -150,8 +155,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condições de Aderência"
-                android:textSize="16sp"
+                android:text="\nCondições de Aderência"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -214,18 +220,20 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Sinalização"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nSinalização"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="23sp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Marcas no Pavimento"
+                android:text="\nMarcas no Pavimento"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -258,9 +266,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sinalização luminosa"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="\nSinalização luminosa"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupSinLum"
@@ -298,8 +307,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sinais"
-                android:textSize="16sp"
+                android:text="\nSinais"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -344,9 +354,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Luminosidade"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nLuminosidade"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
@@ -393,9 +404,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Fatores Atmosféricos"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nFatores Atmosféricos"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 

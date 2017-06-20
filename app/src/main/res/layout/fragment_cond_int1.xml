@@ -3,25 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/UAgreen"
     tools:context="pt.rrochaua.ua_beav.fragments.CondInt1">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
+            android:weightSum="1">
 
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Condutores Intervenientes I"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:text="Condutores Intervenientes I\n"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -29,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:text="Sexo"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -56,8 +60,9 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Idade"
+                android:layout_height="wrap_content"
+                android:text="\nIdade"
+                android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -65,63 +70,67 @@
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change date"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+                android:background="@color/UAgreenLetters"
+                android:src="@mipmap/ic_launcher_today" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1"
-            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-            <EditText
-                android:id="@+id/eTDia"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Dia"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/" />
+                <EditText
+                    android:id="@+id/eTDia"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dia"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
-
-            <EditText
-                android:id="@+id/eTMes"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Mes"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
 
 
-            <EditText
-                android:id="@+id/eTAno"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Ano"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+                <EditText
+                    android:id="@+id/eTMes"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mes"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/" />
+
+
+                <EditText
+                    android:id="@+id/eTAno"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ano"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
             </LinearLayout>
 
 
             <TextView
                 android:id="@+id/textViewPav"
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Características da habilitação de Condução"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nCaracterísticas da habilitação de Condução"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="23sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Licença/Carta de Condução"
+                android:text="\nLicença/Carta de Condução"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -173,9 +182,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="País de Emissão"
+                android:text="\nPaís de Emissão"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -211,9 +221,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ano de Habilitação"
+                android:text="\nAno de Habilitação"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -228,17 +239,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="Condições Psico/Físicas"
-                android:textSize="18sp"
+                android:text="\nCondições Psico/Físicas"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="23sp"
                 android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Controlo do Nível de Alcoolemia"
+                android:text="\nControlo do Nível de Alcoolemia"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -313,9 +326,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Outros Fatores"
+                android:text="\nOutros Fatores"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -368,9 +382,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tempo de Condução Continuada"
+                android:text="\nTempo de Condução Continuada"
                 android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -412,17 +427,20 @@
                     android:text="Ignorada" />
 
             </RadioGroup>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntCondInt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegCondInt1"
                     android:layout_width="wrap_content"

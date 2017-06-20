@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/UAgreen"
     tools:context="pt.rrochaua.ua_beav.fragments.CondInt2">
 
     <!-- TODO: Update blank fragment layout -->
@@ -18,16 +19,18 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:text="Condutores Intervenientes II"
-                android:textSize="20sp"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Ações e Manobras Antes do Acidente"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nAções e Manobras Antes do Acidente"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
@@ -145,9 +148,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Informação Complementar a Ações e Manobras"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nInformação Complementar a Ações e Manobras"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
@@ -260,9 +264,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Acessórios de Segurança"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nAcessórios de Segurança"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
@@ -301,9 +306,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Grau de Gravidade das Lesões"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="\nGrau de Gravidade das Lesões"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
