@@ -24,13 +24,14 @@
                 android:text="Condutores Intervenientes I"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nSexo"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -61,13 +62,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nIdade"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,6 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="/" />
 
 
@@ -104,6 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="/" />
 
 
@@ -120,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nVeículo"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold"/>

@@ -21,9 +21,11 @@
             <TextView
                 android:id="@+id/textViewPav"
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Fotografias e Esquema do Sinistro"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:text="Fotografias e Esquema do Sinistro\n"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
 
@@ -43,9 +45,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Esquema"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:text="\nEsquema"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 

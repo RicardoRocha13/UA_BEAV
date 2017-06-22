@@ -22,17 +22,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Consequências do Acidente nos Passageiros"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sexo"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="\nSexo"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,17 +62,19 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Idade"
+                android:layout_height="wrap_content"
+                android:text="\nIdade"
+                android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Idade"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+                android:background="@color/UAgreenLetters"
+                android:src="@mipmap/ic_launcher_today" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -89,7 +94,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/" />
+                android:text="/"
+                android:gravity="center"/>
 
 
             <EditText
@@ -102,7 +108,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/" />
+                android:text="/"
+                android:gravity="center"/>
 
 
             <EditText
@@ -119,9 +126,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Posição no veículo"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:text="\nPosição no veículo"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -156,9 +164,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Uso de acessórios de segurança"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:text="\nUso de acessórios de segurança"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -200,9 +209,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Grau de gravidade das lesões"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:text="\nGrau de gravidade das lesões"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 

@@ -10,27 +10,31 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
+            android:weightSum="1">
 
             <TextView
+                android:id="@+id/textViewNatAc"
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:text="Natureza do Acidente"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:id="@+id/textViewNatAc"/>
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Despiste"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
+                android:text="\nDespiste"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -91,8 +95,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Colisão"
-                android:textSize="16sp"
+                android:text="\nColisão"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -152,9 +158,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Atropelamento"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="\nAtropelamento"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupAtro"
@@ -184,13 +192,14 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewEsqAci"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Número de peões vítimas"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:id="@+id/textViewEsqAci"/>
+                android:text="\nNúmero de peões vítimas"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText"
@@ -202,14 +211,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntNatAci"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegNatAci"
                     android:layout_width="wrap_content"

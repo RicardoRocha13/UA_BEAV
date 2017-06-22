@@ -25,6 +25,7 @@
                  android:text="Circunstâncias Externas I\n"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="25sp"
+                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
@@ -34,15 +35,16 @@
                  android:text="Características Técnicas da Via\n"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
+                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Estrada com Separador"
-                 android:textAlignment="viewStart"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="16sp"
+                 android:gravity="center"
                  android:textStyle="bold" />
 
 
@@ -50,7 +52,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Autoestrada - nº de vias de trânsito no sentido"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textSize="14sp" />
 
              <EditText
@@ -65,7 +67,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Outra via - nº de vias de trânsito no sentido"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textSize="14sp" />
 
              <EditText
@@ -80,7 +82,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Estrada sem Separador - nº de vias no sentido"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="16sp"
                  android:textStyle="bold" />
@@ -98,7 +100,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nVia de Trânsito"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -135,6 +137,7 @@
                  android:text="\nTraçado da Via"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
+                 android:gravity="center"
                  android:textStyle="bold" />
 
 
@@ -142,7 +145,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Em planta"
-                 android:textAlignment="viewStart"
+                android:gravity="center"
                  android:textSize="16sp"
                  android:textStyle="bold" />
 
@@ -171,7 +174,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nEm Perfil"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -207,7 +210,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nBerma"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -243,7 +246,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nSituação do Acidente"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -291,7 +294,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nInterseção de Vias"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -313,7 +316,7 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:text="Em interseção de nível"
-                     android:textAlignment="viewStart"
+                     android:gravity="center"
                      android:textStyle="bold" />
 
 
@@ -346,7 +349,7 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:text="Em interseção desnivelada"
-                     android:textAlignment="viewStart"
+                     android:gravity="center"
                      android:textStyle="bold" />
 
 
@@ -381,7 +384,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nAcidente em Obras de Arte"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -420,13 +423,14 @@
                  android:text="\nRegime de Circulação"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
+                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nFaixa de Rodagem com"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -463,7 +467,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="\nVelocidade permitida no Lanço"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -472,7 +476,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Limite Geral(km/h)"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textSize="14sp" />
 
              <EditText
@@ -487,7 +491,7 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Limite Local (km/h)"
-                 android:textAlignment="viewStart"
+                 android:gravity="center"
                  android:textSize="14sp" />
 
              <EditText

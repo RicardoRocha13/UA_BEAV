@@ -22,16 +22,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condutores Intervenientes I\n"
+                android:text="Condutores Intervenientes\n"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sexo"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -40,8 +41,7 @@
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupSex"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/radioButtonSex1"
@@ -63,10 +63,11 @@
                 android:layout_height="wrap_content"
                 android:text="\nIdade"
                 android:textColor="@color/UAgreenLetters"
+                android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +91,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/" />
+                    android:text="/"
+                    android:gravity="center"/>
 
 
                 <EditText
@@ -103,7 +105,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/" />
+                    android:text="/"
+                    android:gravity="center" />
 
 
                 <EditText
@@ -122,13 +125,14 @@
                 android:text="\nCaracterísticas da habilitação de Condução"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="23sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nLicença/Carta de Condução"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -183,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nPaís de Emissão"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -222,7 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nAno de Habilitação"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -238,10 +242,11 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:text="\nCondições Psico/Físicas"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="23sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
 
@@ -249,7 +254,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nControlo do Nível de Alcoolemia"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -280,7 +285,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Não submetido por:"
-                    android:textAlignment="viewStart"
+                    android:gravity="center"
                     android:textStyle="bold" />
 
 
@@ -327,7 +332,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nOutros Fatores"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -383,7 +388,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nTempo de Condução Continuada"
-                android:textAlignment="viewStart"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />

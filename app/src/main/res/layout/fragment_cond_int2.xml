@@ -23,6 +23,7 @@
                 android:text="Condutores Intervenientes II"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
@@ -31,6 +32,7 @@
                 android:text="\nAções e Manobras Antes do Acidente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold"/>
 
 
@@ -152,6 +154,7 @@
                 android:text="\nInformação Complementar a Ações e Manobras"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold"/>
 
 
@@ -268,6 +271,7 @@
                 android:text="\nAcessórios de Segurança"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold"/>
 
 
@@ -310,6 +314,7 @@
                 android:text="\nGrau de Gravidade das Lesões"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:textStyle="bold"/>
 
 

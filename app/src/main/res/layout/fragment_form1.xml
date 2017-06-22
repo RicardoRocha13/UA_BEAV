@@ -27,17 +27,18 @@
                 android:text="Identificação do Acidente \n"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:textColor="@color/UAgreenLetters"/>
+                android:textColor="@color/UAgreenLetters"
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data/Hora\n"
-                android:textAlignment="viewStart"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center" />
 
 
             // Inserção da Data do Acidente
@@ -64,18 +65,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/" />
+                    android:text="/"
+                    android:gravity="center" />
        
                 <EditText
                     android:id="@+id/eTMes"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:text="Mes" />
+                    android:text="Mes"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/" />
+                    android:text="/"
+                    android:gravity="center"/>
             
                 <EditText
                     android:id="@+id/eTAno"
@@ -122,7 +125,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=":" />
+                    android:text=":"
+                    android:gravity="center"/>
 
                 <EditText
                     android:id="@+id/eTMin"
@@ -138,9 +142,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nLocalização\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters" />
 
 
@@ -178,9 +182,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nLocal do acidente(Informação Opcional)\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters" />
 
 
@@ -197,9 +201,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nCoordenadas\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters" />
 
 
@@ -225,9 +229,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nTipo de Acidente\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters" />
 
 
@@ -256,9 +260,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nNatureza do Acidente\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -294,9 +298,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\nNúmero de Condutores\n"
-                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"  />
 
             <EditText
