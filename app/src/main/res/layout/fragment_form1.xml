@@ -34,7 +34,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Data/Hora\n"
+                android:text="Data/Hora"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -141,7 +141,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nLocalização\n"
+                android:text="\nLocalização"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -181,7 +181,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nLocal do acidente(Informação Opcional)\n"
+                android:text="\nLocal do acidente(Informação Opcional)"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -200,7 +200,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nCoordenadas\n"
+                android:text="\nCoordenadas"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -228,7 +228,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nTipo de Acidente\n"
+                android:text="\nTipo de Acidente"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -259,7 +259,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNatureza do Acidente\n"
+                android:text="\nNatureza do Acidente"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -297,7 +297,7 @@
                 android:id="@+id/textViewCond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNúmero de Condutores\n"
+                android:text="\nNúmero de Condutores"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"

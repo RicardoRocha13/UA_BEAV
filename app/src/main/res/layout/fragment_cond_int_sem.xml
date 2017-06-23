@@ -84,7 +84,7 @@
 
             <EditText
                 android:id="@+id/eTDia"
-                android:layout_width="100dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:text="Dia"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
@@ -98,9 +98,9 @@
 
             <EditText
                 android:id="@+id/eTMes"
-                android:layout_width="100dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:text="Mes"
+                android:text="Mês"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
             <TextView
