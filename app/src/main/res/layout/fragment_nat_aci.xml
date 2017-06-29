@@ -22,17 +22,17 @@
                 android:id="@+id/textViewNatAc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Natureza do Acidente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nDespiste"
                 android:gravity="center"
+                android:text="\nDespiste"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -95,10 +95,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nColisão"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -158,11 +158,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nAtropelamento"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupAtro"
@@ -195,14 +195,14 @@
                 android:id="@+id/textViewEsqAci"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNúmero de peões vítimas"
                 android:gravity="center"
+                android:text="\nNúmero de peões vítimas"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editTextNPeoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"

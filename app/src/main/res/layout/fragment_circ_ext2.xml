@@ -427,44 +427,44 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt1"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bom tempo" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt2"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chuva" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt3"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vento Forte" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt4"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nevoeiro" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt5"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Neve" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt6"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nuvem de fumo" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonFatAt7"
+                <CheckBox
+                    android:id="@+id/checkBoxFatAt7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Granizo" />
@@ -478,6 +478,7 @@
                 android:orientation="horizontal"
                 android:weightSum="1"
                 android:gravity="center">
+
                 <Button
                     android:id="@+id/ButtonAntCircExt2"
                     android:layout_width="wrap_content"

@@ -53,7 +53,7 @@
                     android:id="@+id/radioButtonAMAA2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Saída de parquemanto ou rua particular" />
+                    android:text="Saída de parque ou rua particular" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAMAA3"
