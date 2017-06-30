@@ -30,7 +30,6 @@ public class Form1 extends Fragment {
 
     private static final String TAG = "Debug";
     private Boolean flag = false;
-    EditText etCoord = null;
     LocationManager locationManager = null;
 
 
@@ -57,7 +56,7 @@ public class Form1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
-        etCoord = (EditText) v.findViewById(R.id.editTextCoor);
+
 
         Button btnSegS = (Button) v.findViewById(R.id.ButtonSegS);
         btnSegS.setOnClickListener(new View.OnClickListener() {

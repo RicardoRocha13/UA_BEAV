@@ -26,6 +26,38 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nFuga"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupFuga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonFuga1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFuga2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não" />
+
+            </RadioGroup>
+
+
+
             <TextView
                 android:id="@+id/textViewPav"
                 android:layout_width="wrap_content"
@@ -539,6 +571,36 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nCondutor Presente"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCondP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não" />
+
+            </RadioGroup>
 
 
             <LinearLayout

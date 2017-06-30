@@ -69,58 +69,15 @@
                 android:gravity="center"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/btnDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/UAgreenLetters"
-                android:src="@mipmap/ic_launcher_today" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1"
-            android:gravity="center">
 
 
         <EditText
-                android:id="@+id/eTDia"
+                android:id="@+id/eTIdade"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Dia"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:gravity="center"/>
-
-
-            <EditText
-                android:id="@+id/eTMes"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Mes"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:gravity="center"/>
-
-
-            <EditText
-                android:id="@+id/eTAno"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Ano"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
-        </LinearLayout>
 
 
             <TextView

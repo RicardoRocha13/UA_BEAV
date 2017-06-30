@@ -275,7 +275,8 @@ public class MainActivity extends AppCompatActivity
             dialog.dismiss();
 
             Fragment fragCoor = getFragmentManager().findFragmentByTag("Form1");
-            ((TextView) fragCoor.getView().findViewById(R.id.editTextCoor)).setText("LAT: " + location.getLatitude() + " LONG: " + location.getLongitude());
+            ((TextView) fragCoor.getView().findViewById(R.id.editTextLat)).setText("" + location.getLatitude());
+            ((TextView) fragCoor.getView().findViewById(R.id.editTextLon)).setText("" + location.getLongitude());
 
             //desliga updates GPS
             locationManager.removeUpdates(this);

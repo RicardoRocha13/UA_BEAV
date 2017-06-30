@@ -11,20 +11,21 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Consequências do Acidente nos Peões"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
 
@@ -63,72 +64,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nIdade"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/eTIdade"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textStyle="bold"/>
-
-            <ImageButton
-                android:id="@+id/btnDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/UAgreenLetters"
-                android:src="@mipmap/ic_launcher_today"  />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1"
-            android:gravity="center">
-
-            <EditText
-                android:id="@+id/eTDia"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Dia"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:gravity="center"/>
-
-
-            <EditText
-                android:id="@+id/eTMes"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Mes"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:gravity="center" />
-
-
-            <EditText
-                android:id="@+id/eTAno"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Ano"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-        </LinearLayout>
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="\nPosição"
-                android:gravity="center"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -167,8 +124,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nCondições Psíco-Físicas"
                 android:gravity="center"
+                android:text="\nCondições Psíco-Físicas"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -219,11 +176,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nAções"
                 android:gravity="center"
+                android:text="\nAções"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -317,12 +274,11 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nUtilização de material refletor"
                 android:gravity="center"
+                android:text="\nUtilização de material refletor"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -350,12 +306,11 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nGrau de gravidade das lesões"
                 android:gravity="center"
+                android:text="\nGrau de gravidade das lesões"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -393,17 +348,20 @@
 
 
             </RadioGroup>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntConsPeo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegConsPeo"
                     android:layout_width="wrap_content"

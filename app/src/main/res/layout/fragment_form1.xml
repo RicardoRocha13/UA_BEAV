@@ -11,141 +11,143 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
-
+            android:weightSum="1">
 
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Identificação do Acidente \n"
-                android:textSize="25sp"
-                android:textStyle="bold"
                 android:textColor="@color/UAgreenLetters"
-                android:gravity="center"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Data/Hora"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center" />
+                android:textStyle="bold" />
 
 
             // Inserção da Data do Acidente
 
-
-            <ImageButton
-                android:id="@+id/btnDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/UAgreenLetters"
-                android:src="@mipmap/ic_launcher_today" />
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
-                <EditText
-                    android:id="@+id/eTDia"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:text="Dia" />
+                android:weightSum="1">
 
-                <TextView
+
+                    <EditText
+                        android:id="@+id/eTDia"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:text="Dia" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="/" />
+
+                    <EditText
+                        android:id="@+id/eTMes"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="/" />
+
+                    <EditText
+                        android:id="@+id/eTAno"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ano" />
+
+
+                <ImageButton
+                    android:id="@+id/btnDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/"
-                    android:gravity="center" />
-       
-                <EditText
-                    android:id="@+id/eTMes"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:text="Mes"/>
+                    android:background="@color/UAgreenLetters"
+                    android:src="@mipmap/ic_launcher_today" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/"
-                    android:gravity="center"/>
-            
-                <EditText
-                    android:id="@+id/eTAno"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Ano" />
             </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:weightSum="1"
-            android:gravity="center">
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1"></LinearLayout>
 
             // Inserção da hora do Acidente
 
-            
-            <ImageButton
-                android:id="@+id/btnTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/UAgreenLetters"
-                android:src="@mipmap/ic_launcher_schedule"
-                app:layout_constraintTop_toBottomOf="@+id/eTAno" />
-
-            
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
 
-                <EditText
-                    android:id="@+id/eTHora"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:text="Hora" />
+                    <EditText
+                        android:id="@+id/eTHora"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:text="Hora" />
 
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=":" />
+
+                    <EditText
+                        android:id="@+id/eTMin"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:text="Minutos" />
+
+
+
+                <ImageButton
+                    android:id="@+id/btnTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=":"
-                    android:gravity="center"/>
+                    android:background="@color/UAgreenLetters"
+                    android:src="@mipmap/ic_launcher_schedule"
+                    app:layout_constraintTop_toBottomOf="@+id/eTAno" />
 
-                <EditText
-                    android:id="@+id/eTMin"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:text="Minutos" />
 
             </LinearLayout>
-
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nLocalização"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters" />
+                android:text="\nLocalização"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
             //controlo de localidade
@@ -181,11 +183,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nLocal do acidente(Informação Opcional)"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters" />
+                android:text="\nLocal do acidente(Informação Opcional)"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
             // Inserção do Local de Acidente
@@ -200,11 +202,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nCoordenadas"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters" />
+                android:text="\nCoordenadas"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
             // Inserção da Latitude do Acidente
@@ -217,22 +219,62 @@
                 android:background="@color/UAgreenLetters"
                 android:src="@mipmap/ic_launcher_gps_fixed" />
 
-            <EditText
-                android:id="@+id/editTextCoor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="\nLatitude:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextLat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="\nLongitude:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextLon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nTipo de Acidente"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters" />
+                android:text="\nTipo de Acidente"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -259,11 +301,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNatureza do Acidente"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters" />
+                android:text="\nNatureza do Acidente"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupNDA"
@@ -293,15 +335,34 @@
             </RadioGroup>
 
 
+
+            <TextView
+                android:id="@+id/textViewVeic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nNúmero de Veículos"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/eTNumVeic"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+
             <TextView
                 android:id="@+id/textViewCond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNúmero de Condutores"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/UAgreenLetters"  />
+                android:text="\nNúmero de Condutores"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/eTNumCond"
@@ -309,6 +370,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
+
 
             <Button
                 android:id="@+id/btnokNCon"
