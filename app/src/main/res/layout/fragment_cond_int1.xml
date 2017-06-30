@@ -349,38 +349,38 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Normal" />
 
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Droga por despistagem" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sono/sonolência" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Distração" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Doença súbita" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonOF6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

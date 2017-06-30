@@ -11,36 +11,37 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Circunstâncias Externas II"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nPavimento"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="23sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nTipo de Piso"
                 android:gravity="center"
+                android:text="\nTipo de Piso"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -82,10 +83,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nEstado de Conservação"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,10 +119,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nObstáculos ou Obras"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -159,9 +160,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCondições de Aderência"
                 android:textColor="@color/UAgreenLetters"
-                android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -222,24 +223,23 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nSinalização"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="23sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nMarcas no Pavimento"
                 android:gravity="center"
+                android:text="\nMarcas no Pavimento"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -272,11 +272,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nSinalização luminosa"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupSinLum"
@@ -314,10 +314,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nSinais"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -363,12 +363,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nLuminosidade"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
-
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -414,11 +413,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nFatores Atmosféricos"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -427,43 +426,43 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bom tempo" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chuva" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vento Forte" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nevoeiro" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Neve" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nuvem de fumo" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/checkBoxFatAt7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -475,15 +474,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
 
                 <Button
                     android:id="@+id/ButtonAntCircExt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegCircExt2"
                     android:layout_width="wrap_content"
@@ -491,7 +491,6 @@
                     android:text="Seguinte" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>

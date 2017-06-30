@@ -137,26 +137,26 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonCPF1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sem restrições" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonCPF2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Com visão deficiente" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonCPF3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Com audição deficiente" />
 
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/radioButtonCPF4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
