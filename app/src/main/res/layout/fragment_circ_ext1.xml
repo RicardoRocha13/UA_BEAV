@@ -136,7 +136,7 @@
                  android:layout_height="wrap_content"
                  android:text="\nTraçado da Via"
                  android:textColor="@color/UAgreenLetters"
-                 android:textSize="20sp"
+                 android:textSize="23sp"
                  android:gravity="center"
                  android:textStyle="bold" />
 
@@ -145,8 +145,9 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Em planta"
-                android:gravity="center"
-                 android:textSize="16sp"
+                 android:gravity="center"
+                 android:textColor="@color/UAgreenLetters"
+                 android:textSize="20sp"
                  android:textStyle="bold" />
 
              <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"

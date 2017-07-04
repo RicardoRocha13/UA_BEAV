@@ -297,6 +297,23 @@
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/textViewEsqAci"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nNúmero de peões vítimas"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNPeoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
 
             <TextView
                 android:layout_width="wrap_content"
