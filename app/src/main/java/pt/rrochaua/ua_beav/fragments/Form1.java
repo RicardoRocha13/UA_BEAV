@@ -14,9 +14,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TimePicker;
 
 import pt.rrochaua.ua_beav.MainActivity;
@@ -56,7 +53,7 @@ public class Form1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
-
+/*
 
         Button btnSegS = (Button) v.findViewById(R.id.ButtonSegS);
         btnSegS.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +63,7 @@ public class Form1 extends Fragment {
             }
         });
 
-
+*/
         Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
         btnSegC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +151,7 @@ public class Form1 extends Fragment {
             }
         });
 
+        /*
         Button btnNumCond = (Button) v.findViewById(R.id.btnokNCon);
         final EditText etNumCond = (EditText) v.findViewById(R.id.eTNumCond);
 
@@ -184,7 +182,7 @@ public class Form1 extends Fragment {
             }
         });
 
-
+*/
 
 
 //adiciona o valor das coordenadas no EditTextCoor

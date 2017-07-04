@@ -18,14 +18,90 @@
             android:gravity="center">
 
 
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condutores Intervenientes I"
+                android:text="Veiculo Interveniente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
                 android:gravity="center"
                 android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nVeículo"
+                android:gravity="center"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupVI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ciclomotor ou Motociclo" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo Ligeiro" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo Pesado" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonVI4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outro" />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nCondutor Presente"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupCondP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não" />
+
+            </RadioGroup>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,40 +151,40 @@
                 android:weightSum="1"
                 android:gravity="center">
 
-            <EditText
-                android:id="@+id/eTDia"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="Dia"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+                <EditText
+                    android:id="@+id/eTDia"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dia"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="/" />
-
-
-            <EditText
-                android:id="@+id/eTMes"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="Mês"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="/" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="/" />
 
 
-            <EditText
-                android:id="@+id/eTAno"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Ano"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+                <EditText
+                    android:id="@+id/eTMes"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mês"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="/" />
+
+
+                <EditText
+                    android:id="@+id/eTAno"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ano"
+                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
 
@@ -120,49 +196,6 @@
                     android:src="@mipmap/ic_launcher_today"  />
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="\nVeículo"
-                android:gravity="center"
-                android:textColor="@color/UAgreenLetters"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/radioGroupVI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-                <RadioButton
-                    android:id="@+id/radioButtonVI1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ciclomotor ou Motociclo" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonVI2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo Ligeiro" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonVI3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo Pesado" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonVI4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Outro" />
-
-
-            </RadioGroup>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

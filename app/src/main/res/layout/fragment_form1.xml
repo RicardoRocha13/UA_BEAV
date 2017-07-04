@@ -354,56 +354,13 @@
                 android:inputType="number" />
 
 
-            <TextView
-                android:id="@+id/textViewCond"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="\nNúmero de Condutores"
-                android:textColor="@color/UAgreenLetters"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/eTNumCond"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number" />
-
-
-            <Button
-                android:id="@+id/btnokNCon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ok" />
-
-            <LinearLayout
-                android:id="@+id/llRadio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
-
-            <Button
-                android:id="@+id/btnGetResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Result" />
-
-
-            // Botao para avançar para a próxima página
-
-            <Button
-                android:id="@+id/ButtonSegS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acidente sem Vítimas" />
 
             <Button
                 android:id="@+id/ButtonSegC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Acidente com Vítimas" />
+                android:text="Seguinte" />
 
         </LinearLayout>
 
