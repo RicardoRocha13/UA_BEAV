@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,6 +47,9 @@ import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
 import pt.rrochaua.ua_beav.fragments.NatAci;
 import pt.rrochaua.ua_beav.fragments.VeicInt1;
+import pt.rrochaua.ua_beav.helpers.SemVitim;
+
+import pt.rrochaua.ua_beav.helpers.SemVitimCondutor;
 import pt.rrochaua.ua_beav.helpers.Util;
 
 public class MainActivity extends AppCompatActivity
@@ -64,8 +68,6 @@ public class MainActivity extends AppCompatActivity
         NatAci.OnNatAciListener,
         VeicInt1.OnVeicInt1Listener {
 
-
-    int numbCond;
     ArrayList<Uri> mArrayUri;
 
     public static final int PERMISSIONS_REQUEST_LOCATION = 200;
@@ -77,6 +79,35 @@ public class MainActivity extends AppCompatActivity
 
     LocationManager locationManager = null;
 
+    //variaveis para guardar
+    int numbCond;
+    //Form1
+    Date dataHora;
+    int localização, tipoAcidente, nPeoesVitimas,  naturezaAcidente, nVeiculos;
+    String local;
+    float coordLat, coordLon;
+
+    // S/ vitimas
+    ArrayList<SemVitim> sViti = new ArrayList<>();
+
+    // circuntancias externas 1
+    int tipoVia;
+    int nVias;
+    int viaTransito;
+    int tracadoViaPlanta;
+    int tracadoViaPerfil;
+    int tracadoViaBerma;
+    int situacaoAcidente;
+    int intersecVias;
+    int acidenteObrasArte;
+    int faixaRodagem;
+    int limiteVelocGeral;
+    int limiteVelocLocal;
+
+
+    // ############################
+    // Begin of getters and setters
+    // ############################
 
     // chamar, por exemplo esta função apartir de um fragment a variável numCond, para guardar na mainactivity o valor
     public void setNumbCond(int numbCond) {
@@ -88,10 +119,117 @@ public class MainActivity extends AppCompatActivity
         return numbCond;
     }
 
+    public Date getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public int getLocalização() {
+        return localização;
+    }
+
+    public void setLocalização(int localização) {
+        this.localização = localização;
+    }
+
+    public int getTipoAcidente() {
+        return tipoAcidente;
+    }
+
+    public void setTipoAcidente(int tipoAcidente) {
+        this.tipoAcidente = tipoAcidente;
+    }
+
+    public int getnPeoesVitimas() {
+        return nPeoesVitimas;
+    }
+
+    public void setnPeoesVitimas(int nPeoesVitimas) {
+        this.nPeoesVitimas = nPeoesVitimas;
+    }
+
+    public int getNaturezaAcidente() {
+        return naturezaAcidente;
+    }
+
+    public void setNaturezaAcidente(int naturezaAcidente) {
+        this.naturezaAcidente = naturezaAcidente;
+    }
+
+    public int getnVeiculos() {
+        return nVeiculos;
+    }
+
+    public void setnVeiculos(int nVeiculos) {
+        this.nVeiculos = nVeiculos;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public float getCoordLat() {
+        return coordLat;
+    }
+
+    public void setCoordLat(float coordLat) {
+        this.coordLat = coordLat;
+    }
+
+    public float getCoordLon() {
+        return coordLon;
+    }
+
+    public void setCoordLon(float coordLon) {
+        this.coordLon = coordLon;
+    }
+
+    public ArrayList<SemVitim> getsViti() {
+        return sViti;
+    }
+
+    public void setsViti(ArrayList<SemVitim> sViti) {
+        this.sViti = sViti;
+    }
+
+    // ##########################
+    // End of getters and setters
+    // ##########################
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = null;
+        try {
+            data = sdf.parse("04/07/2016");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SemVitim semviti1 = new SemVitim(1,0);
+        SemVitimCondutor semviticond = new SemVitimCondutor(2,1,2,data);
+        SemVitimCondutor semviticond2 = new SemVitimCondutor(3,1,3,data);
+        sViti.add(semviti1);
+        sViti.add(semviticond);
+        sViti.add(semviticond2);
+        System.out.println("#############################################");
+        for(int i = 0; i < sViti.size(); i++){
+            System.out.println("Veiculo " + i);
+            System.out.println(sViti.get(i).veiculo + " " + sViti.get(i).condutorPresente + " ");
+            if(sViti.get(i).condutorPresente==1){
+                SemVitimCondutor c = ((SemVitimCondutor) sViti.get(i));
+                System.out.println(c.genero + " " + sdf.format(c.idade));
+            }
+        }
+        System.out.println("#############################################");
         goToMenuFragment();
     }
 
