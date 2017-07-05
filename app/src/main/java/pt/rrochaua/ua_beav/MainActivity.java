@@ -91,18 +91,17 @@ public class MainActivity extends AppCompatActivity
     ArrayList<SemVitim> sViti = new ArrayList<>();
 
     // circuntancias externas 1
-    int tipoVia;
-    int nVias;
-    int viaTransito;
-    int tracadoViaPlanta;
-    int tracadoViaPerfil;
-    int tracadoViaBerma;
-    int situacaoAcidente;
-    int intersecVias;
-    int acidenteObrasArte;
-    int faixaRodagem;
-    int limiteVelocGeral;
-    int limiteVelocLocal;
+    int tipoVia, nVias, viaTransito, tracadoViaPlanta,tracadoViaPerfil;
+    int tracadoViaBerma, situacaoAcidente, intersecVias, acidenteObrasArte;
+    int faixaRodagem, limiteVelocGeral, limiteVelocLocal;
+
+    // circunstancias externas 2
+    int tipoPiso, estadoConservacao, obstaculosObras, condicoesAderencia;
+    int marcasPavimentos, sinalizacaoLuminosa, sinais;
+    int luminosidade, fatoresAtmosfericos;
+
+    // Natureza Acidente
+    int despiste, colisao, atropelamento;
 
 
     // ############################
@@ -197,6 +196,198 @@ public class MainActivity extends AppCompatActivity
 
     public void setsViti(ArrayList<SemVitim> sViti) {
         this.sViti = sViti;
+    }
+
+    public int getTipoVia() {
+        return tipoVia;
+    }
+
+    public void setTipoVia(int tipoVia) {
+        this.tipoVia = tipoVia;
+    }
+
+    public int getnVias() {
+        return nVias;
+    }
+
+    public void setnVias(int nVias) {
+        this.nVias = nVias;
+    }
+
+    public int getViaTransito() {
+        return viaTransito;
+    }
+
+    public void setViaTransito(int viaTransito) {
+        this.viaTransito = viaTransito;
+    }
+
+    public int getTracadoViaPlanta() {
+        return tracadoViaPlanta;
+    }
+
+    public void setTracadoViaPlanta(int tracadoViaPlanta) {
+        this.tracadoViaPlanta = tracadoViaPlanta;
+    }
+
+    public int getTracadoViaPerfil() {
+        return tracadoViaPerfil;
+    }
+
+    public void setTracadoViaPerfil(int tracadoViaPerfil) {
+        this.tracadoViaPerfil = tracadoViaPerfil;
+    }
+
+    public int getTracadoViaBerma() {
+        return tracadoViaBerma;
+    }
+
+    public void setTracadoViaBerma(int tracadoViaBerma) {
+        this.tracadoViaBerma = tracadoViaBerma;
+    }
+
+    public int getSituacaoAcidente() {
+        return situacaoAcidente;
+    }
+
+    public void setSituacaoAcidente(int situacaoAcidente) {
+        this.situacaoAcidente = situacaoAcidente;
+    }
+
+    public int getIntersecVias() {
+        return intersecVias;
+    }
+
+    public void setIntersecVias(int intersecVias) {
+        this.intersecVias = intersecVias;
+    }
+
+    public int getAcidenteObrasArte() {
+        return acidenteObrasArte;
+    }
+
+    public void setAcidenteObrasArte(int acidenteObrasArte) {
+        this.acidenteObrasArte = acidenteObrasArte;
+    }
+
+    public int getFaixaRodagem() {
+        return faixaRodagem;
+    }
+
+    public void setFaixaRodagem(int faixaRodagem) {
+        this.faixaRodagem = faixaRodagem;
+    }
+
+    public int getLimiteVelocGeral() {
+        return limiteVelocGeral;
+    }
+
+    public void setLimiteVelocGeral(int limiteVelocGeral) {
+        this.limiteVelocGeral = limiteVelocGeral;
+    }
+
+    public int getLimiteVelocLocal() {
+        return limiteVelocLocal;
+    }
+
+    public void setLimiteVelocLocal(int limiteVelocLocal) {
+        this.limiteVelocLocal = limiteVelocLocal;
+    }
+
+    public int getTipoPiso() {
+        return tipoPiso;
+    }
+
+    public void setTipoPiso(int tipoPiso) {
+        this.tipoPiso = tipoPiso;
+    }
+
+    public int getEstadoConservacao() {
+        return estadoConservacao;
+    }
+
+    public void setEstadoConservacao(int estadoConservacao) {
+        this.estadoConservacao = estadoConservacao;
+    }
+
+    public int getObstaculosObras() {
+        return obstaculosObras;
+    }
+
+    public void setObstaculosObras(int obstaculosObras) {
+        this.obstaculosObras = obstaculosObras;
+    }
+
+    public int getCondicoesAderencia() {
+        return condicoesAderencia;
+    }
+
+    public void setCondicoesAderencia(int condicoesAderencia) {
+        this.condicoesAderencia = condicoesAderencia;
+    }
+
+    public int getMarcasPavimentos() {
+        return marcasPavimentos;
+    }
+
+    public void setMarcasPavimentos(int marcasPavimentos) {
+        this.marcasPavimentos = marcasPavimentos;
+    }
+
+    public int getSinalizacaoLuminosa() {
+        return sinalizacaoLuminosa;
+    }
+
+    public void setSinalizacaoLuminosa(int sinalizacaoLuminosa) {
+        this.sinalizacaoLuminosa = sinalizacaoLuminosa;
+    }
+
+    public int getSinais() {
+        return sinais;
+    }
+
+    public void setSinais(int sinais) {
+        this.sinais = sinais;
+    }
+
+    public int getLuminosidade() {
+        return luminosidade;
+    }
+
+    public void setLuminosidade(int luminosidade) {
+        this.luminosidade = luminosidade;
+    }
+
+    public int getFatoresAtmosfericos() {
+        return fatoresAtmosfericos;
+    }
+
+    public void setFatoresAtmosfericos(int fatoresAtmosfericos) {
+        this.fatoresAtmosfericos = fatoresAtmosfericos;
+    }
+
+    public int getDespiste() {
+        return despiste;
+    }
+
+    public void setDespiste(int despiste) {
+        this.despiste = despiste;
+    }
+
+    public int getColisao() {
+        return colisao;
+    }
+
+    public void setColisao(int colisao) {
+        this.colisao = colisao;
+    }
+
+    public int getAtropelamento() {
+        return atropelamento;
+    }
+
+    public void setAtropelamento(int atropelamento) {
+        this.atropelamento = atropelamento;
     }
 
     // ##########################
