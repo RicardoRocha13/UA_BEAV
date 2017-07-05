@@ -10,12 +10,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -30,11 +31,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nFuga"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupFuga"
@@ -57,15 +58,14 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:id="@+id/textViewPav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCategoria/Classe"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -108,140 +108,194 @@
                     android:id="@+id/radioButtonTipCat6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Veículo agrícola" />
+                    android:text="Veículo ligeiro" />
+
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Máquina industrial" />
+                    android:text="Veículo pesado" />
+
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Veículo sobre carris" />
+                    android:text="Veículo agrícola" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Veículo de tração animal" />
+                    android:text="Máquina industrial" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quadriciclo" />
+                    android:text="Veículo sobre carris" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Desconhecido" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo Ligeiro"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:text="Veículo de tração animal" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Passageiros" />
+                    android:text="Quadriciclo" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTipCat13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mercadorias" />
+                    android:text="Desconhecido" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Misto" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trator" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo especial. Qual?" />
-
-                <EditText
-                    android:id="@+id/editTextLig"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo Pesado"
-                    android:textAlignment="viewStart"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Passageiros" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mercadorias" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Misto" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trator" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTipCat21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo especial. Qual?" />
-
-                <EditText
-                    android:id="@+id/editTextPes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text" />
 
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nTipo de Veículo Ligeiro:"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+
+
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTVeicLig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicLig1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passageiros" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicLig2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mercadorias" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicLig3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misto" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicLig4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trator" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicLig5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo especial" />
+
+
+            </RadioGroup>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nTipo de Veículo Pesado:"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTVeicPes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicPes1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passageiros" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicPes2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mercadorias" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicPes3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misto" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicPes4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trator" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTVeicPes5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veículo especial" />
+
+
+            </RadioGroup>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nTipo de veículo especial"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+
+            <EditText
+                android:id="@+id/editTextVEsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nTipo de Serviço"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupTDS"
@@ -266,10 +320,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nAno de Matrícula"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <EditText
@@ -283,10 +337,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nInspeção Periódica"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -318,19 +372,41 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nCertificado ADR"
+                android:gravity="center"
+                android:text="\nTransporta mercadorias perigosas"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radioGroupTMerc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipTMerc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipTMerc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não" />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Preencher apenas no caso de transporte de mercadorias perigosas"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:text="\nCertificado ADR"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCADR"
@@ -361,10 +437,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nMatéria/objeto perigoso transportado"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <EditText
@@ -378,20 +454,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCarga/Lotação/Pneus"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="23sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCarga/Lotação"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"  />
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCL"
@@ -434,11 +510,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nPneus"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"  />
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupPneu"
@@ -465,11 +541,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nTacógrafo"
                 android:gravity="center"
+                android:text="\nTacógrafo"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"  />
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupTaco"
@@ -494,11 +570,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nSeguro"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"  />
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupSeg"
@@ -530,11 +606,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nIncêndio Posterior"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupInPo"
@@ -576,11 +652,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCondutor Presente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCondP"
@@ -606,14 +682,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntVeicInt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegVeicInt1"
                     android:layout_width="wrap_content"
