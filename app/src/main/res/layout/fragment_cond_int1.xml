@@ -275,16 +275,9 @@
                     android:id="@+id/radioButtonCDNDA1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Submetido ao teste de alcoolemia, com taxa:"
+                    android:text="Submetido ao teste de alcoolemia"
                     android:textStyle="bold" />
 
-
-                <EditText
-                    android:id="@+id/editTextPes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -333,11 +326,30 @@
             </RadioGroup>
 
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nOutros Fatores"
                 android:gravity="center"
+                android:text="\nTaxa de alcoolemia"
+                android:textColor="@color/UAgreenLetters"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editTextPes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="\nOutros Fatores"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />

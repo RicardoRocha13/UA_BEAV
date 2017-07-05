@@ -32,7 +32,7 @@
                  android:id="@+id/textViewPav"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Características Técnicas da Via\n"
+                 android:text="Características Técnicas da Via"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
                  android:gravity="center"
@@ -41,47 +41,43 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Estrada com Separador"
-                 android:textColor="@color/UAgreenLetters"
-                 android:textSize="16sp"
+                 android:text="\nTipo de Via"
                  android:gravity="center"
+                 android:textColor="@color/UAgreenLetters"
+                 android:textSize="20sp"
                  android:textStyle="bold" />
 
+             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:id="@+id/radioGroupTVia"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+
+                 <RadioButton
+                     android:id="@+id/radioButtonTVia1"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Autostrada" />
+
+                 <RadioButton
+                     android:id="@+id/radioButtonTVia2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Outra via com separador" />
+
+                 <RadioButton
+                     android:id="@+id/radioButtonTVia3"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Via sem separador" />
+
+             </RadioGroup>
+
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Autoestrada - nº de vias de trânsito no sentido"
-                 android:gravity="center"
-                 android:textSize="14sp" />
-
-             <EditText
-                 android:id="@+id/editTextAutonVias"
-                 android:layout_width="100dp"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:inputType="number"
-                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Outra via - nº de vias de trânsito no sentido"
-                 android:gravity="center"
-                 android:textSize="14sp" />
-
-             <EditText
-                 android:id="@+id/editTextOutranVias"
-                 android:layout_width="100dp"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:inputType="number"
-                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Estrada sem Separador - nº de vias no sentido"
+                 android:text="\nNº de vias no sentido"
                  android:gravity="center"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="16sp"
