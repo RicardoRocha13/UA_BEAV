@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity
     // Natureza Acidente
     int despiste, colisao, atropelamento;
 
+    // Veiculos intervenientes
+
 
     // ############################
     // Begin of getters and setters
