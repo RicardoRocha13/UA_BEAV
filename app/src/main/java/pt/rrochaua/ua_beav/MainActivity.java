@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,10 +48,16 @@ import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
 import pt.rrochaua.ua_beav.fragments.NatAci;
 import pt.rrochaua.ua_beav.fragments.VeicInt1;
+import pt.rrochaua.ua_beav.helpers.CondInterveniente1;
+import pt.rrochaua.ua_beav.helpers.CondInterveniente2;
+import pt.rrochaua.ua_beav.helpers.ConseqPassageiros;
+import pt.rrochaua.ua_beav.helpers.ConseqPeoes;
+import pt.rrochaua.ua_beav.helpers.FotosEsquemas;
 import pt.rrochaua.ua_beav.helpers.SemVitim;
 
 import pt.rrochaua.ua_beav.helpers.SemVitimCondutor;
 import pt.rrochaua.ua_beav.helpers.Util;
+import pt.rrochaua.ua_beav.helpers.VeicInterveniente;
 
 public class MainActivity extends AppCompatActivity
         implements Menu.OnMenuListener,
@@ -104,22 +111,22 @@ public class MainActivity extends AppCompatActivity
     int despiste, colisao, atropelamento;
 
     // Veiculos intervenientes
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<VeicInterveniente> vInterv = new ArrayList<>();
 
     // Condutor Interveniente 1
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<CondInterveniente1> cInterv1 = new ArrayList<>();
 
     // Condutor Interveniente 2
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<CondInterveniente2> cInterv2 = new ArrayList<>();
 
     // Consequencia Passageiros
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<ConseqPassageiros> consPassageiros = new ArrayList<>();
 
     // Consequencia Peoes
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<ConseqPeoes> consPeoes = new ArrayList<>();
 
     // Fotos e Esquemas
-    //####################### FALTA AQUI CODIGO ########################
+    ArrayList<FotosEsquemas> fotosEsquemas = new ArrayList<>();
 
     // ############################
     // Begin of getters and setters
@@ -405,6 +412,54 @@ public class MainActivity extends AppCompatActivity
 
     public void setAtropelamento(int atropelamento) {
         this.atropelamento = atropelamento;
+    }
+
+    public ArrayList<VeicInterveniente> getvInterv() {
+        return vInterv;
+    }
+
+    public void setvInterv(ArrayList<VeicInterveniente> vInterv) {
+        this.vInterv = vInterv;
+    }
+
+    public ArrayList<CondInterveniente1> getcInterv1() {
+        return cInterv1;
+    }
+
+    public void setcInterv1(ArrayList<CondInterveniente1> cInterv1) {
+        this.cInterv1 = cInterv1;
+    }
+
+    public ArrayList<CondInterveniente2> getcInterv2() {
+        return cInterv2;
+    }
+
+    public void setcInterv2(ArrayList<CondInterveniente2> cInterv2) {
+        this.cInterv2 = cInterv2;
+    }
+
+    public ArrayList<ConseqPassageiros> getConsPassageiros() {
+        return consPassageiros;
+    }
+
+    public void setConsPassageiros(ArrayList<ConseqPassageiros> consPassageiros) {
+        this.consPassageiros = consPassageiros;
+    }
+
+    public ArrayList<ConseqPeoes> getConsPeoes() {
+        return consPeoes;
+    }
+
+    public void setConsPeoes(ArrayList<ConseqPeoes> consPeoes) {
+        this.consPeoes = consPeoes;
+    }
+
+    public ArrayList<FotosEsquemas> getFotosEsquemas() {
+        return fotosEsquemas;
+    }
+
+    public void setFotosEsquemas(ArrayList<FotosEsquemas> fotosEsquemas) {
+        this.fotosEsquemas = fotosEsquemas;
     }
 
     // ##########################
