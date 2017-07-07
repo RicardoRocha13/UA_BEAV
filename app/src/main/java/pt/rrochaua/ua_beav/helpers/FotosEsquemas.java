@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 public class FotosEsquemas {
 
-    public ArrayList<String> esquemas = new ArrayList<String>();
+    public String esquemas;
     public ArrayList<String> fotos = new ArrayList<String>();
 
-    public FotosEsquemas(ArrayList<String> esquemas, ArrayList<String> fotos){
+    public FotosEsquemas(String esquemas, ArrayList<String> fotos){
 
         this.esquemas = esquemas;
         this.fotos = fotos;
