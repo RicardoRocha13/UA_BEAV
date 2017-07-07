@@ -104,7 +104,22 @@ public class MainActivity extends AppCompatActivity
     int despiste, colisao, atropelamento;
 
     // Veiculos intervenientes
+    //####################### FALTA AQUI CODIGO ########################
 
+    // Condutor Interveniente 1
+    //####################### FALTA AQUI CODIGO ########################
+
+    // Condutor Interveniente 2
+    //####################### FALTA AQUI CODIGO ########################
+
+    // Consequencia Passageiros
+    //####################### FALTA AQUI CODIGO ########################
+
+    // Consequencia Peoes
+    //####################### FALTA AQUI CODIGO ########################
+
+    // Fotos e Esquemas
+    //####################### FALTA AQUI CODIGO ########################
 
     // ############################
     // Begin of getters and setters

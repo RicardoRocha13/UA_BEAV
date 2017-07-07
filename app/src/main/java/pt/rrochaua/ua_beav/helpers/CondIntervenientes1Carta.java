@@ -1,0 +1,23 @@
+package pt.rrochaua.ua_beav.helpers;
+
+import java.util.Date;
+
+/**
+ * Created by filip on 07/07/2017.
+ */
+
+public class CondIntervenientes1Carta extends CondInterveniente1 {
+
+    public int paisEmissao, anoHabilitação;
+
+    public CondIntervenientes1Carta(int idVeiculo, int genero, Date idade, int licencaCarta,
+                                    int testeAlcool, int outrosFactores, int tempoCondução,
+                                    int paisEmissao, int anoHabilitação) {
+
+        super(idVeiculo, genero, idade, licencaCarta, testeAlcool, outrosFactores, tempoCondução);
+
+        this.paisEmissao = paisEmissao;
+        this.anoHabilitação = anoHabilitação;
+
+    }
+}
