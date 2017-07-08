@@ -1,4 +1,4 @@
-package pt.rrochaua.ua_beav.helpers;
+package pt.rrochaua.ua_beav.models;
 
 import java.util.ArrayList;
 

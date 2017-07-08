@@ -28,7 +28,6 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -48,16 +47,20 @@ import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
 import pt.rrochaua.ua_beav.fragments.NatAci;
 import pt.rrochaua.ua_beav.fragments.VeicInt1;
-import pt.rrochaua.ua_beav.helpers.CondInterveniente1;
-import pt.rrochaua.ua_beav.helpers.CondInterveniente2;
-import pt.rrochaua.ua_beav.helpers.ConseqPassageiros;
-import pt.rrochaua.ua_beav.helpers.ConseqPeoes;
-import pt.rrochaua.ua_beav.helpers.FotosEsquemas;
-import pt.rrochaua.ua_beav.helpers.SemVitim;
+import pt.rrochaua.ua_beav.models.CircExternas1;
+import pt.rrochaua.ua_beav.models.CircExternas2;
+import pt.rrochaua.ua_beav.models.CondInterveniente1;
+import pt.rrochaua.ua_beav.models.CondInterveniente2;
+import pt.rrochaua.ua_beav.models.ConseqPassageiros;
+import pt.rrochaua.ua_beav.models.ConseqPeoes;
+import pt.rrochaua.ua_beav.models.Form1Model;
+import pt.rrochaua.ua_beav.models.FotosEsquemas;
+import pt.rrochaua.ua_beav.models.NatuAcidente;
+import pt.rrochaua.ua_beav.models.SemVitim;
 
-import pt.rrochaua.ua_beav.helpers.SemVitimCondutor;
+import pt.rrochaua.ua_beav.models.SemVitimCondutor;
 import pt.rrochaua.ua_beav.helpers.Util;
-import pt.rrochaua.ua_beav.helpers.VeicInterveniente;
+import pt.rrochaua.ua_beav.models.VeicInterveniente;
 
 public class MainActivity extends AppCompatActivity
         implements Menu.OnMenuListener,
@@ -89,26 +92,19 @@ public class MainActivity extends AppCompatActivity
     //variaveis para guardar
     int numbCond;
     //Form1
-    Date dataHora;
-    int localização, tipoAcidente, nPeoesVitimas,  naturezaAcidente, nVeiculos;
-    String local;
-    float coordLat, coordLon;
+    ArrayList<Form1Model> form1 = new ArrayList<>();
 
     // S/ vitimas
     ArrayList<SemVitim> sViti = new ArrayList<>();
 
     // circuntancias externas 1
-    int tipoVia, nVias, viaTransito, tracadoViaPlanta,tracadoViaPerfil;
-    int tracadoViaBerma, situacaoAcidente, intersecVias, acidenteObrasArte;
-    int faixaRodagem, limiteVelocGeral, limiteVelocLocal;
+    ArrayList<CircExternas1> cExt1 = new ArrayList<>();
 
     // circunstancias externas 2
-    int tipoPiso, estadoConservacao, obstaculosObras, condicoesAderencia;
-    int marcasPavimentos, sinalizacaoLuminosa, sinais;
-    int luminosidade, fatoresAtmosfericos;
+    ArrayList<CircExternas2> cExt2 = new ArrayList<>();
 
     // Natureza Acidente
-    int despiste, colisao, atropelamento;
+    ArrayList<NatuAcidente> natuAcidente = new ArrayList<>();
 
     // Veiculos intervenientes
     ArrayList<VeicInterveniente> vInterv = new ArrayList<>();
@@ -142,76 +138,12 @@ public class MainActivity extends AppCompatActivity
         return numbCond;
     }
 
-    public Date getDataHora() {
-        return dataHora;
+    public ArrayList<Form1Model> getForm1() {
+        return form1;
     }
 
-    public void setDataHora(Date dataHora) {
-        this.dataHora = dataHora;
-    }
-
-    public int getLocalização() {
-        return localização;
-    }
-
-    public void setLocalização(int localização) {
-        this.localização = localização;
-    }
-
-    public int getTipoAcidente() {
-        return tipoAcidente;
-    }
-
-    public void setTipoAcidente(int tipoAcidente) {
-        this.tipoAcidente = tipoAcidente;
-    }
-
-    public int getnPeoesVitimas() {
-        return nPeoesVitimas;
-    }
-
-    public void setnPeoesVitimas(int nPeoesVitimas) {
-        this.nPeoesVitimas = nPeoesVitimas;
-    }
-
-    public int getNaturezaAcidente() {
-        return naturezaAcidente;
-    }
-
-    public void setNaturezaAcidente(int naturezaAcidente) {
-        this.naturezaAcidente = naturezaAcidente;
-    }
-
-    public int getnVeiculos() {
-        return nVeiculos;
-    }
-
-    public void setnVeiculos(int nVeiculos) {
-        this.nVeiculos = nVeiculos;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
-    public float getCoordLat() {
-        return coordLat;
-    }
-
-    public void setCoordLat(float coordLat) {
-        this.coordLat = coordLat;
-    }
-
-    public float getCoordLon() {
-        return coordLon;
-    }
-
-    public void setCoordLon(float coordLon) {
-        this.coordLon = coordLon;
+    public void setForm1(ArrayList<Form1Model> form1) {
+        this.form1 = form1;
     }
 
     public ArrayList<SemVitim> getsViti() {
@@ -222,196 +154,28 @@ public class MainActivity extends AppCompatActivity
         this.sViti = sViti;
     }
 
-    public int getTipoVia() {
-        return tipoVia;
+    public ArrayList<CircExternas1> getcExt1() {
+        return cExt1;
     }
 
-    public void setTipoVia(int tipoVia) {
-        this.tipoVia = tipoVia;
+    public void setcExt1(ArrayList<CircExternas1> cExt1) {
+        this.cExt1 = cExt1;
     }
 
-    public int getnVias() {
-        return nVias;
+    public ArrayList<CircExternas2> getcExt2() {
+        return cExt2;
     }
 
-    public void setnVias(int nVias) {
-        this.nVias = nVias;
+    public void setcExt2(ArrayList<CircExternas2> cExt2) {
+        this.cExt2 = cExt2;
     }
 
-    public int getViaTransito() {
-        return viaTransito;
+    public ArrayList<NatuAcidente> getNatuAcidente() {
+        return natuAcidente;
     }
 
-    public void setViaTransito(int viaTransito) {
-        this.viaTransito = viaTransito;
-    }
-
-    public int getTracadoViaPlanta() {
-        return tracadoViaPlanta;
-    }
-
-    public void setTracadoViaPlanta(int tracadoViaPlanta) {
-        this.tracadoViaPlanta = tracadoViaPlanta;
-    }
-
-    public int getTracadoViaPerfil() {
-        return tracadoViaPerfil;
-    }
-
-    public void setTracadoViaPerfil(int tracadoViaPerfil) {
-        this.tracadoViaPerfil = tracadoViaPerfil;
-    }
-
-    public int getTracadoViaBerma() {
-        return tracadoViaBerma;
-    }
-
-    public void setTracadoViaBerma(int tracadoViaBerma) {
-        this.tracadoViaBerma = tracadoViaBerma;
-    }
-
-    public int getSituacaoAcidente() {
-        return situacaoAcidente;
-    }
-
-    public void setSituacaoAcidente(int situacaoAcidente) {
-        this.situacaoAcidente = situacaoAcidente;
-    }
-
-    public int getIntersecVias() {
-        return intersecVias;
-    }
-
-    public void setIntersecVias(int intersecVias) {
-        this.intersecVias = intersecVias;
-    }
-
-    public int getAcidenteObrasArte() {
-        return acidenteObrasArte;
-    }
-
-    public void setAcidenteObrasArte(int acidenteObrasArte) {
-        this.acidenteObrasArte = acidenteObrasArte;
-    }
-
-    public int getFaixaRodagem() {
-        return faixaRodagem;
-    }
-
-    public void setFaixaRodagem(int faixaRodagem) {
-        this.faixaRodagem = faixaRodagem;
-    }
-
-    public int getLimiteVelocGeral() {
-        return limiteVelocGeral;
-    }
-
-    public void setLimiteVelocGeral(int limiteVelocGeral) {
-        this.limiteVelocGeral = limiteVelocGeral;
-    }
-
-    public int getLimiteVelocLocal() {
-        return limiteVelocLocal;
-    }
-
-    public void setLimiteVelocLocal(int limiteVelocLocal) {
-        this.limiteVelocLocal = limiteVelocLocal;
-    }
-
-    public int getTipoPiso() {
-        return tipoPiso;
-    }
-
-    public void setTipoPiso(int tipoPiso) {
-        this.tipoPiso = tipoPiso;
-    }
-
-    public int getEstadoConservacao() {
-        return estadoConservacao;
-    }
-
-    public void setEstadoConservacao(int estadoConservacao) {
-        this.estadoConservacao = estadoConservacao;
-    }
-
-    public int getObstaculosObras() {
-        return obstaculosObras;
-    }
-
-    public void setObstaculosObras(int obstaculosObras) {
-        this.obstaculosObras = obstaculosObras;
-    }
-
-    public int getCondicoesAderencia() {
-        return condicoesAderencia;
-    }
-
-    public void setCondicoesAderencia(int condicoesAderencia) {
-        this.condicoesAderencia = condicoesAderencia;
-    }
-
-    public int getMarcasPavimentos() {
-        return marcasPavimentos;
-    }
-
-    public void setMarcasPavimentos(int marcasPavimentos) {
-        this.marcasPavimentos = marcasPavimentos;
-    }
-
-    public int getSinalizacaoLuminosa() {
-        return sinalizacaoLuminosa;
-    }
-
-    public void setSinalizacaoLuminosa(int sinalizacaoLuminosa) {
-        this.sinalizacaoLuminosa = sinalizacaoLuminosa;
-    }
-
-    public int getSinais() {
-        return sinais;
-    }
-
-    public void setSinais(int sinais) {
-        this.sinais = sinais;
-    }
-
-    public int getLuminosidade() {
-        return luminosidade;
-    }
-
-    public void setLuminosidade(int luminosidade) {
-        this.luminosidade = luminosidade;
-    }
-
-    public int getFatoresAtmosfericos() {
-        return fatoresAtmosfericos;
-    }
-
-    public void setFatoresAtmosfericos(int fatoresAtmosfericos) {
-        this.fatoresAtmosfericos = fatoresAtmosfericos;
-    }
-
-    public int getDespiste() {
-        return despiste;
-    }
-
-    public void setDespiste(int despiste) {
-        this.despiste = despiste;
-    }
-
-    public int getColisao() {
-        return colisao;
-    }
-
-    public void setColisao(int colisao) {
-        this.colisao = colisao;
-    }
-
-    public int getAtropelamento() {
-        return atropelamento;
-    }
-
-    public void setAtropelamento(int atropelamento) {
-        this.atropelamento = atropelamento;
+    public void setNatuAcidente(ArrayList<NatuAcidente> natuAcidente) {
+        this.natuAcidente = natuAcidente;
     }
 
     public ArrayList<VeicInterveniente> getvInterv() {

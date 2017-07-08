@@ -1,4 +1,4 @@
-package pt.rrochaua.ua_beav.helpers;
+package pt.rrochaua.ua_beav.models;
 
 /**
  * Created by filip on 07/07/2017.
