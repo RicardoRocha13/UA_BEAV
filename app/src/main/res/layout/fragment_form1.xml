@@ -163,7 +163,7 @@
 
             //controlo de localidade
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:id="@+id/radioGroupLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -174,9 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="0dp"
-                    android:text="Fora das localidades"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    android:text="Fora das localidades" />
 
                 <RadioButton
                     android:id="@+id/radioButtonLoc2"
@@ -184,9 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="0dp"
-                    android:text="Dentro das localidades"
-                    app:layout_constraintLeft_toLeftOf="@+id/radioButton"
-                    app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+                    android:text="Dentro das localidades" />
 
 
             </RadioGroup>
@@ -207,6 +203,7 @@
                 android:id="@+id/editTextLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:imeOptions="actionDone"
                 android:ems="10"
                 android:inputType="textPersonName" />
@@ -291,7 +288,7 @@
                 android:textStyle="bold" />
 
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:id="@+id/radioGroupTDA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -325,6 +322,7 @@
                 android:id="@+id/editTextNPeoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:imeOptions="actionDone"
                 android:ems="10"
                 android:inputType="number" />
@@ -339,7 +337,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:id="@+id/radioGroupNDA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -380,9 +378,10 @@
 
             <EditText
                 android:id="@+id/eTNumVeic"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
+                android:gravity="center"
                 android:ems="10"
                 android:inputType="number" />
 
