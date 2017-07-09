@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/UAgreen"
@@ -51,42 +51,41 @@
                 android:weightSum="1">
 
 
-                    <EditText
-                        android:id="@+id/eTDia"
-                        android:layout_width="75dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:focusable="false"
-                        android:hint="Dia"
-                         />
+                <EditText
+                    android:id="@+id/eTDia"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="Dia" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="/" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="/" />
 
-                    <EditText
-                        android:id="@+id/eTMes"
-                        android:layout_width="75dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:focusable="false"
-                        android:hint="Mes" />
+                <EditText
+                    android:id="@+id/eTMes"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="Mes" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="/" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="/" />
 
-                    <EditText
-                        android:id="@+id/eTAno"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:focusable="false"
-                        android:hint="Ano" />
+                <EditText
+                    android:id="@+id/eTAno"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="Ano" />
 
 
                 <ImageButton
@@ -114,30 +113,29 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                    <EditText
-                        android:id="@+id/eTHora"
-                        android:layout_width="75dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:focusable="false"
-                        android:ems="10"
-                        android:hint="Hora" />
+                <EditText
+                    android:id="@+id/eTHora"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="Hora" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text=":" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=":" />
 
-                    <EditText
-                        android:id="@+id/eTMin"
-                        android:layout_width="75dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:focusable="false"
-                        android:ems="10"
-                        android:hint="Minutos" />
-
+                <EditText
+                    android:id="@+id/eTMin"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="Minutos" />
 
 
                 <ImageButton
@@ -203,9 +201,9 @@
                 android:id="@+id/editTextLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ems="10"
                 android:gravity="center"
                 android:imeOptions="actionDone"
-                android:ems="10"
                 android:inputType="textPersonName" />
 
             <TextView
@@ -247,8 +245,8 @@
                     android:id="@+id/editTextLat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
                     android:ems="10"
+                    android:imeOptions="actionDone"
                     android:inputType="numberDecimal|numberSigned" />
 
             </LinearLayout>
@@ -272,8 +270,8 @@
                     android:id="@+id/editTextLon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
                     android:ems="10"
+                    android:imeOptions="actionDone"
                     android:inputType="numberDecimal|numberSigned" />
             </LinearLayout>
 
@@ -322,9 +320,9 @@
                 android:id="@+id/editTextNPeoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ems="10"
                 android:gravity="center"
                 android:imeOptions="actionDone"
-                android:ems="10"
                 android:inputType="number" />
 
 
@@ -365,7 +363,6 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:id="@+id/textViewVeic"
                 android:layout_width="wrap_content"
@@ -380,12 +377,10 @@
                 android:id="@+id/eTNumVeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:gravity="center"
                 android:ems="10"
+                android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number" />
-
-
 
 
             <Button
