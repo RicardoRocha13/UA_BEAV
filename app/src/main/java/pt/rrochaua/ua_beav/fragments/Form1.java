@@ -7,6 +7,7 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -69,7 +71,8 @@ public class Form1 extends Fragment {
         final EditText eTCoordLAT = (EditText) v.findViewById(R.id.editTextLat);
         final EditText eTCoordLON = (EditText) v.findViewById(R.id.editTextLon);
         final RadioGroup rGTipoAcide = (RadioGroup) v.findViewById(R.id.radioGroupTDA);
-
+        final TextView txtVnpeosviti = (TextView) v.findViewById(R.id.textViewEsqAci);
+        final EditText eTnPeoesViti = (EditText) v.findViewById(R.id.editTextNPeoes);
         final RadioGroup rGNaturaAcident = (RadioGroup) v.findViewById(R.id.radioGroupNDA);
         final EditText eTnVeic = (EditText) v.findViewById(R.id.eTNumVeic);
 
@@ -159,6 +162,21 @@ public class Form1 extends Fragment {
 
         });
 
+        rGTipoAcide.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonTDA2){
+                    txtVnpeosviti.setVisibility(View.VISIBLE);
+                    eTnPeoesViti.setVisibility(View.VISIBLE);
+                } else{
+                    eTnPeoesViti.setText("");
+                    txtVnpeosviti.setVisibility(View.GONE);
+                    eTnPeoesViti.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
         btnSegC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,7 +191,9 @@ public class Form1 extends Fragment {
                         Toast.makeText(parentActivity, "Latitude formato errado.", Toast.LENGTH_LONG).show();
                     } else if (Float.parseFloat(eTCoordLON.getText().toString()) < -180 || Float.parseFloat(eTCoordLON.getText().toString()) > 180) {
                         Toast.makeText(parentActivity, "Longitude formato errado.", Toast.LENGTH_LONG).show();
-                    } else {
+                    }else if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2 && eTnPeoesViti.getText().toString().equals("")){
+                        Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();                 }
+                    else {
                         //##########################
                         //Falta codigo para guardar dados
                         //##########################
