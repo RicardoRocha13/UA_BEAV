@@ -55,7 +55,10 @@
                         android:id="@+id/eTDia"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Dia" />
+                        android:gravity="center"
+                        android:focusable="false"
+                        android:hint="Dia"
+                         />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -67,7 +70,9 @@
                         android:id="@+id/eTMes"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Mes" />
+                        android:gravity="center"
+                        android:focusable="false"
+                        android:hint="Mes" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -79,7 +84,9 @@
                         android:id="@+id/eTAno"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Ano" />
+                        android:gravity="center"
+                        android:focusable="false"
+                        android:hint="Ano" />
 
 
                 <ImageButton
@@ -111,8 +118,10 @@
                         android:id="@+id/eTHora"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:focusable="false"
                         android:ems="10"
-                        android:text="Hora" />
+                        android:hint="Hora" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -124,8 +133,10 @@
                         android:id="@+id/eTMin"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:focusable="false"
                         android:ems="10"
-                        android:text="Minutos" />
+                        android:hint="Minutos" />
 
 
 
@@ -196,6 +207,7 @@
                 android:id="@+id/editTextLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
@@ -217,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/UAgreenLetters"
-                android:src="@mipmap/ic_launcher_gps_fixed" />
+                android:src="@mipmap/ic_launcher_gps_fixed_green" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -238,8 +250,9 @@
                     android:id="@+id/editTextLat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
                     android:ems="10"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal|numberSigned" />
 
             </LinearLayout>
 
@@ -262,8 +275,9 @@
                     android:id="@+id/editTextLon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
                     android:ems="10"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal|numberSigned" />
             </LinearLayout>
 
 
@@ -311,6 +325,7 @@
                 android:id="@+id/editTextNPeoes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -367,6 +382,7 @@
                 android:id="@+id/eTNumVeic"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
                 android:ems="10"
                 android:inputType="number" />
 

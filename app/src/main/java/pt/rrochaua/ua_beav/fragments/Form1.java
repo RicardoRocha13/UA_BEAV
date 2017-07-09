@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
@@ -53,31 +55,26 @@ public class Form1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
-/*
-
-        Button btnSegS = (Button) v.findViewById(R.id.ButtonSegS);
-        btnSegS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parentActivity.goToCondIntSemFragment();
-            }
-        });
-
-*/
-        Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
-        btnSegC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parentActivity.goToCircExt1Fragment();
-            }
-        });
 
         ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
+        ImageButton btnTime = (ImageButton) v.findViewById(R.id.btnTime);
         final EditText eTHora = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
+        final RadioGroup rGroupLocali = (RadioGroup) v.findViewById(R.id.radioGroupLoc);
+        EditText eTLocalAci = (EditText) v.findViewById(R.id.editTextLoc);
+        ImageButton buttonCoor = (ImageButton) v.findViewById(R.id.buttonCoor);
+        final EditText eTCoordLAT = (EditText) v.findViewById(R.id.editTextLat);
+        final EditText eTCoordLON = (EditText) v.findViewById(R.id.editTextLon);
+        final RadioGroup rGTipoAcide = (RadioGroup) v.findViewById(R.id.radioGroupTDA);
+
+        final RadioGroup rGNaturaAcident = (RadioGroup) v.findViewById(R.id.radioGroupNDA);
+        final EditText eTnVeic = (EditText) v.findViewById(R.id.eTNumVeic);
+
+
+        Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +110,7 @@ public class Form1 extends Fragment {
             }
         });
 
-        ImageButton btnTime = (ImageButton) v.findViewById(R.id.btnTime);
+
         btnTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,55 +148,48 @@ public class Form1 extends Fragment {
             }
         });
 
-        /*
-        Button btnNumCond = (Button) v.findViewById(R.id.btnokNCon);
-        final EditText etNumCond = (EditText) v.findViewById(R.id.eTNumCond);
-
-        btnNumCond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parentActivity.setNumbCond(Integer.parseInt(String.valueOf(etNumCond.getText())));
-                LinearLayout ll = (LinearLayout) parentActivity.findViewById(R.id.llRadio);
-                ll.removeAllViews();
-                for (int x = 1; x <= parentActivity.getNumbCond(); x++) {
-                    RadioGroup rg = new RadioGroup(parentActivity);
-                    rg.setOrientation(LinearLayout.HORIZONTAL);
-                    rg.setId(x);
-
-                    RadioButton rdbtn0 = new RadioButton(parentActivity);
-                    rdbtn0.setId(Integer.parseInt(x + "0"));
-                    rdbtn0.setText("Masculino");
-                    rg.addView(rdbtn0);
-
-                    RadioButton rdbtn1 = new RadioButton(parentActivity);
-                    rdbtn1.setId(Integer.parseInt(x + "1"));
-                    rdbtn1.setText("Feminino");
-                    rg.addView(rdbtn1);
-
-                    ll.addView(rg);
-
-                }
-            }
-        });
-
-*/
-
-
-//adiciona o valor das coordenadas no EditTextCoor
-        ImageButton buttonCoor = (ImageButton) v.findViewById(R.id.buttonCoor);
+        //adiciona o valor das coordenadas no EditTextCoor
         buttonCoor.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-//                    parentActivity.gPSPermission();
+                //parentActivity.gPSPermission();
                 parentActivity.dispatchGetCoorIntent();
-                }
+            }
 
         });
+
+        btnSegC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (eTextDia.getText().toString().equals("") || eTHora.getText().toString().equals("")
+                        || rGroupLocali.getCheckedRadioButtonId() == -1 || eTCoordLAT.getText().toString().equals("")
+                        || eTCoordLON.getText().toString().equals("") || rGTipoAcide.getCheckedRadioButtonId() == -1
+                        || rGNaturaAcident.getCheckedRadioButtonId() == -1 || eTnVeic.getText().toString().equals("")) {
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    if (Float.parseFloat(eTCoordLAT.getText().toString()) < -90 || Float.parseFloat(eTCoordLAT.getText().toString()) > 90) {
+                        Toast.makeText(parentActivity, "Latitude formato errado.", Toast.LENGTH_LONG).show();
+                    } else if (Float.parseFloat(eTCoordLON.getText().toString()) < -180 || Float.parseFloat(eTCoordLON.getText().toString()) > 180) {
+                        Toast.makeText(parentActivity, "Longitude formato errado.", Toast.LENGTH_LONG).show();
+                    } else {
+                        //##########################
+                        //Falta codigo para guardar dados
+                        //##########################
+                        parentActivity.goToCircExt1Fragment();
+                    }
+
+
+                }
+
+            }
+        });
+
+
         return v;
+
     }
-
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
