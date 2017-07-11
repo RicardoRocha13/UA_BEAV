@@ -20,8 +20,14 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.Form1Model;
 
 
 public class Form1 extends Fragment {
@@ -66,7 +72,7 @@ public class Form1 extends Fragment {
         final EditText eTHora = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
         final RadioGroup rGroupLocali = (RadioGroup) v.findViewById(R.id.radioGroupLoc);
-        EditText eTLocalAci = (EditText) v.findViewById(R.id.editTextLoc);
+        final EditText eTLocalAci = (EditText) v.findViewById(R.id.editTextLoc);
         ImageButton buttonCoor = (ImageButton) v.findViewById(R.id.buttonCoor);
         final EditText eTCoordLAT = (EditText) v.findViewById(R.id.editTextLat);
         final EditText eTCoordLON = (EditText) v.findViewById(R.id.editTextLon);
@@ -76,6 +82,7 @@ public class Form1 extends Fragment {
         final RadioGroup rGNaturaAcident = (RadioGroup) v.findViewById(R.id.radioGroupNDA);
         final EditText eTnVeic = (EditText) v.findViewById(R.id.eTNumVeic);
 
+        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy H:mm");
 
         Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
 
@@ -157,6 +164,7 @@ public class Form1 extends Fragment {
             @Override
             public void onClick(View v) {
                 //parentActivity.gPSPermission();
+
                 parentActivity.dispatchGetCoorIntent();
             }
 
@@ -194,9 +202,27 @@ public class Form1 extends Fragment {
                     }else if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2 && eTnPeoesViti.getText().toString().equals("")){
                         Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();                 }
                     else {
-                        //##########################
-                        //Falta codigo para guardar dados
-                        //##########################
+
+                        Date data = null;
+                        try {
+                            data = sdf.parse(eTextDia.getText().toString() + "/" + eTextMes.getText().toString() + "/" + eTextAno.getText().toString() +
+                                    " " + eTHora.getText().toString() + ":" + eTMin.getText().toString());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        int indexLocalizacao = rGroupLocali.indexOfChild(rGroupLocali.findViewById(rGroupLocali.getCheckedRadioButtonId()));
+                        int indexTipoAcidente = rGTipoAcide.indexOfChild(rGTipoAcide.findViewById(rGTipoAcide.getCheckedRadioButtonId()));
+                        int nPeoesVit = 0;
+                        if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
+                            nPeoesVit = Integer.parseInt(eTnPeoesViti.getText().toString());
+                        }
+                        int indexNaturaAcidente = rGNaturaAcident.indexOfChild((rGNaturaAcident.findViewById(rGNaturaAcident.getCheckedRadioButtonId())));
+                        Form1Model f1 = new Form1Model(data, indexLocalizacao, eTLocalAci.getText().toString(), Float.parseFloat(eTCoordLAT.getText().toString()),
+                                Float.parseFloat(eTCoordLON.getText().toString()), indexTipoAcidente, nPeoesVit, indexNaturaAcidente, Integer.parseInt(eTnVeic.getText().toString()));
+                        ArrayList<Form1Model> form1 = parentActivity.getForm1();
+                        form1.add(f1);
+                        parentActivity.setForm1(form1);
+                        parentActivity.testeSAVE();
                         parentActivity.goToCircExt1Fragment();
                     }
 

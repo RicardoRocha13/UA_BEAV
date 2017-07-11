@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date data = null;
         try {
@@ -425,6 +426,23 @@ public class MainActivity extends AppCompatActivity
             }
 
         }
+    }
+
+    public void testeSAVE(){
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy H:mm");
+
+        System.out.println("##################### FORM! ####################");
+        System.out.println("DATA E HORA: " + sdf.format(form1.get(0).dataHora));
+        System.out.println("Localização: " + form1.get(0).localizacao);
+        System.out.println("Local: " + form1.get(0).local);
+        System.out.println("LAT: " + form1.get(0).coordLat);
+        System.out.println("LON: " + form1.get(0).coordLon);
+        System.out.println("Tipo Acidente: " + form1.get(0).tipoAcidente);
+        System.out.println("N. Peoes: " + form1.get(0).nPeoesVitimas);
+        System.out.println("Natureza Acidente: " + form1.get(0).naturezaAcidente);
+        System.out.println("N. Veiculos: " + form1.get(0).nVeiculos);
+
     }
 
     //Listener do GPS
