@@ -223,7 +223,15 @@ public class Form1 extends Fragment {
                         form1.add(f1);
                         parentActivity.setForm1(form1);
                         parentActivity.testeSAVE();
-                        parentActivity.goToCircExt1Fragment();
+
+                        if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
+                            parentActivity.goToCircExt1Fragment();
+                        }
+
+                        if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA1){
+                            parentActivity.goToCondIntSemFragment();
+                        }
+
                     }
 
 
