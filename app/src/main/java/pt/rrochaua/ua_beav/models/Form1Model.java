@@ -11,9 +11,9 @@ public class Form1Model {
     public Date dataHora;
     public int localizacao, tipoAcidente, nPeoesVitimas,  naturezaAcidente, nVeiculos;
     public String local;
-    public float coordLat, coordLon;
+    public Double coordLat, coordLon;
 
-    public Form1Model(Date dataHora, int localizacao, String local, float coordLat, float coordLon,
+    public Form1Model(Date dataHora, int localizacao, String local, Double coordLat, Double coordLon,
                       int tipoAcidente, int nPeoesVitimas, int naturezaAcidente, int nVeiculos){
 
         this.dataHora = dataHora;

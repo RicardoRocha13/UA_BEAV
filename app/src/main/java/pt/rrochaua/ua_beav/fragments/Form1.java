@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import pt.rrochaua.ua_beav.MainActivity;
@@ -33,6 +35,7 @@ import pt.rrochaua.ua_beav.models.Form1Model;
 public class Form1 extends Fragment {
 
     MainActivity parentActivity;
+    ArrayList<Form1Model> form1;
     private OnForm1Listener mListener;
 
     private static final String TAG = "Debug";
@@ -54,6 +57,7 @@ public class Form1 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         parentActivity = (MainActivity) this.getActivity();
+        form1 = parentActivity.getForm1();
 
 
     }
@@ -61,8 +65,8 @@ public class Form1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
+        final View v = inflater.inflate(R.layout.fragment_form1, container, false);
 
         ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
@@ -81,11 +85,35 @@ public class Form1 extends Fragment {
         final EditText eTnPeoesViti = (EditText) v.findViewById(R.id.editTextNPeoes);
         final RadioGroup rGNaturaAcident = (RadioGroup) v.findViewById(R.id.radioGroupNDA);
         final EditText eTnVeic = (EditText) v.findViewById(R.id.eTNumVeic);
+        Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
 
         final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy H:mm");
 
-        Button btnSegC = (Button) v.findViewById(R.id.ButtonSegC);
-
+        if(form1.size()>= 1){
+            Date data = form1.get(0).dataHora;
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(data);
+            eTextDia.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+            int mes = cal.get(Calendar.MONTH)+1;
+            eTextMes.setText(String.valueOf(mes));
+            eTextAno.setText(String.valueOf(cal.get(Calendar.YEAR)));
+            eTHora.setText(String.valueOf(cal.get(Calendar.HOUR_OF_DAY)));
+            eTMin.setText(String.valueOf(cal.get(Calendar.MINUTE)));
+            ((RadioButton)rGroupLocali.getChildAt(form1.get(0).localizacao)).setChecked(true);
+            eTLocalAci.setText(form1.get(0).local);
+            //ver casa decimais. está a arredondar
+            eTCoordLAT.setText(String.valueOf(form1.get(0).coordLat));
+            System.out.println("############################" + form1.get(0).coordLat);
+            eTCoordLON.setText(String.valueOf(form1.get(0).coordLon));
+            ((RadioButton)rGTipoAcide.getChildAt(form1.get(0).tipoAcidente)).setChecked(true);
+            if(form1.get(0).tipoAcidente==1){
+                txtVnpeosviti.setVisibility(View.VISIBLE);
+                eTnPeoesViti.setVisibility(View.VISIBLE);
+                eTnPeoesViti.setText(String.valueOf(form1.get(0).nPeoesVitimas));
+            }
+            ((RadioButton)rGNaturaAcident.getChildAt(form1.get(0).naturezaAcidente)).setChecked(true);
+            eTnVeic.setText(String.valueOf(form1.get(0).nVeiculos));
+        }
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -217,10 +245,10 @@ public class Form1 extends Fragment {
                             nPeoesVit = Integer.parseInt(eTnPeoesViti.getText().toString());
                         }
                         int indexNaturaAcidente = rGNaturaAcident.indexOfChild((rGNaturaAcident.findViewById(rGNaturaAcident.getCheckedRadioButtonId())));
-                        Form1Model f1 = new Form1Model(data, indexLocalizacao, eTLocalAci.getText().toString(), Float.parseFloat(eTCoordLAT.getText().toString()),
-                                Float.parseFloat(eTCoordLON.getText().toString()), indexTipoAcidente, nPeoesVit, indexNaturaAcidente, Integer.parseInt(eTnVeic.getText().toString()));
-                        ArrayList<Form1Model> form1 = parentActivity.getForm1();
-                        form1.add(f1);
+                        Form1Model f1 = new Form1Model(data, indexLocalizacao, eTLocalAci.getText().toString(), Double.parseDouble(eTCoordLAT.getText().toString()),
+                                Double.parseDouble(eTCoordLON.getText().toString()), indexTipoAcidente, nPeoesVit, indexNaturaAcidente, Integer.parseInt(eTnVeic.getText().toString()));
+
+                        form1.add(0, f1);
                         parentActivity.setForm1(form1);
                         parentActivity.testeSAVE();
 
@@ -230,6 +258,8 @@ public class Form1 extends Fragment {
 
                         if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA1){
                             parentActivity.goToCondIntSemFragment();
+
+
                         }
 
                     }
@@ -244,6 +274,7 @@ public class Form1 extends Fragment {
         return v;
 
     }
+
 
 
     // TODO: Rename method, update argument and hook method into UI event

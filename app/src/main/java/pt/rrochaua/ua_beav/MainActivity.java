@@ -28,7 +28,6 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -58,7 +57,6 @@ import pt.rrochaua.ua_beav.models.FotosEsquemas;
 import pt.rrochaua.ua_beav.models.NatuAcidente;
 import pt.rrochaua.ua_beav.models.SemVitim;
 
-import pt.rrochaua.ua_beav.models.SemVitimCondutor;
 import pt.rrochaua.ua_beav.helpers.Util;
 import pt.rrochaua.ua_beav.models.VeicInterveniente;
 
@@ -234,36 +232,17 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date data = null;
-        try {
-            data = sdf.parse("04/07/2016");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        SemVitim semviti1 = new SemVitim(1,0);
-        SemVitimCondutor semviticond = new SemVitimCondutor(2,1,2,data);
-        SemVitimCondutor semviticond2 = new SemVitimCondutor(3,1,3,data);
-        sViti.add(semviti1);
-        sViti.add(semviticond);
-        sViti.add(semviticond2);
-        System.out.println("#############################################");
-        for(int i = 0; i < sViti.size(); i++){
-            System.out.println("Veiculo " + i);
-            System.out.println(sViti.get(i).veiculo + " " + sViti.get(i).condutorPresente + " ");
-            if(sViti.get(i).condutorPresente==1){
-                SemVitimCondutor c = ((SemVitimCondutor) sViti.get(i));
-                System.out.println(c.genero + " " + sdf.format(c.idade));
-            }
-        }
-        System.out.println("#############################################");
         goToMenuFragment();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 
     // Secção de permissões
@@ -397,9 +376,6 @@ public class MainActivity extends AppCompatActivity
 
             locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                System.out.println("###################################");
-                System.out.println("################ ERROR ############");
-                System.out.println("###################################");
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                 dialog.setTitle("Localização desligada");
                 dialog.setMessage("Para utilizar esta funcionalidade tem de ter o serviço de localização activo. Carregue no botão definições e active essa funcionalidade. Este texto está horrivel, é favor de o melhorar.");
@@ -432,7 +408,7 @@ public class MainActivity extends AppCompatActivity
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy H:mm");
 
-        System.out.println("##################### FORM! ####################");
+        System.out.println("##################### FORM1 ####################");
         System.out.println("DATA E HORA: " + sdf.format(form1.get(0).dataHora));
         System.out.println("Localização: " + form1.get(0).localizacao);
         System.out.println("Local: " + form1.get(0).local);
