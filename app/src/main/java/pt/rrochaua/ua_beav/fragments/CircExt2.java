@@ -1,23 +1,27 @@
 package pt.rrochaua.ua_beav.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioGroup;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.CircExternas2;
 
 
 public class CircExt2 extends Fragment {
 
     MainActivity parentActivity;
 
-
+    ArrayList<CircExternas2> circexternas2;
     private OnCircExt2Listener mListener;
 
 
@@ -28,7 +32,6 @@ public class CircExt2 extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static CircExt2 newInstance() {
         CircExt2 fragment = new CircExt2();
-
         return fragment;
     }
 
@@ -38,6 +41,8 @@ public class CircExt2 extends Fragment {
 
         super.onCreate(savedInstanceState);
 
+        circexternas2 = parentActivity.getcExt2();
+
     }
 
     @Override
@@ -46,6 +51,25 @@ public class CircExt2 extends Fragment {
         // Inflate the layout for this fragment
 
         final View v = inflater.inflate(R.layout.fragment_circ_ext2, container, false);
+
+        final RadioGroup rGPis = (RadioGroup) v.findViewById(R.id.radioGroupPis);
+        final RadioGroup rGEst = (RadioGroup) v.findViewById(R.id.radioGroupEst);
+        final RadioGroup rGObs = (RadioGroup) v.findViewById(R.id.radioGroupObs);
+        final RadioGroup rGCondAd = (RadioGroup) v.findViewById(R.id.radioGroupCondAd);
+        final RadioGroup rGMarPav = (RadioGroup) v.findViewById(R.id.radioGroupMarPav);
+        final RadioGroup rGSinLum = (RadioGroup) v.findViewById(R.id.radioGroupSinLum);
+        final RadioGroup rGSin = (RadioGroup) v.findViewById(R.id.radioGroupSin);
+        final RadioGroup rGLum = (RadioGroup) v.findViewById(R.id.radioGroupLum);
+        final RadioGroup rGFatAt = (RadioGroup) v.findViewById(R.id.radioGroupFatAt);
+
+
+
+
+        if(circexternas2.size()>= 1){
+
+
+        }
+
 
         Button btnSegCircExt2 = (Button) v.findViewById(R.id.ButtonSegCircExt2);
         btnSegCircExt2.setOnClickListener(new View.OnClickListener() {

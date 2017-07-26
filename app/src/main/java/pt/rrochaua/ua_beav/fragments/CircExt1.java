@@ -64,19 +64,12 @@ public class CircExt1 extends Fragment {
         final RadioGroup rGroupFDRC = (RadioGroup) v.findViewById(R.id.radioGroupFDRC);
         final EditText eTLimG  = (EditText) v.findViewById(R.id.editTextLimG);
         final EditText eTLimL  = (EditText) v.findViewById(R.id.editTextLimL);
-        Button btnSeg = (Button) v.findViewById(R.id.ButtonSegCircExt1);
-        Button btnAnt = (Button) v.findViewById(R.id.ButtonAntCircExt1);
 
 
         if(circexternas1.size()>= 1){
 
 
         }
-
-
-
-
-
 
         Button btnSegCircExt1 = (Button) v.findViewById(R.id.ButtonSegCircExt1);
         btnSegCircExt1.setOnClickListener(new View.OnClickListener() {

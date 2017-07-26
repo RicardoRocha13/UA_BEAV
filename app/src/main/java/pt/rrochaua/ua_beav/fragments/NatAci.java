@@ -1,22 +1,25 @@
 package pt.rrochaua.ua_beav.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioGroup;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
-
+import pt.rrochaua.ua_beav.models.NatuAcidente;
 
 
 public class NatAci extends Fragment {
     MainActivity parentActivity;
-
+    ArrayList<NatuAcidente> nataci;
     private OnNatAciListener mListener;
 
 
@@ -36,8 +39,8 @@ public class NatAci extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
-
         super.onCreate(savedInstanceState);
+        nataci = parentActivity.getNatuAcidente();
     }
 
     @Override
@@ -46,6 +49,17 @@ public class NatAci extends Fragment {
         // Inflate the layout for this fragment
 
         final View v = inflater.inflate(R.layout.fragment_nat_aci, container, false);
+
+        final RadioGroup rGroupDesp = (RadioGroup) v.findViewById(R.id.radioGroupDesp);
+        final RadioGroup rGroupCol = (RadioGroup) v.findViewById(R.id.radioGroupCol);
+        final RadioGroup rGroupAtro = (RadioGroup) v.findViewById(R.id.radioGroupAtro);
+
+
+
+        if(nataci.size()>= 1){
+
+
+        }
 
         Button btnSegNatAci = (Button) v.findViewById(R.id.ButtonSegNatAci);
         btnSegNatAci.setOnClickListener(new View.OnClickListener() {
