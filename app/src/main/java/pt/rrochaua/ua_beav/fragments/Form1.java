@@ -254,12 +254,8 @@ public class Form1 extends Fragment {
 
                         if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
                             parentActivity.goToCircExt1Fragment();
-                        }
-
-                        if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA1){
+                        }else{
                             parentActivity.goToCondIntSemFragment();
-
-
                         }
 
                     }

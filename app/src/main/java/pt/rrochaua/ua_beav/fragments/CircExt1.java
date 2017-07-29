@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -75,7 +76,39 @@ public class CircExt1 extends Fragment {
         btnSegCircExt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCircExt2Fragment();
+
+                if (rGroupTipVia.getCheckedRadioButtonId() == -1 || eTSemSnVias.getText().toString().equals("")
+                        || rGroupViaT.getCheckedRadioButtonId() == -1 || rGroupPlant.getCheckedRadioButtonId() == -1
+                        || rGroupPerf.getCheckedRadioButtonId() == -1 || rGroupBerm.getCheckedRadioButtonId() == -1
+                        || rGroupSDA.getCheckedRadioButtonId() == -1 || rGroupIDV.getCheckedRadioButtonId() == -1
+                        || rGroupAEODA.getCheckedRadioButtonId() == -1 || rGroupFDRC.getCheckedRadioButtonId() == -1
+                        || eTLimG.getText().toString().equals("") || eTLimL.getText().toString().equals("") ) {
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    int iTipVia = rGroupTipVia.indexOfChild(rGroupTipVia.findViewById(rGroupTipVia.getCheckedRadioButtonId()));
+                    int iGroupViaT = rGroupViaT.indexOfChild(rGroupViaT.findViewById(rGroupViaT.getCheckedRadioButtonId()));
+                    int iGroupPlant = rGroupPlant.indexOfChild(rGroupPlant.findViewById(rGroupPlant.getCheckedRadioButtonId()));
+                    int iGroupPerf = rGroupPerf.indexOfChild(rGroupPerf.findViewById(rGroupPerf.getCheckedRadioButtonId()));
+                    int iGroupBerm = rGroupBerm.indexOfChild(rGroupBerm.findViewById(rGroupBerm.getCheckedRadioButtonId()));
+                    int iGroupSDA = rGroupSDA.indexOfChild(rGroupSDA.findViewById(rGroupSDA.getCheckedRadioButtonId()));
+                    int iGroupIDV = rGroupIDV.indexOfChild(rGroupIDV.findViewById(rGroupIDV.getCheckedRadioButtonId()));
+                    int iGroupAEODA = rGroupAEODA.indexOfChild(rGroupAEODA.findViewById(rGroupAEODA.getCheckedRadioButtonId()));
+                    int iGroupFDRC = rGroupFDRC.indexOfChild(rGroupFDRC.findViewById(rGroupFDRC.getCheckedRadioButtonId()));
+
+
+
+
+
+
+
+                    //CircExternas1 CE1 = new CircExternas1();
+
+                    parentActivity.goToCircExt2Fragment();
+                }
+
+
+
+
             }
         });
 
