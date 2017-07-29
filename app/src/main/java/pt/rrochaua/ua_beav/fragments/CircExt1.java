@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -69,6 +70,19 @@ public class CircExt1 extends Fragment {
 
         if(circexternas1.size()>= 1){
 
+            ((RadioButton)rGroupTipVia.getChildAt(circexternas1.get(0).tipoVia)).setChecked(true);
+            eTSemSnVias.setText(String.valueOf(circexternas1.get(0).nVias));
+            ((RadioButton)rGroupViaT.getChildAt(circexternas1.get(0).viaTransito)).setChecked(true);
+            ((RadioButton)rGroupPlant.getChildAt(circexternas1.get(0).tracadoViaPlanta)).setChecked(true);
+            ((RadioButton)rGroupPerf.getChildAt(circexternas1.get(0).tracadoViaPerfil)).setChecked(true);
+            ((RadioButton)rGroupBerm.getChildAt(circexternas1.get(0).tracadoViaBerma)).setChecked(true);
+            ((RadioButton)rGroupSDA.getChildAt(circexternas1.get(0).situacaoAcidente)).setChecked(true);
+            ((RadioButton)rGroupIDV.getChildAt(circexternas1.get(0).intersecVias)).setChecked(true);
+            ((RadioButton)rGroupAEODA.getChildAt(circexternas1.get(0).acidenteObrasArte)).setChecked(true);
+            ((RadioButton)rGroupFDRC.getChildAt(circexternas1.get(0).faixaRodagem)).setChecked(true);
+            eTLimG.setText(String.valueOf(circexternas1.get(0).limiteVelocGeral));
+            eTLimL.setText(String.valueOf(circexternas1.get(0).limiteVelocLocal));
+
 
         }
 
@@ -85,24 +99,23 @@ public class CircExt1 extends Fragment {
                         || eTLimG.getText().toString().equals("") || eTLimL.getText().toString().equals("") ) {
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {
-                    int iTipVia = rGroupTipVia.indexOfChild(rGroupTipVia.findViewById(rGroupTipVia.getCheckedRadioButtonId()));
-                    int iGroupViaT = rGroupViaT.indexOfChild(rGroupViaT.findViewById(rGroupViaT.getCheckedRadioButtonId()));
-                    int iGroupPlant = rGroupPlant.indexOfChild(rGroupPlant.findViewById(rGroupPlant.getCheckedRadioButtonId()));
-                    int iGroupPerf = rGroupPerf.indexOfChild(rGroupPerf.findViewById(rGroupPerf.getCheckedRadioButtonId()));
-                    int iGroupBerm = rGroupBerm.indexOfChild(rGroupBerm.findViewById(rGroupBerm.getCheckedRadioButtonId()));
-                    int iGroupSDA = rGroupSDA.indexOfChild(rGroupSDA.findViewById(rGroupSDA.getCheckedRadioButtonId()));
-                    int iGroupIDV = rGroupIDV.indexOfChild(rGroupIDV.findViewById(rGroupIDV.getCheckedRadioButtonId()));
-                    int iGroupAEODA = rGroupAEODA.indexOfChild(rGroupAEODA.findViewById(rGroupAEODA.getCheckedRadioButtonId()));
-                    int iGroupFDRC = rGroupFDRC.indexOfChild(rGroupFDRC.findViewById(rGroupFDRC.getCheckedRadioButtonId()));
+                    int indexTipVia = rGroupTipVia.indexOfChild(rGroupTipVia.findViewById(rGroupTipVia.getCheckedRadioButtonId()));
+                    int indexGroupViaT = rGroupViaT.indexOfChild(rGroupViaT.findViewById(rGroupViaT.getCheckedRadioButtonId()));
+                    int indexGroupPlant = rGroupPlant.indexOfChild(rGroupPlant.findViewById(rGroupPlant.getCheckedRadioButtonId()));
+                    int indexGroupPerf = rGroupPerf.indexOfChild(rGroupPerf.findViewById(rGroupPerf.getCheckedRadioButtonId()));
+                    int indexGroupBerm = rGroupBerm.indexOfChild(rGroupBerm.findViewById(rGroupBerm.getCheckedRadioButtonId()));
+                    int indexGroupSDA = rGroupSDA.indexOfChild(rGroupSDA.findViewById(rGroupSDA.getCheckedRadioButtonId()));
+                    int indexGroupIDV = rGroupIDV.indexOfChild(rGroupIDV.findViewById(rGroupIDV.getCheckedRadioButtonId()));
+                    int indexGroupAEODA = rGroupAEODA.indexOfChild(rGroupAEODA.findViewById(rGroupAEODA.getCheckedRadioButtonId()));
+                    int indexGroupFDRC = rGroupFDRC.indexOfChild(rGroupFDRC.findViewById(rGroupFDRC.getCheckedRadioButtonId()));
 
 
+                    CircExternas1 CE1 = new CircExternas1(indexTipVia, Integer.parseInt(eTSemSnVias.getText().toString()), indexGroupViaT,
+                            indexGroupPlant, indexGroupPerf, indexGroupBerm, indexGroupSDA, indexGroupIDV, indexGroupAEODA,
+                            indexGroupFDRC, Integer.parseInt(eTLimG.getText().toString()), Integer.parseInt(eTLimL.getText().toString()));
 
-
-
-
-
-                    //CircExternas1 CE1 = new CircExternas1();
-
+                    circexternas1.add(0,CE1);
+                    parentActivity.setcExt1(circexternas1);
                     parentActivity.goToCircExt2Fragment();
                 }
 
