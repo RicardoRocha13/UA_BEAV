@@ -159,7 +159,6 @@ public class CircExt1 extends Fragment {
                     parentActivity.goToForm1Fragment();
                 }
 
-
             }
         });
 
