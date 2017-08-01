@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -57,6 +59,9 @@ public class NatAci extends Fragment {
 
 
         if(nataci.size()>= 1){
+            ((RadioButton)rGroupDesp.getChildAt(nataci.get(0).despiste)).setChecked(true);
+            ((RadioButton)rGroupCol.getChildAt(nataci.get(0).colisao)).setChecked(true);
+            ((RadioButton)rGroupAtro.getChildAt(nataci.get(0).atropelamento)).setChecked(true);
 
 
         }
@@ -65,8 +70,24 @@ public class NatAci extends Fragment {
         btnSegNatAci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToVeicInt1Fragment();
+
+                if (rGroupDesp.getCheckedRadioButtonId() == -1 || rGroupCol.getCheckedRadioButtonId() == -1 ||
+                        rGroupAtro.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
+                    int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
+                    int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
+
+                    NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                    nataci.add(0,NA);
+                    parentActivity.setNatuAcidente(nataci);
+                    parentActivity.goToVeicInt1Fragment();
+                }
+
             }
+
         });
 
 
@@ -74,8 +95,24 @@ public class NatAci extends Fragment {
         btnAntNatAci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCircExt2Fragment();
+
+                if (rGroupDesp.getCheckedRadioButtonId() == -1 || rGroupCol.getCheckedRadioButtonId() == -1 ||
+                        rGroupAtro.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
+                    int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
+                    int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
+
+                    NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                    nataci.add(0,NA);
+                    parentActivity.setNatuAcidente(nataci);
+                    parentActivity.goToCircExt2Fragment();
+                }
+
             }
+
         });
 
         return v;
