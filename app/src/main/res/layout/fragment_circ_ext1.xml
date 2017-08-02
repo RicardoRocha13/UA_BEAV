@@ -89,6 +89,7 @@
                  android:layout_height="wrap_content"
                  android:ems="10"
                  android:inputType="number"
+                 android:imeOptions="actionDone"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
@@ -482,6 +483,7 @@
                  android:layout_height="wrap_content"
                  android:ems="10"
                  android:inputType="number"
+                 android:imeOptions="actionDone"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
              <TextView
@@ -497,6 +499,7 @@
                  android:layout_height="wrap_content"
                  android:ems="10"
                  android:inputType="number"
+                 android:imeOptions="actionDone"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 

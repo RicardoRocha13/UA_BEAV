@@ -75,6 +75,7 @@
                 android:id="@+id/eTIdade"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
