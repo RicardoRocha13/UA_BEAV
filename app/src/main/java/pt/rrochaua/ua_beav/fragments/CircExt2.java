@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,7 +22,6 @@ import pt.rrochaua.ua_beav.models.CircExternas2;
 public class CircExt2 extends Fragment {
 
     MainActivity parentActivity;
-
     ArrayList<CircExternas2> circexternas2;
     private OnCircExt2Listener mListener;
 
@@ -38,9 +39,7 @@ public class CircExt2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
-
         super.onCreate(savedInstanceState);
-
         circexternas2 = parentActivity.getcExt2();
 
     }
@@ -66,7 +65,15 @@ public class CircExt2 extends Fragment {
 
 
         if(circexternas2.size()>= 1){
-
+            ((RadioButton)rGPis.getChildAt(circexternas2.get(0).tipoPiso)).setChecked(true);
+            ((RadioButton)rGEst.getChildAt(circexternas2.get(0).estadoConservacao)).setChecked(true);
+            ((RadioButton)rGObs.getChildAt(circexternas2.get(0).obstaculosObras)).setChecked(true);
+            ((RadioButton)rGCondAd.getChildAt(circexternas2.get(0).condicoesAderencia)).setChecked(true);
+            ((RadioButton)rGMarPav.getChildAt(circexternas2.get(0).marcasPavimentos)).setChecked(true);
+            ((RadioButton)rGSinLum.getChildAt(circexternas2.get(0).sinalizacaoLuminosa)).setChecked(true);
+            ((RadioButton)rGSin.getChildAt(circexternas2.get(0).sinais)).setChecked(true);
+            ((RadioButton)rGLum.getChildAt(circexternas2.get(0).luminosidade)).setChecked(true);
+            ((RadioButton)rGFatAt.getChildAt(circexternas2.get(0).fatoresAtmosfericos)).setChecked(true);
 
         }
 
@@ -75,7 +82,31 @@ public class CircExt2 extends Fragment {
         btnSegCircExt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToNatAciFragment();
+                if (rGPis.getCheckedRadioButtonId() == -1 || rGEst.getCheckedRadioButtonId() == -1 ||
+                        rGObs.getCheckedRadioButtonId() == -1 || rGCondAd.getCheckedRadioButtonId() == -1 ||
+                        rGMarPav.getCheckedRadioButtonId() == -1 || rGSinLum.getCheckedRadioButtonId() == -1 ||
+                        rGSin.getCheckedRadioButtonId() == -1 || rGLum.getCheckedRadioButtonId() == -1 ||
+                        rGFatAt.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                }else{
+                    int indexPis = rGPis.indexOfChild(rGPis.findViewById(rGPis.getCheckedRadioButtonId()));
+                    int indexEst = rGEst.indexOfChild(rGEst.findViewById(rGEst.getCheckedRadioButtonId()));
+                    int indexObs = rGPis.indexOfChild(rGPis.findViewById(rGPis.getCheckedRadioButtonId()));
+                    int indexConAd = rGCondAd.indexOfChild(rGCondAd.findViewById(rGCondAd.getCheckedRadioButtonId()));
+                    int indexMarPav = rGMarPav.indexOfChild(rGMarPav.findViewById(rGMarPav.getCheckedRadioButtonId()));
+                    int indexSinLum = rGSinLum.indexOfChild(rGSinLum.findViewById(rGSinLum.getCheckedRadioButtonId()));
+                    int indexSin = rGSin.indexOfChild(rGSin.findViewById(rGSin.getCheckedRadioButtonId()));
+                    int indexLum = rGLum.indexOfChild(rGLum.findViewById(rGLum.getCheckedRadioButtonId()));
+                    int indexFatAt = rGFatAt.indexOfChild(rGFatAt.findViewById(rGFatAt.getCheckedRadioButtonId()));
+
+                    CircExternas2 CE2 = new CircExternas2(indexPis, indexEst, indexObs, indexConAd,
+                            indexMarPav, indexSinLum, indexSin, indexLum, indexFatAt);
+
+                    circexternas2.add(0,CE2);
+                    parentActivity.setcExt2(circexternas2);
+                    parentActivity.goToNatAciFragment();
+
+                }
             }
         });
 
@@ -84,7 +115,31 @@ public class CircExt2 extends Fragment {
         btnAntCircExt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCircExt1Fragment();
+                if (rGPis.getCheckedRadioButtonId() == -1 || rGEst.getCheckedRadioButtonId() == -1 ||
+                        rGObs.getCheckedRadioButtonId() == -1 || rGCondAd.getCheckedRadioButtonId() == -1 ||
+                        rGMarPav.getCheckedRadioButtonId() == -1 || rGSinLum.getCheckedRadioButtonId() == -1 ||
+                        rGSin.getCheckedRadioButtonId() == -1 || rGLum.getCheckedRadioButtonId() == -1 ||
+                        rGFatAt.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                }else{
+                    int indexPis = rGPis.indexOfChild(rGPis.findViewById(rGPis.getCheckedRadioButtonId()));
+                    int indexEst = rGEst.indexOfChild(rGEst.findViewById(rGEst.getCheckedRadioButtonId()));
+                    int indexObs = rGPis.indexOfChild(rGPis.findViewById(rGPis.getCheckedRadioButtonId()));
+                    int indexConAd = rGCondAd.indexOfChild(rGCondAd.findViewById(rGCondAd.getCheckedRadioButtonId()));
+                    int indexMarPav = rGMarPav.indexOfChild(rGMarPav.findViewById(rGMarPav.getCheckedRadioButtonId()));
+                    int indexSinLum = rGSinLum.indexOfChild(rGSinLum.findViewById(rGSinLum.getCheckedRadioButtonId()));
+                    int indexSin = rGSin.indexOfChild(rGSin.findViewById(rGSin.getCheckedRadioButtonId()));
+                    int indexLum = rGLum.indexOfChild(rGLum.findViewById(rGLum.getCheckedRadioButtonId()));
+                    int indexFatAt = rGFatAt.indexOfChild(rGFatAt.findViewById(rGFatAt.getCheckedRadioButtonId()));
+
+                    CircExternas2 CE2 = new CircExternas2(indexPis, indexEst, indexObs, indexConAd,
+                            indexMarPav, indexSinLum, indexSin, indexLum, indexFatAt);
+
+                    circexternas2.add(0,CE2);
+                    parentActivity.setcExt2(circexternas2);
+                    parentActivity.goToCircExt1Fragment();
+
+                }
             }
         });
 
