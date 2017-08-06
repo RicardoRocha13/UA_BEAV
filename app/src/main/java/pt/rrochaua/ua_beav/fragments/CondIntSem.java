@@ -188,7 +188,48 @@ public class CondIntSem extends Fragment {
         btnAntCondIntSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToForm1Fragment();
+
+
+                if (rGroupCondP.getCheckedRadioButtonId() == -1 || rGroupVI.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    Date idade = null;
+                    try {
+                        idade = sdf.parse(eTextDia.getText().toString() + "/" + eTextMes.getText().toString() + "/" + eTextAno.getText().toString() +
+                                " " );
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    int indexPresente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));int Presente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
+                    int indexVeiculo = rGroupVI.indexOfChild(rGroupVI.findViewById(rGroupVI.getCheckedRadioButtonId()));
+
+
+                    if (rGroupVI.getCheckedRadioButtonId() == 0) {
+
+                        if (eTextDia.getText().toString().equals("") || rGroupSex.getCheckedRadioButtonId() == -1) {
+                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                        }
+                        int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+
+                        SemVitimCondutor SVC = new SemVitimCondutor(indexVeiculo, indexPresente, indexSex, idade);
+
+                        semvitim.add(0, SVC);
+                        parentActivity.setsViti(semvitim);
+
+                        parentActivity.goToForm1Fragment();
+
+                    }else{
+                        SemVitim SV = new SemVitim(indexVeiculo, indexPresente);
+                        semvitim.add(0, SV);
+                        parentActivity.setsViti(semvitim);
+
+                        parentActivity.goToForm1Fragment();
+                    }
+
+                }
+
             }
         });
 
