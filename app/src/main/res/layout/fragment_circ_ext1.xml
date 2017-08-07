@@ -112,19 +112,21 @@
                      android:id="@+id/radioButtonViaT1"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
+                     android:visibility="gone"
                      android:text="Esquerda" />
-
-                 <RadioButton
-                     android:id="@+id/radioButtonViaT2"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="Direita" />
 
                  <RadioButton
                      android:id="@+id/radioButtonViaT3"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:text="Central" />
+
+                 <RadioButton
+                     android:id="@+id/radioButtonViaT2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:visibility="gone"
+                     android:text="Direita" />
 
              </RadioGroup>
 
