@@ -19,6 +19,7 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import pt.rrochaua.ua_beav.MainActivity;
@@ -75,22 +76,21 @@ public class CondIntSem extends Fragment {
         final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         if(semvitim.size()>=1){
-
-
-
             if (semvitim.get(0).condutorPresente==0){
+                //faltava isto
+                SemVitimCondutor svc = ((SemVitimCondutor) semvitim.get(0));
 
-                /*
-                Date data = semvitim.get(0).idade;
+                //mudei isto
+                Date data = svc.idade;
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(data);
                 eTextDia.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
                 int mes = cal.get(Calendar.MONTH)+1;
                 eTextMes.setText(String.valueOf(mes));
                 eTextAno.setText(String.valueOf(cal.get(Calendar.YEAR)));
+                //mudei isto
+                ((RadioButton)rGroupSex.getChildAt(svc.genero)).setChecked(true);
 
-                ((RadioButton)rGroupSex.getChildAt(semvitim.get(0).genero)).setChecked(true);
-                */
 
             }
 
@@ -156,7 +156,8 @@ public class CondIntSem extends Fragment {
                     int indexVeiculo = rGroupVI.indexOfChild(rGroupVI.findViewById(rGroupVI.getCheckedRadioButtonId()));
 
 
-                    if (rGroupVI.getCheckedRadioButtonId() == 0) {
+                    //estava mal
+                    if (rGroupCondP.getCheckedRadioButtonId() == R.id.radioButtonCondP1) {
 
                         if (eTextDia.getText().toString().equals("") || rGroupSex.getCheckedRadioButtonId() == -1) {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
