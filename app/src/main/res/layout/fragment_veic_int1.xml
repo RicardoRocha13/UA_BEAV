@@ -167,16 +167,11 @@
                 android:textStyle="bold" />
 
 
-
-
-
-
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupTVeicLig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
 
 
                 <RadioButton
@@ -213,7 +208,6 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -229,7 +223,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
 
 
                 <RadioButton
@@ -266,7 +259,6 @@
             </RadioGroup>
 
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -277,7 +269,6 @@
                 android:textStyle="bold" />
 
 
-
             <EditText
                 android:id="@+id/editTextVEsp"
                 android:layout_width="wrap_content"
@@ -285,8 +276,6 @@
                 android:ems="10"
                 android:imeOptions="actionDone"
                 android:inputType="number" />
-
-
 
 
             <TextView

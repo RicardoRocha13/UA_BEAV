@@ -8,14 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.ConseqPeoes;
 
 
 public class ConsPeo extends Fragment {
     MainActivity parentActivity;
-
+    ArrayList<ConseqPeoes> conseqpeoes;
     private OnConsPeoListener mListener;
 
 
@@ -35,7 +42,7 @@ public class ConsPeo extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
-
+        conseqpeoes = parentActivity.getConsPeoes();
         super.onCreate(savedInstanceState);
 
     }
@@ -46,11 +53,76 @@ public class ConsPeo extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cons_peo, container, false);
 
+
+        final RadioGroup rGroupSexPe = (RadioGroup) v.findViewById(R.id.radioGroupSexPe);
+        final EditText eTextIdade = (EditText) v.findViewById(R.id.eTIdade);
+        final RadioGroup rGroupPos = (RadioGroup) v.findViewById(R.id.radioGroupPos);
+        final RadioGroup rGroupCPF = (RadioGroup) v.findViewById(R.id.radioGroupCPF);
+        final EditText eTextTaxa = (EditText) v.findViewById(R.id.eTTaxa);
+        final RadioGroup rGroupAco = (RadioGroup) v.findViewById(R.id.radioGroupAco);
+        final RadioGroup rGroupUDMR = (RadioGroup) v.findViewById(R.id.radioGroupUDMR);
+        final RadioGroup rGroupGDGDL = (RadioGroup) v.findViewById(R.id.radioGroupGDGDL);
+
+
+        if(conseqpeoes.size()>=1){
+            /*
+            if (conseqpeoes.get(0).condiPsicoFisicas==3){
+
+
+            ConseqPeoesAlcool cpa = ((ConseqPeoesAlcool) conseqpeoes.get(0));
+
+            eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
+
+            }
+            */
+            ((RadioButton)rGroupSexPe.getChildAt(conseqpeoes.get(0).genero)).setChecked(true);
+            ((RadioButton)rGroupPos.getChildAt(conseqpeoes.get(0).posicao)).setChecked(true);
+            ((RadioButton)rGroupAco.getChildAt(conseqpeoes.get(0).acoes)).setChecked(true);
+            ((RadioButton)rGroupUDMR.getChildAt(conseqpeoes.get(0).utilizacaoMaterialRefletor)).setChecked(true);
+            ((RadioButton)rGroupGDGDL.getChildAt(conseqpeoes.get(0).grauGravidadeLesoes)).setChecked(true);
+            //((RadioButton)rGroupCPF.getChildAt(conseqpeoes.get(0).condiPsicoFisicas)).setChecked(true);
+            eTextIdade.setText(String.valueOf(conseqpeoes.get(0).idade));
+        }
+
+
+
+
+
         Button btnSegConsPeo = (Button) v.findViewById(R.id.ButtonSegConsPeo);
         btnSegConsPeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToFotoEsquemaFragment();
+
+                if (eTextIdade .getText().toString().equals("") || rGroupSexPe.getCheckedRadioButtonId() == -1 ||
+                        rGroupPos.getCheckedRadioButtonId() == -1 || rGroupCPF.getCheckedRadioButtonId() == -1 ||
+                        rGroupAco.getCheckedRadioButtonId() == -1 || rGroupUDMR.getCheckedRadioButtonId() == -1 ||
+                        rGroupGDGDL.getCheckedRadioButtonId() == -1  ) {
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    /* Para quando é selecionado a hiipotese de taxa alcoolemia
+                    if () {
+
+                    }
+                    */
+
+                    int indexSexPe = rGroupSexPe.indexOfChild(rGroupSexPe.findViewById(rGroupSexPe.getCheckedRadioButtonId()));
+                    int indexPos = rGroupPos.indexOfChild(rGroupPos.findViewById(rGroupPos.getCheckedRadioButtonId()));
+                    int indexCPF = rGroupCPF.indexOfChild(rGroupCPF.findViewById(rGroupCPF.getCheckedRadioButtonId()));
+                    int indexAco = rGroupAco.indexOfChild(rGroupAco.findViewById(rGroupAco.getCheckedRadioButtonId()));
+                    int indexUDMR = rGroupUDMR.indexOfChild(rGroupUDMR.findViewById(rGroupUDMR.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
+
+/* Erro na idade e mais uma vez com os checkboxes
+                    ConseqPeoes CP = new ConseqPeoes(indexSexPe, eTextIdade.getText().toString(),
+                            indexPos, indexAco, indexUDMR, indexGDGDL,  indexCPF);
+*/
+
+                    parentActivity.goToFotoEsquemaFragment();
+                }
+
+
+
             }
         });
 

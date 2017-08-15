@@ -1,22 +1,27 @@
 package pt.rrochaua.ua_beav.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
-
+import pt.rrochaua.ua_beav.models.VeicInterveniente;
 
 
 public class VeicInt1 extends Fragment {
     MainActivity parentActivity;
-
+    ArrayList<VeicInterveniente> veicinterveniente;
     private OnVeicInt1Listener mListener;
 
 
@@ -34,7 +39,7 @@ public class VeicInt1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
-
+        veicinterveniente = parentActivity.getvInterv();
         super.onCreate(savedInstanceState);
     }
 
@@ -44,10 +49,55 @@ public class VeicInt1 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_veic_int1, container, false);
 
+
+        final RadioGroup rGroupFuga = (RadioGroup) v.findViewById(R.id.radioGroupFuga);
+        final RadioGroup rGroupCat = (RadioGroup) v.findViewById(R.id.radioGroupCat);
+        final RadioGroup rGroupTVeicLig = (RadioGroup) v.findViewById(R.id.radioGroupTVeicLig);
+        final RadioGroup rGroupTVeicPes = (RadioGroup) v.findViewById(R.id.radioGroupTVeicPes);
+        final EditText eTextVEsp = (EditText) v.findViewById(R.id.editTextVEsp);
+        final RadioGroup rGroupTDS = (RadioGroup) v.findViewById(R.id.radioGroupTDS);
+        final EditText eTextADM = (EditText) v.findViewById(R.id.editTextADM);
+        final RadioGroup rGroupIP = (RadioGroup) v.findViewById(R.id.radioGroupIP);
+        final RadioGroup rGroupTMerc = (RadioGroup) v.findViewById(R.id.radioGroupTMerc);
+        final RadioGroup rGroupCADR = (RadioGroup) v.findViewById(R.id.radioGroupCADR);
+        final EditText eTextCADR = (EditText) v.findViewById(R.id.editTextCADR);
+        final RadioGroup rGroupCL = (RadioGroup) v.findViewById(R.id.radioGroupCL);
+        final RadioGroup rGroupPneu = (RadioGroup) v.findViewById(R.id.radioGroupPneu);
+        final RadioGroup rGroupTaco = (RadioGroup) v.findViewById(R.id.radioGroupTaco);
+        final RadioGroup rGroupSeg = (RadioGroup) v.findViewById(R.id.radioGroupSeg);
+        final RadioGroup rGroupInPo = (RadioGroup) v.findViewById(R.id.radioGroupInPo);
+        final EditText eTextNPass = (EditText) v.findViewById(R.id.editTextNPass);
+        final RadioGroup rGroupCondP = (RadioGroup) v.findViewById(R.id.radioGroupCondP);
+
+
+        if(veicinterveniente.size()>=1){
+
+
+        }
+
+
+
+
+
         Button btnSegVeicInt1 = (Button) v.findViewById(R.id.ButtonSegVeicInt1);
         btnSegVeicInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (rGroupFuga.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    if (rGroupFuga.getCheckedRadioButtonId() == R.id.radioButtonFuga1){
+
+                    }
+
+
+                }
+
+
+
+
+
+
                 parentActivity.goToCondInt1Fragment();
             }
         });
