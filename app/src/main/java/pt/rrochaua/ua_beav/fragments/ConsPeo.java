@@ -114,9 +114,10 @@ public class ConsPeo extends Fragment {
                     int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
 
 /* Erro na idade e mais uma vez com os checkboxes
-                    ConseqPeoes CP = new ConseqPeoes(indexSexPe, eTextIdade.getText().toString(),
+                    ConseqPeoes CP = new ConseqPeoes(indexSexPe,Integer.parseInt(eTextIdade.getText().toString()),
                             indexPos, indexAco, indexUDMR, indexGDGDL,  indexCPF);
 */
+
 
                     parentActivity.goToFotoEsquemaFragment();
                 }
