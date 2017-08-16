@@ -267,6 +267,20 @@ public class Form1 extends Fragment {
         });
 
 
+        Button btnSegTest = (Button) v.findViewById(R.id.ButtonSegTeste);
+        btnSegTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
+                    parentActivity.goToCircExt1Fragment();
+                }else{
+                    parentActivity.goToCondIntSemFragment();
+                }
+            }
+        });
+
+
+
         return v;
 
     }

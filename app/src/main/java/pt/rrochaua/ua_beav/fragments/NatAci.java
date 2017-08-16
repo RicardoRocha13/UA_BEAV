@@ -115,6 +115,27 @@ public class NatAci extends Fragment {
 
         });
 
+
+
+
+        Button btnSegTest = (Button) v.findViewById(R.id.ButtonSegTeste);
+        btnSegTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToVeicInt1Fragment();
+
+            }
+        });
+        Button btnAntTest = (Button) v.findViewById(R.id.ButtonAntTeste);
+        btnAntTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToCircExt2Fragment();
+            }
+
+        });
+
+
         return v;
     }
 

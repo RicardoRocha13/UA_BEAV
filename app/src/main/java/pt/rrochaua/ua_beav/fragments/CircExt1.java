@@ -184,6 +184,26 @@ public class CircExt1 extends Fragment {
         });
 
 
+
+        Button btnSegTest = (Button) v.findViewById(R.id.ButtonSegTeste);
+        btnSegTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToCircExt2Fragment();
+
+            }
+        });
+        Button btnAntTest = (Button) v.findViewById(R.id.ButtonAntTeste);
+        btnAntTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToForm1Fragment();
+            }
+
+        });
+
+
+
         return v;
     }
 
