@@ -8,14 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.CondInterveniente2;
 
 
 public class CondInt2 extends Fragment {
     MainActivity parentActivity;
-
+    ArrayList<CondInterveniente2> condint2;
     private OnCondInt2Listener mListener;
 
 
@@ -34,6 +40,7 @@ public class CondInt2 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
         super.onCreate(savedInstanceState);
+        condint2 = parentActivity.getcInterv2();
     }
 
     @Override
@@ -42,11 +49,49 @@ public class CondInt2 extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int2, container, false);
 
+        final RadioGroup rGGAMAA = (RadioGroup) v.findViewById(R.id.radioGroupAMAA);
+        final RadioGroup rGICAM = (RadioGroup) v.findViewById(R.id.radioGroupICAM);
+        final RadioGroup rGAS = (RadioGroup) v.findViewById(R.id.radioGroupAS);
+        final RadioGroup rGGDGDL = (RadioGroup) v.findViewById(R.id.radioGroupGDGDL);
+
+        if (condint2.size() >= 1){
+            ((RadioButton)rGGAMAA.getChildAt(condint2.get(0).accaoManobras)).setChecked(true);
+            ((RadioButton)rGICAM.getChildAt(condint2.get(0).infoComplementar)).setChecked(true);
+            ((RadioButton)rGAS.getChildAt(condint2.get(0).acessoriosSeguranca)).setChecked(true);
+            ((RadioButton)rGGDGDL.getChildAt(condint2.get(0).gravidadeLesoes)).setChecked(true);
+        }
+
+
         Button btnSegCondInt2 = (Button) v.findViewById(R.id.ButtonSegCondInt2);
         btnSegCondInt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToConsPassFragment();
+
+                if (rGGAMAA.getCheckedRadioButtonId() == -1 || rGICAM.getCheckedRadioButtonId() == -1 ||
+                        rGAS.getCheckedRadioButtonId() == -1 || rGGDGDL.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    int indexGAMAA = rGGAMAA.indexOfChild(rGGAMAA.findViewById(rGGAMAA.getCheckedRadioButtonId()));
+                    int indexICAM = rGICAM.indexOfChild(rGICAM.findViewById(rGICAM.getCheckedRadioButtonId()));
+                    int indexAS = rGAS.indexOfChild(rGAS.findViewById(rGAS.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGGDGDL.indexOfChild(rGGDGDL.findViewById(rGGDGDL.getCheckedRadioButtonId()));
+
+                    //A modificar posteriormente
+                    int indexIDV = 0;
+
+                    CondInterveniente2 ci2 = new CondInterveniente2(indexIDV, indexGAMAA, indexICAM,
+                            indexAS, indexGDGDL);
+
+
+                    condint2.add(0, ci2);
+                    parentActivity.setcInterv2(condint2);
+
+
+                    parentActivity.goToConsPassFragment();
+
+                }
+
             }
         });
 
@@ -55,7 +100,28 @@ public class CondInt2 extends Fragment {
         btnAntCondInt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCondInt1Fragment();
+
+                if (rGGAMAA.getCheckedRadioButtonId() == -1 || rGICAM.getCheckedRadioButtonId() == -1 ||
+                        rGAS.getCheckedRadioButtonId() == -1 || rGGDGDL.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    int indexGAMAA = rGGAMAA.indexOfChild(rGGAMAA.findViewById(rGGAMAA.getCheckedRadioButtonId()));
+                    int indexICAM = rGICAM.indexOfChild(rGICAM.findViewById(rGICAM.getCheckedRadioButtonId()));
+                    int indexAS = rGAS.indexOfChild(rGAS.findViewById(rGAS.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGGDGDL.indexOfChild(rGGDGDL.findViewById(rGGDGDL.getCheckedRadioButtonId()));
+
+                    //A modificar posteriormente
+                    int indexIDV = 0;
+
+                    CondInterveniente2 ci2 = new CondInterveniente2(indexIDV, indexGAMAA, indexICAM,
+                            indexAS, indexGDGDL);
+
+
+                    condint2.add(0, ci2);
+
+                    parentActivity.goToCondInt1Fragment();
+                }
             }
         });
 
