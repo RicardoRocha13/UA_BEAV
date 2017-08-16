@@ -8,15 +8,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.ConseqPassageiros;
 
 
 public class ConsPass extends Fragment {
 
     MainActivity parentActivity;
-
+    ArrayList<ConseqPassageiros> conspass;
     private OnConsPassListener mListener;
 
 
@@ -35,7 +42,7 @@ public class ConsPass extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
-
+        conspass = parentActivity.getConsPassageiros();
         super.onCreate(savedInstanceState);
 
     }
@@ -46,11 +53,50 @@ public class ConsPass extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cons_pass, container, false);
 
+        final RadioGroup rGroupSex = (RadioGroup) v.findViewById(R.id.radioGroupSexPa);
+        final EditText eTextIdade = (EditText) v.findViewById(R.id.eTIdade);
+        final RadioGroup rGroupPNV = (RadioGroup) v.findViewById(R.id.radioGroupPNV);
+        final RadioGroup rGroupUDADS = (RadioGroup) v.findViewById(R.id.radioGroupUDADS);
+        final RadioGroup rGroupGDGDL = (RadioGroup) v.findViewById(R.id.radioGroupGDGDL);
+
+        if(conspass.size()>= 1){
+
+            ((RadioButton)rGroupSex.getChildAt(conspass.get(0).genero)).setChecked(true);
+            eTextIdade.setText(String.valueOf(conspass.get(0).idade));
+            ((RadioButton)rGroupPNV.getChildAt(conspass.get(0).posicaoVeiculo)).setChecked(true);
+            ((RadioButton)rGroupUDADS.getChildAt(conspass.get(0).usoAcessorioSeguranca)).setChecked(true);
+            ((RadioButton)rGroupGDGDL.getChildAt(conspass.get(0).grauGraviadeLesoes)).setChecked(true);
+
+        }
+
+
         Button btnSegConsPass = (Button) v.findViewById(R.id.ButtonSegConsPass);
         btnSegConsPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToConsPeoFragment();
+
+                if (eTextIdade.getText().toString().equals("") ||rGroupSex.getCheckedRadioButtonId() == -1
+                        ||rGroupPNV.getCheckedRadioButtonId() == -1 || rGroupUDADS.getCheckedRadioButtonId() == -1
+                        ||rGroupGDGDL.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+                    int indexPNV = rGroupPNV.indexOfChild(rGroupPNV.findViewById(rGroupPNV.getCheckedRadioButtonId()));
+                    int indexUDAS = rGroupUDADS.indexOfChild(rGroupUDADS.findViewById(rGroupUDADS.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
+
+                    //Para modificar no futuro
+                    int indexIDV = 0;
+
+                    ConseqPassageiros cp = new ConseqPassageiros(indexIDV, indexSex, Integer.parseInt(eTextIdade.getText().toString()),
+                            indexPNV, indexUDAS, indexGDGDL);
+
+                    conspass.add(0, cp);
+                    parentActivity.setConsPassageiros(conspass);
+                    parentActivity.goToConsPeoFragment();
+
+                }
+
             }
         });
 
@@ -59,7 +105,29 @@ public class ConsPass extends Fragment {
         btnAntConsPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToCondInt2Fragment();
+
+
+                if (eTextIdade.getText().toString().equals("") ||rGroupSex.getCheckedRadioButtonId() == -1
+                        ||rGroupPNV.getCheckedRadioButtonId() == -1 || rGroupUDADS.getCheckedRadioButtonId() == -1
+                        ||rGroupGDGDL.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+                    int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+                    int indexPNV = rGroupPNV.indexOfChild(rGroupPNV.findViewById(rGroupPNV.getCheckedRadioButtonId()));
+                    int indexUDAS = rGroupUDADS.indexOfChild(rGroupUDADS.findViewById(rGroupUDADS.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
+
+                    //Para modificar no futuro
+                    int indexIDV = 0;
+
+                    ConseqPassageiros cp = new ConseqPassageiros(indexIDV, indexSex, Integer.parseInt(eTextIdade.getText().toString()),
+                            indexPNV, indexUDAS, indexGDGDL);
+
+                    conspass.add(0, cp);
+                    parentActivity.setConsPassageiros(conspass);
+                    parentActivity.goToCondInt2Fragment();
+
+                }
             }
         });
 
