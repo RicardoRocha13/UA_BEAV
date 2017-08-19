@@ -155,6 +155,9 @@ public class CondInt1 extends Fragment {
         });
 
 
+        //quando abre para escrever checkbox
+        //cbOF1.setChecked(true);
+
         return v;
     }
 

@@ -204,7 +204,7 @@ public class CondIntSem extends Fragment {
                     int indexVeiculo = rGroupVI.indexOfChild(rGroupVI.findViewById(rGroupVI.getCheckedRadioButtonId()));
 
 
-                    if (rGroupVI.getCheckedRadioButtonId() == 0) {
+                    if (rGroupCondP.getCheckedRadioButtonId() == R.id.radioButtonCondP1) {
 
                         if (eTextDia.getText().toString().equals("") || rGroupSex.getCheckedRadioButtonId() == -1) {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
