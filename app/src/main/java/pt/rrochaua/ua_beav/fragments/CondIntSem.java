@@ -183,7 +183,6 @@ public class CondIntSem extends Fragment {
             }
         });
 
-
         btnAntCondIntSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
