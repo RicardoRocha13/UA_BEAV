@@ -155,7 +155,7 @@
                     android:id="@+id/eTDia"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:text="Dia"
+                    android:hint="Dia"
                     android:focusable="false"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
@@ -170,7 +170,7 @@
                     android:id="@+id/eTMes"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:text="Mês"
+                    android:hint="Mês"
                     android:focusable="false"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
@@ -185,7 +185,7 @@
                     android:id="@+id/eTAno"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Ano"
+                    android:hint="Ano"
                     android:focusable="false"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 

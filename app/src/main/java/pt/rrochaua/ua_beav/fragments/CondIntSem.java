@@ -152,7 +152,7 @@ public class CondIntSem extends Fragment {
                         e.printStackTrace();
                     }
 
-                    int indexPresente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));int Presente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
+                    int indexPresente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
                     int indexVeiculo = rGroupVI.indexOfChild(rGroupVI.findViewById(rGroupVI.getCheckedRadioButtonId()));
 
 
@@ -161,14 +161,15 @@ public class CondIntSem extends Fragment {
 
                         if (eTextDia.getText().toString().equals("") || rGroupSex.getCheckedRadioButtonId() == -1) {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                        }else {
+                            int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+
+                            SemVitimCondutor SVC = new SemVitimCondutor(indexVeiculo, indexPresente, indexSex, idade);
+
+                            semvitim.add(0, SVC);
+                            parentActivity.setsViti(semvitim);
+                            parentActivity.goToFotoEsquemaFragment();
                         }
-                        int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
-
-                        SemVitimCondutor SVC = new SemVitimCondutor(indexVeiculo, indexPresente, indexSex, idade);
-
-                        semvitim.add(0, SVC);
-                        parentActivity.setsViti(semvitim);
-                        parentActivity.goToFotoEsquemaFragment();
 
                     }else{
                         SemVitim SV = new SemVitim(indexVeiculo, indexPresente);
@@ -178,9 +179,6 @@ public class CondIntSem extends Fragment {
                     }
 
                 }
-
-
-
 
             }
         });
@@ -203,7 +201,7 @@ public class CondIntSem extends Fragment {
                         e.printStackTrace();
                     }
 
-                    int indexPresente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));int Presente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
+                    int indexPresente = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
                     int indexVeiculo = rGroupVI.indexOfChild(rGroupVI.findViewById(rGroupVI.getCheckedRadioButtonId()));
 
 
@@ -211,16 +209,16 @@ public class CondIntSem extends Fragment {
 
                         if (eTextDia.getText().toString().equals("") || rGroupSex.getCheckedRadioButtonId() == -1) {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                        } else {
+                            int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+
+                            SemVitimCondutor SVC = new SemVitimCondutor(indexVeiculo, indexPresente, indexSex, idade);
+
+                            semvitim.add(0, SVC);
+                            parentActivity.setsViti(semvitim);
+
+                            parentActivity.goToForm1Fragment();
                         }
-                        int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
-
-                        SemVitimCondutor SVC = new SemVitimCondutor(indexVeiculo, indexPresente, indexSex, idade);
-
-                        semvitim.add(0, SVC);
-                        parentActivity.setsViti(semvitim);
-
-                        parentActivity.goToForm1Fragment();
-
                     }else{
                         SemVitim SV = new SemVitim(indexVeiculo, indexPresente);
                         semvitim.add(0, SV);
@@ -239,7 +237,7 @@ public class CondIntSem extends Fragment {
         btnSegTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    parentActivity.goToFotoEsquemaFragment();
+                parentActivity.goToFotoEsquemaFragment();
 
             }
         });
