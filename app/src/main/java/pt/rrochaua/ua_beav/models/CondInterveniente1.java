@@ -1,5 +1,6 @@
 package pt.rrochaua.ua_beav.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -8,11 +9,12 @@ import java.util.Date;
 
 public class CondInterveniente1 {
 
-    public int idVeiculo, genero, licencaCarta, testeAlcool, outrosFactores, tempoCondução;
+    public int idVeiculo, genero, licencaCarta, testeAlcool, tempoCondução;
     Date idade;
+    ArrayList<Integer> outrosFactores = new ArrayList<>();
 
     public CondInterveniente1(int idVeiculo, int genero, Date idade, int licencaCarta,
-                              int testeAlcool, int outrosFactores, int tempoCondução){
+                              int testeAlcool, ArrayList<Integer> outrosFactores, int tempoCondução){
 
         this.idVeiculo = idVeiculo;
         this.genero = genero;
