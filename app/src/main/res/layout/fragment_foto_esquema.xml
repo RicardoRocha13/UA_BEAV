@@ -57,7 +57,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text|number"
+                android:inputType="textCapCharacters"
                 android:imeOptions="actionDone"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 

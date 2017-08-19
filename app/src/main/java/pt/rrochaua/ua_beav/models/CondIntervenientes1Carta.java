@@ -1,5 +1,6 @@
 package pt.rrochaua.ua_beav.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ public class CondIntervenientes1Carta extends CondInterveniente1 {
     public int paisEmissao, anoHabilitação;
 
     public CondIntervenientes1Carta(int idVeiculo, int genero, Date idade, int licencaCarta,
-                                    int testeAlcool, int outrosFactores, int tempoCondução,
+                                    int testeAlcool, ArrayList<Integer> outrosFactores, int tempoCondução,
                                     int paisEmissao, int anoHabilitação) {
 
         super(idVeiculo, genero, idade, licencaCarta, testeAlcool, outrosFactores, tempoCondução);

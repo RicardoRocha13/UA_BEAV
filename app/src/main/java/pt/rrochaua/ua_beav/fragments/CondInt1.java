@@ -9,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
@@ -40,34 +43,27 @@ public class CondInt1 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int1, container, false);
 
+        final ArrayList<Integer> checkBOF = new ArrayList<Integer>();
+
         Button btnSegCondInt1 = (Button) v.findViewById(R.id.ButtonSegCondInt1);
-        btnSegCondInt1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parentActivity.goToCondInt2Fragment();
-            }
-        });
-
-
         Button btnAntCondInt1 = (Button) v.findViewById(R.id.ButtonAntCondInt1);
-        btnAntCondInt1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parentActivity.goToVeicInt1Fragment();
-            }
-        });
-
         ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
         final EditText eTHora = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
+        final CheckBox cbOF1 = (CheckBox) v.findViewById(R.id.radioButtonOF1);
+        final CheckBox cbOF2 = (CheckBox) v.findViewById(R.id.radioButtonOF2);
+        final CheckBox cbOF3 = (CheckBox) v.findViewById(R.id.radioButtonOF3);
+        final CheckBox cbOF4 = (CheckBox) v.findViewById(R.id.radioButtonOF4);
+        final CheckBox cbOF5 = (CheckBox) v.findViewById(R.id.radioButtonOF5);
+        final CheckBox cbOF6 = (CheckBox) v.findViewById(R.id.radioButtonOF6);
+
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +99,43 @@ public class CondInt1 extends Fragment {
             }
         });
 
+        btnAntCondInt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                parentActivity.goToVeicInt1Fragment();
+            }
+        });
 
+        btnSegCondInt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(cbOF1.isChecked()){
+                    checkBOF.add(1);
+                }
+                if(cbOF2.isChecked()){
+                    checkBOF.add(2);
+                }
+                if(cbOF3.isChecked()){
+                    checkBOF.add(3);
+                }
+                if(cbOF4.isChecked()){
+                    checkBOF.add(4);
+                }
+                if(cbOF5.isChecked()){
+                    checkBOF.add(5);
+                }
+                if(cbOF6.isChecked()){
+                    checkBOF.add(6);
+                }
+
+                System.out.println("###################");
+                System.out.println(checkBOF);
+                System.out.println("###################");
+
+                parentActivity.goToCondInt2Fragment();
+            }
+        });
 
         Button btnSegTest = (Button) v.findViewById(R.id.ButtonSegTeste);
         btnSegTest.setOnClickListener(new View.OnClickListener() {
