@@ -71,12 +71,13 @@
                 android:textStyle="bold" />
 
 
-                <EditText
-                    android:id="@+id/eTIdade"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
-                    app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+            <EditText
+                android:id="@+id/eTIdade"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
             <TextView
@@ -172,6 +173,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:imeOptions="actionDone"
+                android:text="0.0"
                 android:inputType="numberDecimal" />
 
 

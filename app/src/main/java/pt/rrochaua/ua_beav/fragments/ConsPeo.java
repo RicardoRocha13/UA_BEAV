@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -47,41 +48,76 @@ public class ConsPeo extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cons_peo, container, false);
 
+        final ArrayList<Integer> checkCPF = new ArrayList<Integer>();
 
         final RadioGroup rGroupSexPe = (RadioGroup) v.findViewById(R.id.radioGroupSexPe);
         final EditText eTextIdade = (EditText) v.findViewById(R.id.eTIdade);
         final RadioGroup rGroupPos = (RadioGroup) v.findViewById(R.id.radioGroupPos);
-        final RadioGroup rGroupCPF = (RadioGroup) v.findViewById(R.id.radioGroupCPF);
+        //final RadioGroup rGroupCPF = (RadioGroup) v.findViewById(R.id.radioGroupCPF);
+        final CheckBox cbCPF1 = (CheckBox) v.findViewById(R.id.radioButtonCPF1);
+        final CheckBox cbCPF2 = (CheckBox) v.findViewById(R.id.radioButtonCPF2);
+        final CheckBox cbCPF3 = (CheckBox) v.findViewById(R.id.radioButtonCPF3);
+        final CheckBox cbCPF4 = (CheckBox) v.findViewById(R.id.radioButtonCPF4);
         final EditText eTextTaxa = (EditText) v.findViewById(R.id.eTTaxa);
         final RadioGroup rGroupAco = (RadioGroup) v.findViewById(R.id.radioGroupAco);
         final RadioGroup rGroupUDMR = (RadioGroup) v.findViewById(R.id.radioGroupUDMR);
         final RadioGroup rGroupGDGDL = (RadioGroup) v.findViewById(R.id.radioGroupGDGDL);
 
 
+        //ArrayList<Integer> checkWriteCPF = new ArrayList<Integer>();
+        //checkWriteCPF = conseqpeoes.get(0).condiPsicoFisicas;
+
         if(conseqpeoes.size()>=1){
-            /*
-            if (conseqpeoes.get(0).condiPsicoFisicas==3){
 
-
-            ConseqPeoesAlcool cpa = ((ConseqPeoesAlcool) conseqpeoes.get(0));
-
-            eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
-
-            }
-            */
             ((RadioButton)rGroupSexPe.getChildAt(conseqpeoes.get(0).genero)).setChecked(true);
             ((RadioButton)rGroupPos.getChildAt(conseqpeoes.get(0).posicao)).setChecked(true);
             ((RadioButton)rGroupAco.getChildAt(conseqpeoes.get(0).acoes)).setChecked(true);
             ((RadioButton)rGroupUDMR.getChildAt(conseqpeoes.get(0).utilizacaoMaterialRefletor)).setChecked(true);
             ((RadioButton)rGroupGDGDL.getChildAt(conseqpeoes.get(0).grauGravidadeLesoes)).setChecked(true);
-            //((RadioButton)rGroupCPF.getChildAt(conseqpeoes.get(0).condiPsicoFisicas)).setChecked(true);
             eTextIdade.setText(String.valueOf(conseqpeoes.get(0).idade));
+
+            /*
+
+            for (int k=1; k<=5; k++) {
+                if (checkWriteCPF(k) == 1) {
+
+                    cbCPF1.setChecked(true);
+
+                    eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
+
+                }
+                if (checkWriteCPF(k) == 2) {
+
+                    cbCPF2.setChecked(true);
+
+                    eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
+
+                }
+                if (checkWriteCPF(k) == 3) {
+
+                    cbCPF3.setChecked(true);
+
+                    eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
+
+                }
+                if (checkWriteCPF(k) == 4) {
+
+                    cbCPF4.setChecked(true);
+
+                    eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
+
+                }
+
+            }
+            */
         }
 
 
@@ -94,29 +130,37 @@ public class ConsPeo extends Fragment {
             public void onClick(View v) {
 
                 if (eTextIdade .getText().toString().equals("") || rGroupSexPe.getCheckedRadioButtonId() == -1 ||
-                        rGroupPos.getCheckedRadioButtonId() == -1 || rGroupCPF.getCheckedRadioButtonId() == -1 ||
-                        rGroupAco.getCheckedRadioButtonId() == -1 || rGroupUDMR.getCheckedRadioButtonId() == -1 ||
-                        rGroupGDGDL.getCheckedRadioButtonId() == -1  ) {
+                        rGroupPos.getCheckedRadioButtonId() == -1 || rGroupAco.getCheckedRadioButtonId() == -1 ||
+                        rGroupUDMR.getCheckedRadioButtonId() == -1 || rGroupGDGDL.getCheckedRadioButtonId() == -1 ) {
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {
 
-                    /* Para quando é selecionado a hiipotese de taxa alcoolemia
-                    if () {
-
+                    if(cbCPF1.isChecked()){
+                        checkCPF.add(1);
                     }
-                    */
+                    if(cbCPF2.isChecked()){
+                        checkCPF.add(2);
+                    }
+                    if(cbCPF3.isChecked()){
+                        checkCPF.add(3);
+                    }
+                    if(cbCPF4.isChecked()){
+                        checkCPF.add(4);
+                    }
 
                     int indexSexPe = rGroupSexPe.indexOfChild(rGroupSexPe.findViewById(rGroupSexPe.getCheckedRadioButtonId()));
                     int indexPos = rGroupPos.indexOfChild(rGroupPos.findViewById(rGroupPos.getCheckedRadioButtonId()));
-                    int indexCPF = rGroupCPF.indexOfChild(rGroupCPF.findViewById(rGroupCPF.getCheckedRadioButtonId()));
                     int indexAco = rGroupAco.indexOfChild(rGroupAco.findViewById(rGroupAco.getCheckedRadioButtonId()));
                     int indexUDMR = rGroupUDMR.indexOfChild(rGroupUDMR.findViewById(rGroupUDMR.getCheckedRadioButtonId()));
                     int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
 
-/* Erro na idade e mais uma vez com os checkboxes
+
                     ConseqPeoes CP = new ConseqPeoes(indexSexPe,Integer.parseInt(eTextIdade.getText().toString()),
-                            indexPos, indexAco, indexUDMR, indexGDGDL,  indexCPF);
-*/
+                            indexPos, indexAco, indexUDMR, indexGDGDL, checkCPF, Float.parseFloat(eTextTaxa.getText().toString()));
+
+
+                    conseqpeoes.add(0,CP);
+                    parentActivity.setConsPeoes(conseqpeoes);
 
 
                     parentActivity.goToFotoEsquemaFragment();
@@ -131,7 +175,43 @@ public class ConsPeo extends Fragment {
         btnAntConsPeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToConsPassFragment();
+                if (eTextIdade .getText().toString().equals("") || rGroupSexPe.getCheckedRadioButtonId() == -1 ||
+                        rGroupPos.getCheckedRadioButtonId() == -1 || rGroupAco.getCheckedRadioButtonId() == -1 ||
+                        rGroupUDMR.getCheckedRadioButtonId() == -1 || rGroupGDGDL.getCheckedRadioButtonId() == -1  ) {
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    if(cbCPF1.isChecked()){
+                        checkCPF.add(1);
+                    }
+                    if(cbCPF2.isChecked()){
+                        checkCPF.add(2);
+                    }
+                    if(cbCPF3.isChecked()){
+                        checkCPF.add(3);
+                    }
+                    if(cbCPF4.isChecked()){
+                        checkCPF.add(4);
+                    }
+
+                    int indexSexPe = rGroupSexPe.indexOfChild(rGroupSexPe.findViewById(rGroupSexPe.getCheckedRadioButtonId()));
+                    int indexPos = rGroupPos.indexOfChild(rGroupPos.findViewById(rGroupPos.getCheckedRadioButtonId()));
+                    int indexAco = rGroupAco.indexOfChild(rGroupAco.findViewById(rGroupAco.getCheckedRadioButtonId()));
+                    int indexUDMR = rGroupUDMR.indexOfChild(rGroupUDMR.findViewById(rGroupUDMR.getCheckedRadioButtonId()));
+                    int indexGDGDL = rGroupGDGDL.indexOfChild(rGroupGDGDL.findViewById(rGroupGDGDL.getCheckedRadioButtonId()));
+
+
+                    ConseqPeoes CP = new ConseqPeoes(indexSexPe,Integer.parseInt(eTextIdade.getText().toString()),
+                            indexPos, indexAco, indexUDMR, indexGDGDL, checkCPF, Float.parseFloat(eTextTaxa.getText().toString()));
+
+
+                    conseqpeoes.add(0,CP);
+                    parentActivity.setConsPeoes(conseqpeoes);
+
+
+                    parentActivity.goToConsPassFragment();
+                }
+
             }
         });
 
@@ -157,6 +237,9 @@ public class ConsPeo extends Fragment {
 
         return v;
     }
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
