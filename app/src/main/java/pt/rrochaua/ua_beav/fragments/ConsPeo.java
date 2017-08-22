@@ -72,8 +72,7 @@ public class ConsPeo extends Fragment {
         final RadioGroup rGroupGDGDL = (RadioGroup) v.findViewById(R.id.radioGroupGDGDL);
 
 
-        //ArrayList<Integer> checkWriteCPF = new ArrayList<Integer>();
-        //checkWriteCPF = conseqpeoes.get(0).condiPsicoFisicas;
+        ArrayList<Integer> checkWriteCPF = new ArrayList<Integer>();
 
         if(conseqpeoes.size()>=1){
 
@@ -84,9 +83,12 @@ public class ConsPeo extends Fragment {
             ((RadioButton)rGroupGDGDL.getChildAt(conseqpeoes.get(0).grauGravidadeLesoes)).setChecked(true);
             eTextIdade.setText(String.valueOf(conseqpeoes.get(0).idade));
 
-            /*
+          /*
+            checkWriteCPF = (conseqpeoes.get(0).condiPsicoFisicas).clone();
 
-            for (int k=1; k<=5; k++) {
+
+
+            for (int k=0; k<=checkWriteCPF.size(); k++) {
                 if (checkWriteCPF(k) == 1) {
 
                     cbCPF1.setChecked(true);
@@ -117,7 +119,7 @@ public class ConsPeo extends Fragment {
                 }
 
             }
-            */
+*/
         }
 
 
