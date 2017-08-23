@@ -22,27 +22,27 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
+                 android:gravity="center"
                  android:text="Circunstâncias Externas I\n"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="25sp"
-                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
                  android:id="@+id/textViewPav"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
+                 android:gravity="center"
                  android:text="Características Técnicas da Via"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
-                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nTipo de Via"
                  android:gravity="center"
+                 android:text="\nTipo de Via"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -77,8 +77,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nNº de vias no sentido"
                  android:gravity="center"
+                 android:text="\nNº de vias no sentido"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="16sp"
                  android:textStyle="bold" />
@@ -88,16 +88,16 @@
                  android:layout_width="100dp"
                  android:layout_height="wrap_content"
                  android:ems="10"
-                 android:inputType="number"
                  android:imeOptions="actionDone"
+                 android:inputType="number"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nVia de Trânsito"
                  android:gravity="center"
+                 android:text="\nVia de Trânsito"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -112,8 +112,8 @@
                      android:id="@+id/radioButtonViaT1"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:visibility="gone"
-                     android:text="Esquerda" />
+                     android:text="Esquerda"
+                     android:visibility="gone" />
 
                  <RadioButton
                      android:id="@+id/radioButtonViaT3"
@@ -125,26 +125,26 @@
                      android:id="@+id/radioButtonViaT2"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:visibility="gone"
-                     android:text="Direita" />
+                     android:text="Direita"
+                     android:visibility="gone" />
 
              </RadioGroup>
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
+                 android:gravity="center"
                  android:text="\nTraçado da Via"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
-                 android:gravity="center"
                  android:textStyle="bold" />
 
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Em planta"
                  android:gravity="center"
+                 android:text="Em planta"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -173,8 +173,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nEm Perfil"
                  android:gravity="center"
+                 android:text="\nEm Perfil"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -209,8 +209,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nBerma"
                  android:gravity="center"
+                 android:text="\nBerma"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -245,8 +245,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nSituação do Acidente"
                  android:gravity="center"
+                 android:text="\nSituação do Acidente"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -293,8 +293,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nInterseção de Vias"
                  android:gravity="center"
+                 android:text="\nInterseção de Vias"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -315,8 +315,8 @@
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Em interseção de nível"
                      android:gravity="center"
+                     android:text="Em interseção de nível"
                      android:textStyle="bold" />
 
 
@@ -348,8 +348,8 @@
                  <TextView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Em interseção desnivelada"
                      android:gravity="center"
+                     android:text="Em interseção desnivelada"
                      android:textStyle="bold" />
 
 
@@ -383,8 +383,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nAcidente em Obras de Arte"
                  android:gravity="center"
+                 android:text="\nAcidente em Obras de Arte"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -420,17 +420,17 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
+                 android:gravity="center"
                  android:text="\nRegime de Circulação"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="23sp"
-                 android:gravity="center"
                  android:textStyle="bold" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nFaixa de Rodagem com"
                  android:gravity="center"
+                 android:text="\nFaixa de Rodagem com"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -466,8 +466,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="\nVelocidade permitida no Lanço"
                  android:gravity="center"
+                 android:text="\nVelocidade permitida no Lanço"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="20sp"
                  android:textStyle="bold" />
@@ -475,8 +475,8 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Limite Geral(km/h)"
                  android:gravity="center"
+                 android:text="Limite Geral(km/h)"
                  android:textSize="14sp" />
 
              <EditText
@@ -484,15 +484,15 @@
                  android:layout_width="100dp"
                  android:layout_height="wrap_content"
                  android:ems="10"
-                 android:inputType="number"
                  android:imeOptions="actionDone"
+                 android:inputType="number"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="Limite Local (km/h)"
                  android:gravity="center"
+                 android:text="Limite Local (km/h)"
                  android:textSize="14sp" />
 
              <EditText
@@ -500,8 +500,8 @@
                  android:layout_width="100dp"
                  android:layout_height="wrap_content"
                  android:ems="10"
-                 android:inputType="number"
                  android:imeOptions="actionDone"
+                 android:inputType="number"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
 
@@ -529,14 +529,16 @@
              <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"
+                 android:gravity="center"
                  android:orientation="horizontal"
-                 android:weightSum="1"
-                 android:gravity="center">
+                 android:weightSum="1">
+
                  <Button
                      android:id="@+id/ButtonAntTeste"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:text="Anterior TESTE" />
+
                  <Button
                      android:id="@+id/ButtonSegTeste"
                      android:layout_width="wrap_content"

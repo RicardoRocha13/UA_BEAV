@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,21 +90,23 @@ public class CircExt1 extends Fragment {
         }
 
 
+        eTSemSnVias.setOnClickListener(new View.OnClickListener() {
 
-/*
-        eTSemSnVias.addTextChangedListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if(checkedId >= 2){
-                    rButtonVEsq.setVisibility(View.VISIBLE);
-                    rButtonVDir.setVisibility(View.VISIBLE);
-                } else{
+            public void onClick(View v) {
+
+            if (eTSemSnVias.getText().toString().equals("") || eTSemSnVias.getText().toString().equals("0")
+            || eTSemSnVias.getText().toString().equals("1")) {
                     rButtonVEsq.setVisibility(View.GONE);
                     rButtonVDir.setVisibility(View.GONE);
+                } else {
+                    rButtonVEsq.setVisibility(View.VISIBLE);
+                    rButtonVDir.setVisibility(View.VISIBLE);
                 }
             }
+
         });
-*/
+
 
         Button btnSegCircExt1 = (Button) v.findViewById(R.id.ButtonSegCircExt1);
         btnSegCircExt1.setOnClickListener(new View.OnClickListener() {
