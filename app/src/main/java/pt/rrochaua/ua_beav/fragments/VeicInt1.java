@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 import pt.rrochaua.ua_beav.models.VeicInterveniente;
+import pt.rrochaua.ua_beav.models.VeicIntervinienteMercPerigosa;
 
 
 public class VeicInt1 extends Fragment {
@@ -71,6 +73,30 @@ public class VeicInt1 extends Fragment {
 
 
         if(veicinterveniente.size()>=1){
+            ((RadioButton)rGroupFuga.getChildAt(veicinterveniente.get(0).fuga)).setChecked(true);
+            ((RadioButton)rGroupCat.getChildAt(veicinterveniente.get(0).categoriaClasse)).setChecked(true);
+            ((RadioButton)rGroupTDS.getChildAt(veicinterveniente.get(0).tipoServico)).setChecked(true);
+            eTextADM.setText(String.valueOf(veicinterveniente.get(0).anoMatricula));
+            ((RadioButton)rGroupTMerc.getChildAt(veicinterveniente.get(0).mercadoriasPerigosas)).setChecked(true);
+            ((RadioButton)rGroupCL.getChildAt(veicinterveniente.get(0).cargaLotacao)).setChecked(true);
+            ((RadioButton)rGroupPneu.getChildAt(veicinterveniente.get(0).pneus)).setChecked(true);
+            ((RadioButton)rGroupTaco.getChildAt(veicinterveniente.get(0).tacografo)).setChecked(true);
+            ((RadioButton)rGroupSeg.getChildAt(veicinterveniente.get(0).seguro)).setChecked(true);
+            ((RadioButton)rGroupInPo.getChildAt(veicinterveniente.get(0).incendioPosterior)).setChecked(true);
+            eTextNPass.setText(String.valueOf(veicinterveniente.get(0).nPassageiros));
+            ((RadioButton)rGroupCondP.getChildAt(veicinterveniente.get(0).condutorPresente)).setChecked(true);
+
+        if (veicinterveniente.get(0).mercadoriasPerigosas==0){
+            VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
+            ((RadioButton)rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
+            eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
+        }
+
+
+
+
+
+
 
 
         }
