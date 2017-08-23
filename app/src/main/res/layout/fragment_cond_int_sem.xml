@@ -10,34 +10,33 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:gravity="center">
-
-
+            android:weightSum="1">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Veiculo Interveniente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="25sp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nVeículo"
                 android:gravity="center"
+                android:text="\nVeículo"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,13 +73,14 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="\nCondutor Presente"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:gravity="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCondP"
@@ -104,19 +104,23 @@
 
 
             <TextView
+                android:id="@+id/textViewSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nGénero"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
                 <RadioButton
@@ -135,28 +139,33 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewIdade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nIdade"
                 android:gravity="center"
+                android:text="\nIdade"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+
+                android:visibility="gone" />
 
 
             <LinearLayout
+                android:id="@+id/linearlayoutIdade"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:visibility="gone"
+                android:weightSum="1">
 
                 <EditText
                     android:id="@+id/eTDia"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:hint="Dia"
                     android:focusable="false"
+                    android:hint="Dia"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
                 <TextView
@@ -170,8 +179,8 @@
                     android:id="@+id/eTMes"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:hint="Mês"
                     android:focusable="false"
+                    android:hint="Mês"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
 
                 <TextView
@@ -185,10 +194,9 @@
                     android:id="@+id/eTAno"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:hint="Ano"
                     android:focusable="false"
+                    android:hint="Ano"
                     app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
-
 
 
                 <ImageButton
@@ -196,20 +204,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/UAgreenLetters"
-                    android:src="@mipmap/ic_launcher_today"  />
+                    android:src="@mipmap/ic_launcher_today" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntCondIntSem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior" />
+
                 <Button
                     android:id="@+id/ButtonSegCondIntSem"
                     android:layout_width="wrap_content"
@@ -221,14 +232,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntTeste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior TESTE" />
+
                 <Button
                     android:id="@+id/ButtonSegTeste"
                     android:layout_width="wrap_content"

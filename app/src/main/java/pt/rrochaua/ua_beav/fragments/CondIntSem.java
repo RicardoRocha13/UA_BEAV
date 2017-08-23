@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -68,9 +71,15 @@ public class CondIntSem extends Fragment {
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
+        final LinearLayout linearlayoutIdade = (LinearLayout) v.findViewById(R.id.linearlayoutIdade);
+        final TextView textViewSex = (TextView) v.findViewById(R.id.textViewSex);
+        final RadioGroup radioGroupSex = (RadioGroup) v.findViewById(R.id.radioGroupSex);
+        final TextView textViewIdade = (TextView) v.findViewById(R.id.textViewIdade);
+
 
         Button btnSegCondIntSem = (Button) v.findViewById(R.id.ButtonSegCondIntSem);
         Button btnAntCondIntSem = (Button) v.findViewById(R.id.ButtonAntCondIntSem);
+
 
 
         final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -90,6 +99,10 @@ public class CondIntSem extends Fragment {
                 eTextAno.setText(String.valueOf(cal.get(Calendar.YEAR)));
                 //mudei isto
                 ((RadioButton)rGroupSex.getChildAt(svc.genero)).setChecked(true);
+                linearlayoutIdade.setVisibility(View.VISIBLE);
+                textViewSex.setVisibility(View.VISIBLE);
+                radioGroupSex.setVisibility(View.VISIBLE);
+                textViewIdade.setVisibility(View.VISIBLE);
 
 
             }
@@ -101,6 +114,22 @@ public class CondIntSem extends Fragment {
         }
 
 
+        rGroupCondP.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonCondP1){
+                    linearlayoutIdade.setVisibility(View.VISIBLE);
+                    textViewSex.setVisibility(View.VISIBLE);
+                    radioGroupSex.setVisibility(View.VISIBLE);
+                    textViewIdade.setVisibility(View.VISIBLE);
+                } else{
+                    linearlayoutIdade.setVisibility(View.GONE);
+                    textViewSex.setVisibility(View.GONE);
+                    radioGroupSex.setVisibility(View.GONE);
+                    textViewIdade.setVisibility(View.GONE);
+                }
+            }
+        });
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {
             @Override
