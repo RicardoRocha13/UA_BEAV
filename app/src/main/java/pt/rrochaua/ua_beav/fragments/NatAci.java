@@ -63,9 +63,26 @@ public class NatAci extends Fragment {
         final int acidente = form1.get(0).naturezaAcidente;
 
         if(nataci.size()>= 1){
-            ((RadioButton)rGroupDesp.getChildAt(nataci.get(0).despiste)).setChecked(true);
-            ((RadioButton)rGroupCol.getChildAt(nataci.get(0).colisao)).setChecked(true);
-            ((RadioButton)rGroupAtro.getChildAt(nataci.get(0).atropelamento)).setChecked(true);
+            if(acidente == 0){
+
+                ((RadioButton)rGroupDesp.getChildAt(nataci.get(0).despiste)).setChecked(true);
+
+            }
+            if(acidente == 1){
+
+                ((RadioButton)rGroupCol.getChildAt(nataci.get(0).colisao)).setChecked(true);
+
+            }
+            if(acidente == 2){
+
+                ((RadioButton)rGroupAtro.getChildAt(nataci.get(0).atropelamento)).setChecked(true);
+
+            }
+
+
+
+
+
         }
 
 
@@ -95,15 +112,43 @@ public class NatAci extends Fragment {
                         rGroupAtro.getCheckedRadioButtonId() == -1){
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {
-                    int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
-                    int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
-                    int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
 
-                    NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+                    if(acidente == 0){
+                        int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
+                        int indexCol = 99;
+                        int indexAtro = 99;
 
-                    nataci.add(0,NA);
-                    parentActivity.setNatuAcidente(nataci);
-                    parentActivity.goToVeicInt1Fragment();
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToVeicInt1Fragment();
+                    }
+                    if(acidente == 1){
+                        int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
+                        int indexDesp = 99;
+                        int indexAtro = 99;
+
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToVeicInt1Fragment();
+                    }
+                    if(acidente == 2){
+                        int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
+                        int indexDesp = 99;
+                        int indexCol = 99;
+
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToVeicInt1Fragment();
+                    }
+
+
+
                 }
 
             }
@@ -116,19 +161,43 @@ public class NatAci extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (rGroupDesp.getCheckedRadioButtonId() == -1 || rGroupCol.getCheckedRadioButtonId() == -1 ||
+                if (rGroupDesp.getCheckedRadioButtonId() == -1 & rGroupCol.getCheckedRadioButtonId() == -1 &
                         rGroupAtro.getCheckedRadioButtonId() == -1){
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {
-                    int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
-                    int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
-                    int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
+                    if(acidente == 0){
+                        int indexDesp = rGroupDesp.indexOfChild(rGroupDesp.findViewById(rGroupDesp.getCheckedRadioButtonId()));
+                        int indexCol = 99;
+                        int indexAtro = 99;
 
-                    NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
 
-                    nataci.add(0,NA);
-                    parentActivity.setNatuAcidente(nataci);
-                    parentActivity.goToCircExt2Fragment();
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToCircExt2Fragment();
+                    }
+                    if(acidente == 1){
+                        int indexCol = rGroupCol.indexOfChild(rGroupCol.findViewById(rGroupCol.getCheckedRadioButtonId()));
+                        int indexDesp = 99;
+                        int indexAtro = 99;
+
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToCircExt2Fragment();
+                    }
+                    if(acidente == 2){
+                        int indexAtro = rGroupAtro.indexOfChild(rGroupAtro.findViewById(rGroupAtro.getCheckedRadioButtonId()));
+                        int indexDesp = 99;
+                        int indexCol = 99;
+
+                        NatuAcidente NA = new NatuAcidente(indexDesp, indexCol, indexAtro);
+
+                        nataci.add(0,NA);
+                        parentActivity.setNatuAcidente(nataci);
+                        parentActivity.goToCircExt2Fragment();
+                    }
                 }
 
             }

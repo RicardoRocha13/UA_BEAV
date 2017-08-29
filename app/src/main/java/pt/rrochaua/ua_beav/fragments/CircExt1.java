@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -67,6 +68,8 @@ public class CircExt1 extends Fragment {
         final EditText eTLimG  = (EditText) v.findViewById(R.id.editTextLimG);
         final EditText eTLimL  = (EditText) v.findViewById(R.id.editTextLimL);
 
+        ImageButton  btnRefresh =(ImageButton) v.findViewById(R.id.btnRefresh);
+
         final RadioButton rButtonVEsq = (RadioButton) v.findViewById(R.id.radioButtonViaT1);
         final RadioButton rButtonVDir = (RadioButton) v.findViewById(R.id.radioButtonViaT2);
 
@@ -90,7 +93,7 @@ public class CircExt1 extends Fragment {
         }
 
 
-        eTSemSnVias.setOnClickListener(new View.OnClickListener() {
+        btnRefresh.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
