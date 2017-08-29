@@ -16,12 +16,14 @@ import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.Form1Model;
 import pt.rrochaua.ua_beav.models.NatuAcidente;
 
 
 public class NatAci extends Fragment {
     MainActivity parentActivity;
     ArrayList<NatuAcidente> nataci;
+    ArrayList<Form1Model> form1;
     private OnNatAciListener mListener;
 
 
@@ -43,6 +45,8 @@ public class NatAci extends Fragment {
         parentActivity = (MainActivity) this.getActivity();
         super.onCreate(savedInstanceState);
         nataci = parentActivity.getNatuAcidente();
+        form1 = parentActivity.getForm1();
+
     }
 
     @Override
@@ -56,22 +60,38 @@ public class NatAci extends Fragment {
         final RadioGroup rGroupCol = (RadioGroup) v.findViewById(R.id.radioGroupCol);
         final RadioGroup rGroupAtro = (RadioGroup) v.findViewById(R.id.radioGroupAtro);
 
-
+        final int acidente = form1.get(0).naturezaAcidente;
 
         if(nataci.size()>= 1){
             ((RadioButton)rGroupDesp.getChildAt(nataci.get(0).despiste)).setChecked(true);
             ((RadioButton)rGroupCol.getChildAt(nataci.get(0).colisao)).setChecked(true);
             ((RadioButton)rGroupAtro.getChildAt(nataci.get(0).atropelamento)).setChecked(true);
-
-
         }
+
+
+        if(acidente == 0){
+            rGroupDesp.setVisibility(View.VISIBLE);
+            rGroupCol.setVisibility(View.GONE);
+            rGroupAtro.setVisibility(View.GONE);
+        }
+        if(acidente == 1){
+            rGroupDesp.setVisibility(View.GONE);
+            rGroupCol.setVisibility(View.VISIBLE);
+            rGroupAtro.setVisibility(View.GONE);
+        }
+        if(acidente == 2){
+            rGroupDesp.setVisibility(View.GONE);
+            rGroupCol.setVisibility(View.GONE);
+            rGroupAtro.setVisibility(View.VISIBLE);
+        }
+
 
         Button btnSegNatAci = (Button) v.findViewById(R.id.ButtonSegNatAci);
         btnSegNatAci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (rGroupDesp.getCheckedRadioButtonId() == -1 || rGroupCol.getCheckedRadioButtonId() == -1 ||
+                if (rGroupDesp.getCheckedRadioButtonId() == -1 & rGroupCol.getCheckedRadioButtonId() == -1 &
                         rGroupAtro.getCheckedRadioButtonId() == -1){
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {

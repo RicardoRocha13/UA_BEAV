@@ -28,6 +28,16 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
+
+            <ImageButton
+                android:id="@+id/btnRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/UAgreenLetters"
+                android:src="@mipmap/ic_launcher_refresh"
+                app:layout_constraintTop_toBottomOf="@+id/eTAno" />
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,14 +45,15 @@
                 android:text="\nDespiste"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupDesp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
+                app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc"
+                android:visibility="gone">
 
                 <RadioButton
                     android:id="@+id/radioButtonDesp1"
@@ -99,12 +110,13 @@
                 android:text="\nColisão"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
 
                 <RadioButton
@@ -162,12 +174,13 @@
                 android:text="\nAtropelamento"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupAtro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewNatAc">
 
                 <RadioButton
