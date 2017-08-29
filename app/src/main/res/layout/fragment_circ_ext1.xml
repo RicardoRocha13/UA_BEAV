@@ -78,11 +78,18 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:gravity="center"
-                 android:text="\nNº de vias no sentido"
+                 android:text="\nNº de vias no sentido\n"
                  android:textColor="@color/UAgreenLetters"
                  android:textSize="16sp"
                  android:textStyle="bold" />
 
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             android:orientation="horizontal"
+             android:weightSum="1">
              <EditText
                  android:id="@+id/editTextSemSnVias"
                  android:layout_width="100dp"
@@ -91,6 +98,16 @@
                  android:imeOptions="actionDone"
                  android:inputType="number"
                  app:layout_constraintLeft_toLeftOf="@+id/textViewPav" />
+
+             <ImageButton
+                 android:id="@+id/btnRefresh"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@color/UAgreenLetters"
+                 android:src="@mipmap/ic_launcher_refresh"
+                 app:layout_constraintTop_toBottomOf="@+id/eTAno" />
+
+         </LinearLayout>
 
 
              <TextView
