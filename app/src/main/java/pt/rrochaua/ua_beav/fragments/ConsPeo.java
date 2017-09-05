@@ -83,34 +83,31 @@ public class ConsPeo extends Fragment {
             ((RadioButton)rGroupGDGDL.getChildAt(conseqpeoes.get(0).grauGravidadeLesoes)).setChecked(true);
             eTextIdade.setText(String.valueOf(conseqpeoes.get(0).idade));
 
-          /*
-            checkWriteCPF = (conseqpeoes.get(0).condiPsicoFisicas).clone();
+            checkWriteCPF = conseqpeoes.get(0).condiPsicoFisicas;
 
-
-
-            for (int k=0; k<=checkWriteCPF.size(); k++) {
-                if (checkWriteCPF(k) == 1) {
+            for (int k=0; k<checkWriteCPF.size(); k++) {
+                if (checkWriteCPF.get(k) == 1) {
 
                     cbCPF1.setChecked(true);
 
                     eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
 
                 }
-                if (checkWriteCPF(k) == 2) {
+                if (checkWriteCPF.get(k) == 2) {
 
                     cbCPF2.setChecked(true);
 
                     eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
 
                 }
-                if (checkWriteCPF(k) == 3) {
+                if (checkWriteCPF.get(k) == 3) {
 
                     cbCPF3.setChecked(true);
 
                     eTextTaxa.setText(String.valueOf(conseqpeoes.get(0).taxaAlcolemia));
 
                 }
-                if (checkWriteCPF(k) == 4) {
+                if (checkWriteCPF.get(k) == 4) {
 
                     cbCPF4.setChecked(true);
 
@@ -119,7 +116,7 @@ public class ConsPeo extends Fragment {
                 }
 
             }
-*/
+
         }
 
 
