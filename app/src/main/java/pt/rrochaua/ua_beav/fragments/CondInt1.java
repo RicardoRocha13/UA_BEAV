@@ -13,16 +13,18 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.CondInterveniente1;
 
 
 public class CondInt1 extends Fragment {
     MainActivity parentActivity;
-
+    ArrayList<CondInterveniente1> condint1;
     private OnCondInt1Listener mListener;
 
     public CondInt1() {
@@ -39,6 +41,7 @@ public class CondInt1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         parentActivity = (MainActivity) this.getActivity();
+        condint1 = parentActivity.getcInterv1();
         super.onCreate(savedInstanceState);
     }
 
@@ -51,12 +54,24 @@ public class CondInt1 extends Fragment {
 
         Button btnSegCondInt1 = (Button) v.findViewById(R.id.ButtonSegCondInt1);
         Button btnAntCondInt1 = (Button) v.findViewById(R.id.ButtonAntCondInt1);
+
+
+        final RadioGroup rGroupSex = (RadioGroup) v.findViewById(R.id.radioGroupSex);
         ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
+        final RadioGroup rGroupLic = (RadioGroup) v.findViewById(R.id.radioGroupLCDC);
+        final EditText eTextLig = (EditText) v.findViewById(R.id.editTextLig);
+        final EditText eTextAnoHab = (EditText) v.findViewById(R.id.editTextAnoHab);
+        final RadioGroup rGroupCDNDA = (RadioGroup) v.findViewById(R.id.radioGroupCDNDA);
+        final EditText eTextPes = (EditText) v.findViewById(R.id.editTextPes);
+        final RadioGroup rGroupTDCC = (RadioGroup) v.findViewById(R.id.radioGroupTDCC);
+
         final EditText eTextDia = (EditText) v.findViewById(R.id.eTDia);
         final EditText eTextMes = (EditText) v.findViewById(R.id.eTMes);
         final EditText eTextAno = (EditText) v.findViewById(R.id.eTAno);
         final EditText eTHora = (EditText) v.findViewById(R.id.eTHora);
         final EditText eTMin = (EditText) v.findViewById(R.id.eTMin);
+
+
         final CheckBox cbOF1 = (CheckBox) v.findViewById(R.id.radioButtonOF1);
         final CheckBox cbOF2 = (CheckBox) v.findViewById(R.id.radioButtonOF2);
         final CheckBox cbOF3 = (CheckBox) v.findViewById(R.id.radioButtonOF3);
@@ -64,6 +79,53 @@ public class CondInt1 extends Fragment {
         final CheckBox cbOF5 = (CheckBox) v.findViewById(R.id.radioButtonOF5);
         final CheckBox cbOF6 = (CheckBox) v.findViewById(R.id.radioButtonOF6);
 
+        ArrayList<Integer> checkWriteOF = new ArrayList<Integer>();
+
+        if(condint1.size()>=1){
+
+
+
+
+
+
+
+
+
+            checkWriteOF = condint1.get(0).outrosFactores;
+
+            for (int k=0; k<checkWriteOF.size(); k++) {
+                if (checkWriteOF.get(k) == 1) {
+
+                    cbOF1.setChecked(true);
+
+                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
+
+                }
+                if (checkWriteOF.get(k) == 2) {
+
+                    cbOF2.setChecked(true);
+
+                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
+
+                }
+                if (checkWriteOF.get(k) == 3) {
+
+                    cbOF3.setChecked(true);
+
+                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
+
+                }
+                if (checkWriteOF.get(k) == 4) {
+
+                    cbOF4.setChecked(true);
+
+                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
+
+                }
+
+            }
+
+        }
 
 
         btnChangeDate.setOnClickListener(new View.OnClickListener() {

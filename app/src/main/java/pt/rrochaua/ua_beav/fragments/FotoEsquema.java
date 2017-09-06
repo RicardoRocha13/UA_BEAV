@@ -8,14 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.ArrayList;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
+import pt.rrochaua.ua_beav.models.FotosEsquemas;
 
 
 public class FotoEsquema extends Fragment {
     MainActivity parentActivity;
     private OnFotoEsquemaListener mListener;
+    ArrayList<FotosEsquemas> fotoesquema;
+
 
     public FotoEsquema() {
         // Required empty public constructor
@@ -31,6 +37,7 @@ public class FotoEsquema extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         parentActivity = (MainActivity) this.getActivity();
+        fotoesquema = parentActivity.getFotosEsquemas();
     }
 
 
@@ -41,6 +48,18 @@ public class FotoEsquema extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_foto_esquema, container, false);
+
+        final EditText eTextEsquema = (EditText) v.findViewById(R.id.editTextEsq);
+        String sFotos;
+
+
+
+        if(fotoesquema.size()>=1){
+
+            eTextEsquema.setText(String.valueOf(fotoesquema.get(0).esquemas));
+            sFotos = String.valueOf(fotoesquema.get(0).fotos);
+        }
+
 
 
         Button btnFormSegFotoEsquema = (Button) v.findViewById(R.id.ButtonSegFotoEsquema);
