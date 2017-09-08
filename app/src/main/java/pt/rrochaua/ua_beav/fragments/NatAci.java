@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -54,6 +57,7 @@ public class NatAci extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+
         final View v = inflater.inflate(R.layout.fragment_nat_aci, container, false);
 
         final RadioGroup rGroupDesp = (RadioGroup) v.findViewById(R.id.radioGroupDesp);
@@ -90,6 +94,7 @@ public class NatAci extends Fragment {
             rGroupDesp.setVisibility(View.VISIBLE);
             rGroupCol.setVisibility(View.GONE);
             rGroupAtro.setVisibility(View.GONE);
+
         }
         if(acidente == 1){
             rGroupDesp.setVisibility(View.GONE);
