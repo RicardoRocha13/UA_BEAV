@@ -13,9 +13,12 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
@@ -79,18 +82,21 @@ public class CondInt1 extends Fragment {
         final CheckBox cbOF5 = (CheckBox) v.findViewById(R.id.radioButtonOF5);
         final CheckBox cbOF6 = (CheckBox) v.findViewById(R.id.radioButtonOF6);
 
+        //ArrayList para obter os dados para radioGroupOF
         ArrayList<Integer> checkWriteOF = new ArrayList<Integer>();
 
         if(condint1.size()>=1){
 
-
-
-
-
-
-
-
-
+            ((RadioButton)rGroupSex.getChildAt(condint1.get(0).genero)).setChecked(true);
+            Date data = condint1.get(0).idade;
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(data);
+            eTextDia.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+            int mes = cal.get(Calendar.MONTH)+1;
+            eTextMes.setText(String.valueOf(mes));
+            eTextAno.setText(String.valueOf(cal.get(Calendar.YEAR)));
+            ((RadioButton)rGroupLic.getChildAt(condint1.get(0).licencaCarta)).setChecked(true);
+            ((RadioButton)rGroupCDNDA.getChildAt(condint1.get(0).testeAlcool)).setChecked(true);
             checkWriteOF = condint1.get(0).outrosFactores;
 
             for (int k=0; k<checkWriteOF.size(); k++) {
@@ -122,6 +128,9 @@ public class CondInt1 extends Fragment {
                     eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
 
                 }
+
+                ((RadioButton)rGroupTDCC.getChildAt(condint1.get(0).tempoCondução)).setChecked(true);
+
 
             }
 

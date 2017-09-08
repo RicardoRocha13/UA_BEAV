@@ -11,8 +11,8 @@ public class CondInterveniente1 {
 
     public int idVeiculo, genero, licencaCarta, testeAlcool, tempoCondução;
     public float valorAlcool;
-    Date idade;
     public ArrayList<Integer> outrosFactores = new ArrayList<>();
+    public Date idade;
 
     public CondInterveniente1(int idVeiculo, int genero, Date idade, int licencaCarta,
                               int testeAlcool, ArrayList<Integer> outrosFactores, int tempoCondução){
