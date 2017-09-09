@@ -15,7 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,6 +26,9 @@ import java.util.Date;
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 import pt.rrochaua.ua_beav.models.CondInterveniente1;
+import pt.rrochaua.ua_beav.models.CondInterveniente1CartaTeste;
+import pt.rrochaua.ua_beav.models.CondInterveniente1Teste;
+import pt.rrochaua.ua_beav.models.CondIntervenientes1Carta;
 
 
 public class CondInt1 extends Fragment {
@@ -85,6 +91,10 @@ public class CondInt1 extends Fragment {
         //ArrayList para obter os dados para radioGroupOF
         ArrayList<Integer> checkWriteOF = new ArrayList<Integer>();
 
+
+        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+
         if(condint1.size()>=1){
 
             ((RadioButton)rGroupSex.getChildAt(condint1.get(0).genero)).setChecked(true);
@@ -104,32 +114,57 @@ public class CondInt1 extends Fragment {
 
                     cbOF1.setChecked(true);
 
-                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
+
 
                 }
                 if (checkWriteOF.get(k) == 2) {
 
                     cbOF2.setChecked(true);
 
-                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
 
                 }
                 if (checkWriteOF.get(k) == 3) {
 
                     cbOF3.setChecked(true);
 
-                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
-
                 }
                 if (checkWriteOF.get(k) == 4) {
 
                     cbOF4.setChecked(true);
 
-                    eTextPes.setText(String.valueOf(condint1.get(0).valorAlcool));
 
                 }
 
                 ((RadioButton)rGroupTDCC.getChildAt(condint1.get(0).tempoCondução)).setChecked(true);
+
+
+                if (condint1.get(0).testeAlcool==0){
+
+                    CondInterveniente1Teste ci1t = ((CondInterveniente1Teste)condint1.get(0));
+
+                    eTextPes.setText(String.valueOf(ci1t.get(0).valorAlcool));
+
+                }
+
+                if (condint1.get(0).licencaCarta==0){
+
+                    CondIntervenientes1Carta ci1c = ((CondIntervenientes1Carta)condint1.get(0));
+
+                    eTextLig.setText(String.valueOf(ci1c.get(0).paisEmissao));
+                    eTextAnoHab.setText(String.valueOf(ci1c.get(0).anoHabilitação));
+
+
+                    if (condint1.get(0).testeAlcool==0){
+
+                        CondInterveniente1CartaTeste ci1ct = ((CondInterveniente1CartaTeste)condint1.get(0));
+
+                        eTextPes.setText(String.valueOf(ci1ct.get(0).valorAlcool));
+
+                    }
+
+
+                }
+
 
 
             }
@@ -181,30 +216,120 @@ public class CondInt1 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(cbOF1.isChecked()){
-                    checkBOF.add(1);
-                }
-                if(cbOF2.isChecked()){
-                    checkBOF.add(2);
-                }
-                if(cbOF3.isChecked()){
-                    checkBOF.add(3);
-                }
-                if(cbOF4.isChecked()){
-                    checkBOF.add(4);
-                }
-                if(cbOF5.isChecked()){
-                    checkBOF.add(5);
-                }
-                if(cbOF6.isChecked()){
-                    checkBOF.add(6);
-                }
 
-                System.out.println("###################");
-                System.out.println(checkBOF);
-                System.out.println("###################");
+                final EditText eTextLig = (EditText) v.findViewById(R.id.editTextLig);
+                final EditText eTextAnoHab = (EditText) v.findViewById(R.id.editTextAnoHab);
+                final EditText eTextPes = (EditText) v.findViewById(R.id.editTextPes);
 
-                parentActivity.goToCondInt2Fragment();
+
+                if(rGroupSex.getCheckedRadioButtonId() == -1 || rGroupLic.getCheckedRadioButtonId() == -1 ||
+                    eTextDia.getText().toString().equals("") || rGroupCDNDA.getCheckedRadioButtonId() == -1 ||
+                        rGroupTDCC.getCheckedRadioButtonId() == -1 ){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    int idveiculo = 0;
+
+
+                    Date idade = null;
+                    try {
+                        idade = sdf.parse(eTextDia.getText().toString() + "/" + eTextMes.getText().toString() + "/" + eTextAno.getText().toString() +
+                                " " );
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+                    int indexLicença = rGroupLic.indexOfChild(rGroupLic.findViewById(rGroupLic.getCheckedRadioButtonId()));
+                    int indexCDNDA = rGroupCDNDA.indexOfChild(rGroupCDNDA.findViewById(rGroupCDNDA.getCheckedRadioButtonId()));
+                    int indexTDCC = rGroupTDCC.indexOfChild(rGroupTDCC.findViewById(rGroupTDCC.getCheckedRadioButtonId()));
+
+
+                    if (cbOF1.isChecked()) {
+                        checkBOF.add(1);
+                    }
+                    if (cbOF2.isChecked()) {
+                        checkBOF.add(2);
+                    }
+                    if (cbOF3.isChecked()) {
+                        checkBOF.add(3);
+                    }
+                    if (cbOF4.isChecked()) {
+                        checkBOF.add(4);
+                    }
+                    if (cbOF5.isChecked()) {
+                        checkBOF.add(5);
+                    }
+                    if (cbOF6.isChecked()) {
+                        checkBOF.add(6);
+                    }
+
+
+                    if (rGroupLic.getCheckedRadioButtonId() == R.id.radioButtonLCDC1) {
+
+                        if (eTextAnoHab.getText().toString().equals("") || eTextLig.getText().toString().equals("")) {
+                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                        }else {
+                            int indexAnoHab = Integer.parseInt(eTextAnoHab.getText().toString());
+                            int indexLig = Integer.parseInt(eTextLig.getText().toString());
+
+                            if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
+                                if (eTextPes.getText().toString().equals("")){
+                                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    int indexPes = Integer.parseInt(eTextPes.getText().toString());
+                                    CondInterveniente1CartaTeste ci1ct = new CondInterveniente1CartaTeste (idveiculo, indexSex, idade,
+                                            indexLicença, indexCDNDA, checkBOF, indexTDCC, indexLig, indexAnoHab, indexPes);
+
+                                    condint1.add(0,ci1ct);
+                                    parentActivity.setcInterv1(condint1);
+                                    parentActivity.goToCondInt2Fragment();
+                                }
+
+                            }else{
+                                CondIntervenientes1Carta ci1c = new CondIntervenientes1Carta (idveiculo, indexSex, idade,
+                                        indexLicença, indexCDNDA, checkBOF, indexTDCC, indexLig, indexAnoHab);
+
+                                condint1.add(0,ci1c);
+                                parentActivity.setcInterv1(condint1);
+                                parentActivity.goToCondInt2Fragment();
+
+                            }
+
+
+
+
+
+                        }
+
+                    } else {
+                        if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
+                            if (eTextPes.getText().toString().equals("")){
+                                Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                            } else {
+                                int indexPes = Integer.parseInt(eTextPes.getText().toString());
+                                CondInterveniente1Teste ci1t = new CondInterveniente1Teste (idveiculo, indexSex, idade,
+                                        indexLicença, indexCDNDA, checkBOF, indexTDCC, indexPes);
+
+                                condint1.add(0,ci1t);
+                                parentActivity.setcInterv1(condint1);
+                                parentActivity.goToCondInt2Fragment();
+                            }
+
+                        }else{
+                            CondInterveniente1 ci1 = new CondInterveniente1 (idveiculo, indexSex, idade,
+                                    indexLicença, indexCDNDA, checkBOF, indexTDCC);
+
+                            condint1.add(0,ci1);
+                            parentActivity.setcInterv1(condint1);
+                            parentActivity.goToCondInt2Fragment();
+
+                        }
+
+                    }
+
+                }
             }
         });
 

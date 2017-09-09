@@ -330,7 +330,6 @@
                 android:imeOptions="actionDone"
                 android:inputType="numberDecimal" />
 
-
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
@@ -342,7 +341,7 @@
                 android:textStyle="bold" />
 
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
                 android:id="@+id/radioGroupOF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -386,6 +385,7 @@
                     android:text="Fadiga" />
 
             </RadioGroup>
+
 
 
             <TextView

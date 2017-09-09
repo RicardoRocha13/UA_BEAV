@@ -10,7 +10,6 @@ import java.util.Date;
 public class CondInterveniente1 {
 
     public int idVeiculo, genero, licencaCarta, testeAlcool, tempoCondução;
-    public float valorAlcool;
     public ArrayList<Integer> outrosFactores = new ArrayList<>();
     public Date idade;
 
