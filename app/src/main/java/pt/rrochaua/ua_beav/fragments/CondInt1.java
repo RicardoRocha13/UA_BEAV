@@ -231,11 +231,6 @@ public class CondInt1 extends Fragment {
             public void onClick(View v) {
 
 
-                final EditText eTextLig = (EditText) v.findViewById(R.id.editTextLig);
-                final EditText eTextAnoHab = (EditText) v.findViewById(R.id.editTextAnoHab);
-                final EditText eTextPes = (EditText) v.findViewById(R.id.editTextPes);
-
-
                 if(rGroupSex.getCheckedRadioButtonId() == -1 || rGroupLic.getCheckedRadioButtonId() == -1 ||
                     eTextDia.getText().toString().equals("") || rGroupCDNDA.getCheckedRadioButtonId() == -1 ||
                         rGroupTDCC.getCheckedRadioButtonId() == -1 ){
