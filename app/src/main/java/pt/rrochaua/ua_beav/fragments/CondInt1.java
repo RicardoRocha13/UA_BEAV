@@ -42,6 +42,7 @@ public class CondInt1 extends Fragment {
     }
 
 
+
     // TODO: Rename and change types and number of parameters
     public static CondInt1 newInstance() {
         CondInt1 fragment = new CondInt1();
