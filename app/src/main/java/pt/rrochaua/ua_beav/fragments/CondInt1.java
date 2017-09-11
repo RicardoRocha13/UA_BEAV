@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -115,7 +116,6 @@ public class CondInt1 extends Fragment {
                     cbOF1.setChecked(true);
 
 
-
                 }
                 if (checkWriteOF.get(k) == 2) {
 
@@ -135,6 +135,19 @@ public class CondInt1 extends Fragment {
 
                 }
 
+                if (checkWriteOF.get(k) == 5) {
+
+                    cbOF5.setChecked(true);
+
+                }
+                if (checkWriteOF.get(k) == 6) {
+
+                    cbOF6.setChecked(true);
+
+
+                }
+            }
+
                 ((RadioButton)rGroupTDCC.getChildAt(condint1.get(0).tempoCondução)).setChecked(true);
 
 
@@ -142,7 +155,8 @@ public class CondInt1 extends Fragment {
 
                     CondInterveniente1Teste ci1t = ((CondInterveniente1Teste)condint1.get(0));
 
-                    eTextPes.setText(String.valueOf(ci1t.get(0).valorAlcool));
+                    eTextPes.setText(String.valueOf(ci1t.valorAlcool));
+
 
                 }
 
@@ -150,15 +164,15 @@ public class CondInt1 extends Fragment {
 
                     CondIntervenientes1Carta ci1c = ((CondIntervenientes1Carta)condint1.get(0));
 
-                    eTextLig.setText(String.valueOf(ci1c.get(0).paisEmissao));
-                    eTextAnoHab.setText(String.valueOf(ci1c.get(0).anoHabilitação));
+                    eTextLig.setText(String.valueOf(ci1c.paisEmissao));
+                    eTextAnoHab.setText(String.valueOf(ci1c.anoHabilitação));
 
 
                     if (condint1.get(0).testeAlcool==0){
 
                         CondInterveniente1CartaTeste ci1ct = ((CondInterveniente1CartaTeste)condint1.get(0));
 
-                        eTextPes.setText(String.valueOf(ci1ct.get(0).valorAlcool));
+                        eTextPes.setText(String.valueOf(ci1ct.valorAlcool));
 
                     }
 
@@ -167,7 +181,7 @@ public class CondInt1 extends Fragment {
 
 
 
-            }
+
 
         }
 

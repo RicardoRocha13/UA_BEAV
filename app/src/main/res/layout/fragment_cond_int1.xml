@@ -167,7 +167,7 @@
                     android:id="@+id/radioButtonLCDC3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Em stiaução de instrução/exame" />
+                    android:text="Em sitauação de instrução/exame" />
 
                 <RadioButton
                     android:id="@+id/radioButtonLCDC4"
