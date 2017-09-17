@@ -97,8 +97,6 @@ public class VeicInt1 extends Fragment {
 
 
 
-
-
         }
 
 
