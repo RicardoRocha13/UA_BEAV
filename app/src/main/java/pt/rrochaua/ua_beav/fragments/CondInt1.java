@@ -156,7 +156,8 @@ public class CondInt1 extends Fragment {
                 ((RadioButton)rGroupTDCC.getChildAt(condint1.get(0).tempoCondução)).setChecked(true);
 
 
-                if (condint1.get(0).testeAlcool==0){
+                //FALTAM VERIFICAÇÔES - CORRIGIDO
+                if (condint1.get(0).testeAlcool==0 && condint1.get(0).licencaCarta!=0){
 
                     CondInterveniente1Teste ci1t = ((CondInterveniente1Teste)condint1.get(0));
 
@@ -334,15 +335,15 @@ public class CondInt1 extends Fragment {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                         }else {
                             int indexAnoHab = Integer.parseInt(eTextAnoHab.getText().toString());
-
-                            //################### WTF ##########################*
+                            //PAÍS - APARECE TECLANO ALFANUMERICO - NÂO CORRIGIDO
                             int indexLig = Integer.parseInt(eTextLig.getText().toString());
 
                             if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
                                 if (eTextPes.getText().toString().equals("")){
                                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                                 } else {
-                                    int indexPes = Integer.parseInt(eTextPes.getText().toString());
+                                    //TIPO ERRADO DE VARIAVEL - CORRIGIDO
+                                    float indexPes = Float.parseFloat(eTextPes.getText().toString());
                                     CondInterveniente1CartaTeste ci1ct = new CondInterveniente1CartaTeste (idveiculo, indexSex, idade,
                                             indexLicença, indexCDNDA, checkBOF, indexTDCC, indexLig, indexAnoHab, indexPes);
 
@@ -372,7 +373,8 @@ public class CondInt1 extends Fragment {
                             if (eTextPes.getText().toString().equals("")){
                                 Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                             } else {
-                                int indexPes = Integer.parseInt(eTextPes.getText().toString());
+                                //TIPO ERRADO DE VARIAVEL - CORRIGIDO
+                                float indexPes = Float.parseFloat(eTextPes.getText().toString());
                                 CondInterveniente1Teste ci1t = new CondInterveniente1Teste (idveiculo, indexSex, idade,
                                         indexLicença, indexCDNDA, checkBOF, indexTDCC, indexPes);
 
