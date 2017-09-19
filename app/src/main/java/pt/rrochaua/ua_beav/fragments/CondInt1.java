@@ -282,6 +282,8 @@ public class CondInt1 extends Fragment {
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                         }else {
                             int indexAnoHab = Integer.parseInt(eTextAnoHab.getText().toString());
+
+                            //################### WTF ##########################*
                             int indexLig = Integer.parseInt(eTextLig.getText().toString());
 
                             if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
