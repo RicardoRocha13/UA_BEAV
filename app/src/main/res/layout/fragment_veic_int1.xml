@@ -167,47 +167,6 @@
                 android:textStyle="bold" />
 
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/radioGroupTVeicLig"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
-
-
-                <RadioButton
-                    android:id="@+id/radioButtonTVeicLig1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Passageiros" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTVeicLig2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mercadorias" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTVeicLig3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Misto" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTVeicLig4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trator" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonTVeicLig5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veículo especial" />
-
-
-            </RadioGroup>
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -219,38 +178,38 @@
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/radioGroupTVeicPes"
+                android:id="@+id/radioGroupTVeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
 
 
                 <RadioButton
-                    android:id="@+id/radioButtonTVeicPes1"
+                    android:id="@+id/radioButtonTVeic1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Passageiros" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonTVeicPes2"
+                    android:id="@+id/radioButtonTVeic2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mercadorias" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonTVeicPes3"
+                    android:id="@+id/radioButtonTVeic3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Misto" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonTVeicPes4"
+                    android:id="@+id/radioButtonTVeic4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Trator" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonTVeicPes5"
+                    android:id="@+id/radioButtonTVeic5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Veículo especial" />

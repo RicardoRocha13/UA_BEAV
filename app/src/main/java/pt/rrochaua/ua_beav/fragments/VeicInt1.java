@@ -18,6 +18,10 @@ import java.util.ArrayList;
 import pt.rrochaua.ua_beav.MainActivity;
 import pt.rrochaua.ua_beav.R;
 import pt.rrochaua.ua_beav.models.VeicInterveniente;
+import pt.rrochaua.ua_beav.models.VeicIntervenienteTipo;
+import pt.rrochaua.ua_beav.models.VeicIntervenienteTipoEspecial;
+import pt.rrochaua.ua_beav.models.VeicIntervenienteTipoEspecialMercPerigosa;
+import pt.rrochaua.ua_beav.models.VeicIntervenienteTipoMercPerigosa;
 import pt.rrochaua.ua_beav.models.VeicIntervinienteMercPerigosa;
 
 
@@ -54,8 +58,7 @@ public class VeicInt1 extends Fragment {
 
         final RadioGroup rGroupFuga = (RadioGroup) v.findViewById(R.id.radioGroupFuga);
         final RadioGroup rGroupCat = (RadioGroup) v.findViewById(R.id.radioGroupCat);
-        final RadioGroup rGroupTVeicLig = (RadioGroup) v.findViewById(R.id.radioGroupTVeicLig);
-        final RadioGroup rGroupTVeicPes = (RadioGroup) v.findViewById(R.id.radioGroupTVeicPes);
+        final RadioGroup rGroupTVeic = (RadioGroup) v.findViewById(R.id.radioGroupTVeic);
         final EditText eTextVEsp = (EditText) v.findViewById(R.id.editTextVEsp);
         final RadioGroup rGroupTDS = (RadioGroup) v.findViewById(R.id.radioGroupTDS);
         final EditText eTextADM = (EditText) v.findViewById(R.id.editTextADM);
@@ -86,11 +89,43 @@ public class VeicInt1 extends Fragment {
             eTextNPass.setText(String.valueOf(veicinterveniente.get(0).nPassageiros));
             ((RadioButton)rGroupCondP.getChildAt(veicinterveniente.get(0).condutorPresente)).setChecked(true);
 
-        if (veicinterveniente.get(0).mercadoriasPerigosas==0){
-            VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
-            ((RadioButton)rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
-            eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
-        }
+
+            if(veicinterveniente.get(0).categoriaClasse==5 || veicinterveniente.get(0).categoriaClasse==5){
+                VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
+                ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
+
+                if(((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo==4){
+                    VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
+                    eTextVEsp.setText(String.valueOf(vite.especial));
+
+
+
+                    if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                        VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
+                        ((RadioButton)rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
+                        eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
+
+                    }
+
+
+                }
+
+
+                if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                    VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
+                    ((RadioButton)rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
+                    eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
+                }
+
+
+            }
+
+
+            if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
+                ((RadioButton)rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
+                eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
+            }
 
 
 
