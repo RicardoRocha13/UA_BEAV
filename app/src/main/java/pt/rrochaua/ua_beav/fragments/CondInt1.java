@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,9 +71,12 @@ public class CondInt1 extends Fragment {
         final RadioGroup rGroupSex = (RadioGroup) v.findViewById(R.id.radioGroupSex);
         ImageButton btnChangeDate = (ImageButton) v.findViewById(R.id.btnDate);
         final RadioGroup rGroupLic = (RadioGroup) v.findViewById(R.id.radioGroupLCDC);
+        final TextView textViewLig = (TextView) v.findViewById(R.id.textViewLig);
         final EditText eTextLig = (EditText) v.findViewById(R.id.editTextLig);
+        final TextView textViewAnoHab = (TextView) v.findViewById(R.id.textViewAnoHab);
         final EditText eTextAnoHab = (EditText) v.findViewById(R.id.editTextAnoHab);
         final RadioGroup rGroupCDNDA = (RadioGroup) v.findViewById(R.id.radioGroupCDNDA);
+        final TextView textViewPes = (TextView) v.findViewById(R.id.textViewPes);
         final EditText eTextPes = (EditText) v.findViewById(R.id.editTextPes);
         final RadioGroup rGroupTDCC = (RadioGroup) v.findViewById(R.id.radioGroupTDCC);
 
@@ -157,6 +161,8 @@ public class CondInt1 extends Fragment {
                     CondInterveniente1Teste ci1t = ((CondInterveniente1Teste)condint1.get(0));
 
                     eTextPes.setText(String.valueOf(ci1t.valorAlcool));
+                    textViewPes.setVisibility(View.VISIBLE);
+                    eTextPes.setVisibility(View.VISIBLE);
 
 
                 }
@@ -168,12 +174,19 @@ public class CondInt1 extends Fragment {
                     eTextLig.setText(String.valueOf(ci1c.paisEmissao));
                     eTextAnoHab.setText(String.valueOf(ci1c.anoHabilitação));
 
+                    textViewLig.setVisibility(View.VISIBLE);
+                    eTextLig.setVisibility(View.VISIBLE);
+                    textViewAnoHab.setVisibility(View.VISIBLE);
+                    eTextAnoHab.setVisibility(View.VISIBLE);
+
 
                     if (condint1.get(0).testeAlcool==0){
 
                         CondInterveniente1CartaTeste ci1ct = ((CondInterveniente1CartaTeste)condint1.get(0));
 
                         eTextPes.setText(String.valueOf(ci1ct.valorAlcool));
+                        textViewPes.setVisibility(View.VISIBLE);
+                        eTextPes.setVisibility(View.VISIBLE);
 
                     }
 
@@ -219,6 +232,45 @@ public class CondInt1 extends Fragment {
 
             }
         });
+
+
+
+        rGroupLic.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonLCDC1){
+                    textViewLig.setVisibility(View.VISIBLE);
+                    eTextLig.setVisibility(View.VISIBLE);
+                    textViewAnoHab.setVisibility(View.VISIBLE);
+                    eTextAnoHab.setVisibility(View.VISIBLE);
+                } else{
+                    textViewLig.setVisibility(View.GONE);
+                    eTextLig.setVisibility(View.GONE);
+                    textViewAnoHab.setVisibility(View.GONE);
+                    eTextAnoHab.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
+
+
+        rGroupCDNDA.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonCDNDA1){
+                    textViewPes.setVisibility(View.VISIBLE);
+                    eTextPes.setVisibility(View.VISIBLE);
+                } else{
+                    textViewPes.setVisibility(View.GONE);
+                    eTextPes.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
 
         btnAntCondInt1.setOnClickListener(new View.OnClickListener() {
             @Override
