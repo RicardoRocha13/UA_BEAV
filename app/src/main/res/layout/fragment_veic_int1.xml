@@ -158,30 +158,35 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewLig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nTipo de Veículo Ligeiro:"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"  />
 
 
             <TextView
+                android:id="@+id/textViewPes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nTipo de Veículo Pesado:"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"  />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupTVeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav"
+                android:visibility="gone" >
 
 
                 <RadioButton
@@ -219,13 +224,15 @@
 
 
             <TextView
+                android:id="@+id/textViewVEsp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nTipo de veículo especial"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
 
             <EditText
@@ -234,7 +241,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:imeOptions="actionDone"
-                android:inputType="number" />
+                android:inputType="number"
+                android:visibility="gone"  />
 
 
             <TextView
@@ -320,6 +328,7 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewMP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -349,20 +358,23 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewADR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nCertificado ADR"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"  />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/radioGroupCADR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/textViewPav">
+                app:layout_constraintLeft_toLeftOf="@+id/textViewPav"
+                android:visibility="gone" >
 
                 <RadioButton
                     android:id="@+id/radioButtonCADR1"
@@ -385,13 +397,15 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textViewMAT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="\nMatéria/objeto perigoso transportado"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"  />
 
             <EditText
                 android:id="@+id/editTextCADR"
@@ -399,7 +413,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:imeOptions="actionDone"
-                android:inputType="text" />
+                android:inputType="text"
+                android:visibility="gone"  />
 
 
             <TextView
@@ -655,14 +670,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                android:gravity="center">
+                android:weightSum="1">
+
                 <Button
                     android:id="@+id/ButtonAntTeste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anterior TESTE" />
+
                 <Button
                     android:id="@+id/ButtonSegTeste"
                     android:layout_width="wrap_content"

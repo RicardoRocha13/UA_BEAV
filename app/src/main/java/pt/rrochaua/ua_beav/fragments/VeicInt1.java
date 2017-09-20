@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -73,6 +75,15 @@ public class VeicInt1 extends Fragment {
         final RadioGroup rGroupInPo = (RadioGroup) v.findViewById(R.id.radioGroupInPo);
         final EditText eTextNPass = (EditText) v.findViewById(R.id.editTextNPass);
         final RadioGroup rGroupCondP = (RadioGroup) v.findViewById(R.id.radioGroupCondP);
+        final TextView textViewLig = (TextView) v.findViewById(R.id.textViewLig);
+        final TextView textViewPes = (TextView) v.findViewById(R.id.textViewPes);
+        final TextView textViewVEsp = (TextView) v.findViewById(R.id.textViewVEsp);
+        final TextView textViewADR = (TextView) v.findViewById(R.id.textViewADR);
+        final TextView textViewMAT = (TextView) v.findViewById(R.id.textViewMAT);
+
+
+
+
 
 
         if(veicinterveniente.size()>=1){
@@ -129,10 +140,74 @@ public class VeicInt1 extends Fragment {
 
 
 
-
-
-
         }
+
+
+
+
+
+        rGroupCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonTipCat6){
+                    textViewLig.setVisibility(View.VISIBLE);
+                    rGroupTVeic.setVisibility(View.VISIBLE);
+                } else{
+                    textViewLig.setVisibility(View.GONE);
+                    rGroupTVeic.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
+        rGroupCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonTipCat7){
+                    textViewPes.setVisibility(View.VISIBLE);
+                    rGroupTVeic.setVisibility(View.VISIBLE);
+                } else{
+                    textViewPes.setVisibility(View.GONE);
+                    rGroupTVeic.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
+        rGroupTVeic.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonTVeic5){
+                    textViewVEsp.setVisibility(View.VISIBLE);
+                    eTextVEsp.setVisibility(View.VISIBLE);
+                } else{
+                    textViewVEsp.setVisibility(View.GONE);
+                    eTextVEsp.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        rGroupTMerc.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(checkedId == R.id.radioButtonTipTMerc1){
+                    rGroupCADR.setVisibility(View.VISIBLE);
+                    textViewADR.setVisibility(View.VISIBLE);
+                    textViewMAT.setVisibility(View.VISIBLE);
+                    eTextCADR.setVisibility(View.VISIBLE);
+                } else{
+                    rGroupCADR.setVisibility(View.GONE);
+                    textViewADR.setVisibility(View.GONE);
+                    textViewMAT.setVisibility(View.GONE);
+                    eTextCADR.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
 
 
 
