@@ -299,7 +299,7 @@ public class VeicInt1 extends Fragment {
                     } else {
 
 
-                        if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                        if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
                             int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
                             int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
 
