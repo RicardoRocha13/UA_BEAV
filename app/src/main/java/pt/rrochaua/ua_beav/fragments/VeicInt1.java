@@ -250,7 +250,7 @@ public class VeicInt1 extends Fragment {
 
                     if(rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat6 || rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat7 ){
 
-                        if (rGroupCat.getCheckedRadioButtonId() == -1){
+                        if (rGroupTVeic.getCheckedRadioButtonId() == -1){
                             Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
 
                         } else {
@@ -259,29 +259,46 @@ public class VeicInt1 extends Fragment {
 
 
                             if(rGroupTVeic.getCheckedRadioButtonId() == R.id.radioButtonTVeic5){
-
-
-                                int indexVEsp = Integer.parseInt(eTextVEsp.getText().toString());
-
-                                if(rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1){
-                                    int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
-                                    int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+                                if (eTextVEsp.getText().toString().equals("")){
+                                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
 
                                 } else {
 
+                                    int indexVEsp = Integer.parseInt(eTextVEsp.getText().toString());
+
+                                    if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
+
+                                        if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                                        } else {
+
+                                            int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                            int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                        }
+
+                                    } else {
+
+
+                                    }
 
 
                                 }
-
-
-
 
                             }else {
 
 
                                 if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
-                                    int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
-                                    int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                    if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                        Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                                    } else {
+                                        int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                        int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                    }
 
                                 } else {
 
@@ -300,9 +317,15 @@ public class VeicInt1 extends Fragment {
 
 
                         if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
-                            int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
-                            int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
 
+                            if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                            } else {
+                                int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                            }
 
                         } else {
 
