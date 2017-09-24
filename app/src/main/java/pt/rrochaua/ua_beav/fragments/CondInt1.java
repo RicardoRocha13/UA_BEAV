@@ -276,7 +276,120 @@ public class CondInt1 extends Fragment {
         btnAntCondInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToVeicInt1Fragment();
+
+                if(rGroupSex.getCheckedRadioButtonId() == -1 || rGroupLic.getCheckedRadioButtonId() == -1 ||
+                        eTextDia.getText().toString().equals("") || rGroupCDNDA.getCheckedRadioButtonId() == -1 ||
+                        rGroupTDCC.getCheckedRadioButtonId() == -1 ){
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    int idveiculo = 0;
+
+
+                    Date idade = null;
+                    try {
+                        idade = sdf.parse(eTextDia.getText().toString() + "/" + eTextMes.getText().toString() + "/" + eTextAno.getText().toString() +
+                                " " );
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    int indexSex = rGroupSex.indexOfChild(rGroupSex.findViewById(rGroupSex.getCheckedRadioButtonId()));
+                    int indexLicença = rGroupLic.indexOfChild(rGroupLic.findViewById(rGroupLic.getCheckedRadioButtonId()));
+                    int indexCDNDA = rGroupCDNDA.indexOfChild(rGroupCDNDA.findViewById(rGroupCDNDA.getCheckedRadioButtonId()));
+                    int indexTDCC = rGroupTDCC.indexOfChild(rGroupTDCC.findViewById(rGroupTDCC.getCheckedRadioButtonId()));
+
+
+                    if (cbOF1.isChecked()) {
+                        checkBOF.add(1);
+                    }
+                    if (cbOF2.isChecked()) {
+                        checkBOF.add(2);
+                    }
+                    if (cbOF3.isChecked()) {
+                        checkBOF.add(3);
+                    }
+                    if (cbOF4.isChecked()) {
+                        checkBOF.add(4);
+                    }
+                    if (cbOF5.isChecked()) {
+                        checkBOF.add(5);
+                    }
+                    if (cbOF6.isChecked()) {
+                        checkBOF.add(6);
+                    }
+
+
+                    if (rGroupLic.getCheckedRadioButtonId() == R.id.radioButtonLCDC1) {
+
+                        if (eTextAnoHab.getText().toString().equals("") || eTextLig.getText().toString().equals("")) {
+                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                        }else {
+                            int indexAnoHab = Integer.parseInt(eTextAnoHab.getText().toString());
+                            //PAÍS - APARECE TECLANO ALFANUMERICO - NÂO CORRIGIDO
+                            int indexLig = Integer.parseInt(eTextLig.getText().toString());
+
+                            if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
+                                if (eTextPes.getText().toString().equals("")){
+                                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    //TIPO ERRADO DE VARIAVEL - CORRIGIDO
+                                    float indexPes = Float.parseFloat(eTextPes.getText().toString());
+                                    CondInterveniente1CartaTeste ci1ct = new CondInterveniente1CartaTeste (idveiculo, indexSex, idade,
+                                            indexLicença, indexCDNDA, checkBOF, indexTDCC, indexLig, indexAnoHab, indexPes);
+
+                                    condint1.add(0,ci1ct);
+                                    parentActivity.setcInterv1(condint1);
+                                    parentActivity.goToVeicInt1Fragment();
+                                }
+
+                            }else{
+                                CondIntervenientes1Carta ci1c = new CondIntervenientes1Carta (idveiculo, indexSex, idade,
+                                        indexLicença, indexCDNDA, checkBOF, indexTDCC, indexLig, indexAnoHab);
+
+                                condint1.add(0,ci1c);
+                                parentActivity.setcInterv1(condint1);
+                                parentActivity.goToVeicInt1Fragment();
+
+                            }
+
+
+
+
+
+                        }
+
+                    } else {
+                        if (rGroupCDNDA.getCheckedRadioButtonId() == R.id.radioButtonCDNDA1){
+                            if (eTextPes.getText().toString().equals("")){
+                                Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                            } else {
+                                //TIPO ERRADO DE VARIAVEL - CORRIGIDO
+                                float indexPes = Float.parseFloat(eTextPes.getText().toString());
+                                CondInterveniente1Teste ci1t = new CondInterveniente1Teste (idveiculo, indexSex, idade,
+                                        indexLicença, indexCDNDA, checkBOF, indexTDCC, indexPes);
+
+                                condint1.add(0,ci1t);
+                                parentActivity.setcInterv1(condint1);
+                                parentActivity.goToVeicInt1Fragment();
+                            }
+
+                        }else{
+                            CondInterveniente1 ci1 = new CondInterveniente1 (idveiculo, indexSex, idade,
+                                    indexLicença, indexCDNDA, checkBOF, indexTDCC);
+
+                            condint1.add(0,ci1);
+                            parentActivity.setcInterv1(condint1);
+                            parentActivity.goToVeicInt1Fragment();
+
+                        }
+
+                    }
+
+                }
+
+
             }
         });
 
