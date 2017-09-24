@@ -306,8 +306,13 @@ public class VeicInt1 extends Fragment {
 
                         } else {
 
+                            VeicInterveniente vi = new VeicInterveniente(indexGroupFuga, indexGroupCat, indexGroupTDS,
+                                    indexADM,  indexGroupIP, indexGroupTMerc, indexGroupCL, indexGroupPneu, indexGroupTaco,
+                                    indexGroupSeg, indexGroupInPo, indexNPass, indexGroupCondP);
 
-
+                            veicinterveniente.add(0,vi);
+                            parentActivity.setvInterv(veicinterveniente);
+                            parentActivity.goToCondInt1Fragment();
 
                         }
 
@@ -323,8 +328,6 @@ public class VeicInt1 extends Fragment {
 
 
 
-
-                parentActivity.goToCondInt1Fragment();
             }
         });
 
