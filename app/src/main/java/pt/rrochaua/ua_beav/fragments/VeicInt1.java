@@ -91,6 +91,7 @@ public class VeicInt1 extends Fragment {
             ((RadioButton)rGroupCat.getChildAt(veicinterveniente.get(0).categoriaClasse)).setChecked(true);
             ((RadioButton)rGroupTDS.getChildAt(veicinterveniente.get(0).tipoServico)).setChecked(true);
             eTextADM.setText(String.valueOf(veicinterveniente.get(0).anoMatricula));
+            ((RadioButton)rGroupIP.getChildAt(veicinterveniente.get(0).inspeccaoPeriodica)).setChecked(true);
             ((RadioButton)rGroupTMerc.getChildAt(veicinterveniente.get(0).mercadoriasPerigosas)).setChecked(true);
             ((RadioButton)rGroupCL.getChildAt(veicinterveniente.get(0).cargaLotacao)).setChecked(true);
             ((RadioButton)rGroupPneu.getChildAt(veicinterveniente.get(0).pneus)).setChecked(true);
@@ -213,16 +214,107 @@ public class VeicInt1 extends Fragment {
 
 
 
+
+
         Button btnSegVeicInt1 = (Button) v.findViewById(R.id.ButtonSegVeicInt1);
         btnSegVeicInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rGroupFuga.getCheckedRadioButtonId() == -1){
+                if (rGroupFuga.getCheckedRadioButtonId() == -1 || rGroupCat.getCheckedRadioButtonId() == -1 ||
+                        rGroupTDS.getCheckedRadioButtonId() == -1 || rGroupIP.getCheckedRadioButtonId() == -1 ||
+                        rGroupTMerc.getCheckedRadioButtonId() == -1 || rGroupCL.getCheckedRadioButtonId() == -1 ||
+                        rGroupPneu.getCheckedRadioButtonId() == -1 || rGroupTaco.getCheckedRadioButtonId() == -1 ||
+                        rGroupSeg.getCheckedRadioButtonId() == -1 || rGroupInPo.getCheckedRadioButtonId() == -1 ||
+                        rGroupInPo.getCheckedRadioButtonId() == -1 || eTextADM.getText().toString().equals("") ||
+                        eTextNPass.getText().toString().equals("")){
+
                     Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
                 } else {
-                    if (rGroupFuga.getCheckedRadioButtonId() == R.id.radioButtonFuga1){
+
+                    int indexGroupFuga = rGroupFuga.indexOfChild(rGroupFuga.findViewById(rGroupFuga.getCheckedRadioButtonId()));
+                    int indexGroupCat = rGroupCat.indexOfChild(rGroupCat.findViewById(rGroupCat.getCheckedRadioButtonId()));
+                    int indexGroupTDS = rGroupTDS.indexOfChild(rGroupTDS.findViewById(rGroupTDS.getCheckedRadioButtonId()));
+                    int indexADM = Integer.parseInt(eTextADM.getText().toString());
+                    int indexGroupIP = rGroupIP.indexOfChild(rGroupIP.findViewById(rGroupIP.getCheckedRadioButtonId()));
+                    int indexGroupTMerc = rGroupTMerc.indexOfChild(rGroupTMerc.findViewById(rGroupTMerc.getCheckedRadioButtonId()));
+                    int indexGroupCL = rGroupCL.indexOfChild(rGroupCL.findViewById(rGroupCL.getCheckedRadioButtonId()));
+                    int indexGroupPneu = rGroupPneu.indexOfChild(rGroupPneu.findViewById(rGroupPneu.getCheckedRadioButtonId()));
+                    int indexGroupTaco = rGroupTaco.indexOfChild(rGroupTaco.findViewById(rGroupTaco.getCheckedRadioButtonId()));
+                    int indexGroupSeg = rGroupSeg.indexOfChild(rGroupSeg.findViewById(rGroupSeg.getCheckedRadioButtonId()));
+                    int indexGroupInPo = rGroupInPo.indexOfChild(rGroupInPo.findViewById(rGroupInPo.getCheckedRadioButtonId()));
+                    int indexNPass = Integer.parseInt(eTextNPass.getText().toString());
+                    int indexGroupCondP = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
+
+
+
+
+                    if(rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat6 || rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat7 ){
+
+                        if (rGroupCat.getCheckedRadioButtonId() == -1){
+                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                        } else {
+
+                            int indexGroupTVeic = rGroupTVeic.indexOfChild(rGroupTVeic.findViewById(rGroupTVeic.getCheckedRadioButtonId()));
+
+
+                            if(rGroupTVeic.getCheckedRadioButtonId() == R.id.radioButtonTVeic5){
+
+
+                                int indexVEsp = Integer.parseInt(eTextVEsp.getText().toString());
+
+                                if(rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1){
+                                    int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                    int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                } else {
+
+
+
+                                }
+
+
+
+
+                            }else {
+
+
+                                if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
+                                    int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                    int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                } else {
+
+
+
+
+                                }
+
+                            }
+                        }
+
+
+
+
+                    } else {
+
+
+                        if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                            int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                            int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+
+                        } else {
+
+
+
+
+                        }
 
                     }
+
+
+
 
 
                 }
