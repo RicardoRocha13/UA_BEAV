@@ -86,23 +86,23 @@ public class VeicInt1 extends Fragment {
 
 
 
-        if(veicinterveniente.size()>=1){
-            ((RadioButton)rGroupFuga.getChildAt(veicinterveniente.get(0).fuga)).setChecked(true);
-            ((RadioButton)rGroupCat.getChildAt(veicinterveniente.get(0).categoriaClasse)).setChecked(true);
-            ((RadioButton)rGroupTDS.getChildAt(veicinterveniente.get(0).tipoServico)).setChecked(true);
+        if(veicinterveniente.size()>=1) {
+            ((RadioButton) rGroupFuga.getChildAt(veicinterveniente.get(0).fuga)).setChecked(true);
+            ((RadioButton) rGroupCat.getChildAt(veicinterveniente.get(0).categoriaClasse)).setChecked(true);
+            ((RadioButton) rGroupTDS.getChildAt(veicinterveniente.get(0).tipoServico)).setChecked(true);
             eTextADM.setText(String.valueOf(veicinterveniente.get(0).anoMatricula));
-            ((RadioButton)rGroupIP.getChildAt(veicinterveniente.get(0).inspeccaoPeriodica)).setChecked(true);
-            ((RadioButton)rGroupTMerc.getChildAt(veicinterveniente.get(0).mercadoriasPerigosas)).setChecked(true);
-            ((RadioButton)rGroupCL.getChildAt(veicinterveniente.get(0).cargaLotacao)).setChecked(true);
-            ((RadioButton)rGroupPneu.getChildAt(veicinterveniente.get(0).pneus)).setChecked(true);
-            ((RadioButton)rGroupTaco.getChildAt(veicinterveniente.get(0).tacografo)).setChecked(true);
-            ((RadioButton)rGroupSeg.getChildAt(veicinterveniente.get(0).seguro)).setChecked(true);
-            ((RadioButton)rGroupInPo.getChildAt(veicinterveniente.get(0).incendioPosterior)).setChecked(true);
+            ((RadioButton) rGroupIP.getChildAt(veicinterveniente.get(0).inspeccaoPeriodica)).setChecked(true);
+            ((RadioButton) rGroupTMerc.getChildAt(veicinterveniente.get(0).mercadoriasPerigosas)).setChecked(true);
+            ((RadioButton) rGroupCL.getChildAt(veicinterveniente.get(0).cargaLotacao)).setChecked(true);
+            ((RadioButton) rGroupPneu.getChildAt(veicinterveniente.get(0).pneus)).setChecked(true);
+            ((RadioButton) rGroupTaco.getChildAt(veicinterveniente.get(0).tacografo)).setChecked(true);
+            ((RadioButton) rGroupSeg.getChildAt(veicinterveniente.get(0).seguro)).setChecked(true);
+            ((RadioButton) rGroupInPo.getChildAt(veicinterveniente.get(0).incendioPosterior)).setChecked(true);
             eTextNPass.setText(String.valueOf(veicinterveniente.get(0).nPassageiros));
-            ((RadioButton)rGroupCondP.getChildAt(veicinterveniente.get(0).condutorPresente)).setChecked(true);
+            ((RadioButton) rGroupCondP.getChildAt(veicinterveniente.get(0).condutorPresente)).setChecked(true);
 
 
-            if(veicinterveniente.get(0).categoriaClasse==6){
+            if (veicinterveniente.get(0).categoriaClasse == 6) {
                 VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
                 ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
 
@@ -111,8 +111,7 @@ public class VeicInt1 extends Fragment {
                 rGroupTVeic.setVisibility(View.VISIBLE);
 
 
-
-                if(((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo==4){
+                if (((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo == 4) {
                     VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
                     eTextVEsp.setText(String.valueOf(vite.especial));
 
@@ -120,9 +119,9 @@ public class VeicInt1 extends Fragment {
                     textViewVEsp.setVisibility(View.VISIBLE);
                     eTextVEsp.setVisibility(View.VISIBLE);
 
-                    if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                    if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
                         VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
-                        ((RadioButton)rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
+                        ((RadioButton) rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
                         eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
 
                         rGroupCADR.setVisibility(View.VISIBLE);
@@ -133,90 +132,86 @@ public class VeicInt1 extends Fragment {
                     }
 
 
-                }
+                } else {
 
 
-                if(veicinterveniente.get(0).mercadoriasPerigosas==0){
-                    VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
-                    ((RadioButton)rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
-                    eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
-
-                    rGroupCADR.setVisibility(View.VISIBLE);
-                    textViewADR.setVisibility(View.VISIBLE);
-                    textViewMAT.setVisibility(View.VISIBLE);
-                    eTextCADR.setVisibility(View.VISIBLE);
-                }
-
-
-            }
-
-
-
-
-            if(veicinterveniente.get(0).categoriaClasse==5){
-                VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
-                ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
-
-                textViewLig.setVisibility(View.VISIBLE);
-                rGroupTVeic.setVisibility(View.VISIBLE);
-
-
-
-                if(((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo==4){
-                    VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
-                    eTextVEsp.setText(String.valueOf(vite.especial));
-
-
-                    textViewVEsp.setVisibility(View.VISIBLE);
-                    eTextVEsp.setVisibility(View.VISIBLE);
-
-                    if(veicinterveniente.get(0).mercadoriasPerigosas==0){
-                        VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
-                        ((RadioButton)rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
-                        eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
+                    if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                        VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
+                        ((RadioButton) rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
+                        eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
 
                         rGroupCADR.setVisibility(View.VISIBLE);
                         textViewADR.setVisibility(View.VISIBLE);
                         textViewMAT.setVisibility(View.VISIBLE);
                         eTextCADR.setVisibility(View.VISIBLE);
+                    }
+                }
 
+
+            } else {
+
+
+                if (veicinterveniente.get(0).categoriaClasse == 5) {
+                    VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
+                    ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
+
+                    textViewLig.setVisibility(View.VISIBLE);
+                    rGroupTVeic.setVisibility(View.VISIBLE);
+
+
+                    if (((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo == 4) {
+                        VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
+                        eTextVEsp.setText(String.valueOf(vite.especial));
+
+
+                        textViewVEsp.setVisibility(View.VISIBLE);
+                        eTextVEsp.setVisibility(View.VISIBLE);
+
+                        if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                            VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
+                            ((RadioButton) rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
+                            eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
+
+                            rGroupCADR.setVisibility(View.VISIBLE);
+                            textViewADR.setVisibility(View.VISIBLE);
+                            textViewMAT.setVisibility(View.VISIBLE);
+                            eTextCADR.setVisibility(View.VISIBLE);
+
+                        }
+
+
+                    } else {
+
+
+                        if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                            VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
+                            ((RadioButton) rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
+                            eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
+
+                            rGroupCADR.setVisibility(View.VISIBLE);
+                            textViewADR.setVisibility(View.VISIBLE);
+                            textViewMAT.setVisibility(View.VISIBLE);
+                            eTextCADR.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                } else {
+
+
+                    if (veicinterveniente.get(0).mercadoriasPerigosas == 0) {
+                        VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
+                        ((RadioButton) rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
+                        eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
+
+                        rGroupCADR.setVisibility(View.VISIBLE);
+                        textViewADR.setVisibility(View.VISIBLE);
+                        textViewMAT.setVisibility(View.VISIBLE);
+                        eTextCADR.setVisibility(View.VISIBLE);
                     }
 
 
                 }
-
-
-                if(veicinterveniente.get(0).mercadoriasPerigosas==0){
-                    VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
-                    ((RadioButton)rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
-                    eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
-
-                    rGroupCADR.setVisibility(View.VISIBLE);
-                    textViewADR.setVisibility(View.VISIBLE);
-                    textViewMAT.setVisibility(View.VISIBLE);
-                    eTextCADR.setVisibility(View.VISIBLE);
-                }
-
-
             }
-
-
-
-
-
-            if(veicinterveniente.get(0).mercadoriasPerigosas==0){
-                VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
-                ((RadioButton)rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
-                eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
-
-                rGroupCADR.setVisibility(View.VISIBLE);
-                textViewADR.setVisibility(View.VISIBLE);
-                textViewMAT.setVisibility(View.VISIBLE);
-                eTextCADR.setVisibility(View.VISIBLE);
-            }
-
-
-
         }
 
 
@@ -481,7 +476,181 @@ public class VeicInt1 extends Fragment {
         btnAntVeicInt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.goToNatAciFragment();
+
+                if (rGroupFuga.getCheckedRadioButtonId() == -1 || rGroupCat.getCheckedRadioButtonId() == -1 ||
+                        rGroupTDS.getCheckedRadioButtonId() == -1 || rGroupIP.getCheckedRadioButtonId() == -1 ||
+                        rGroupTMerc.getCheckedRadioButtonId() == -1 || rGroupCL.getCheckedRadioButtonId() == -1 ||
+                        rGroupPneu.getCheckedRadioButtonId() == -1 || rGroupTaco.getCheckedRadioButtonId() == -1 ||
+                        rGroupSeg.getCheckedRadioButtonId() == -1 || rGroupInPo.getCheckedRadioButtonId() == -1 ||
+                        rGroupInPo.getCheckedRadioButtonId() == -1 || eTextADM.getText().toString().equals("") ||
+                        eTextNPass.getText().toString().equals("")){
+
+                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    int indexGroupFuga = rGroupFuga.indexOfChild(rGroupFuga.findViewById(rGroupFuga.getCheckedRadioButtonId()));
+                    int indexGroupCat = rGroupCat.indexOfChild(rGroupCat.findViewById(rGroupCat.getCheckedRadioButtonId()));
+                    int indexGroupTDS = rGroupTDS.indexOfChild(rGroupTDS.findViewById(rGroupTDS.getCheckedRadioButtonId()));
+                    int indexADM = Integer.parseInt(eTextADM.getText().toString());
+                    int indexGroupIP = rGroupIP.indexOfChild(rGroupIP.findViewById(rGroupIP.getCheckedRadioButtonId()));
+                    int indexGroupTMerc = rGroupTMerc.indexOfChild(rGroupTMerc.findViewById(rGroupTMerc.getCheckedRadioButtonId()));
+                    int indexGroupCL = rGroupCL.indexOfChild(rGroupCL.findViewById(rGroupCL.getCheckedRadioButtonId()));
+                    int indexGroupPneu = rGroupPneu.indexOfChild(rGroupPneu.findViewById(rGroupPneu.getCheckedRadioButtonId()));
+                    int indexGroupTaco = rGroupTaco.indexOfChild(rGroupTaco.findViewById(rGroupTaco.getCheckedRadioButtonId()));
+                    int indexGroupSeg = rGroupSeg.indexOfChild(rGroupSeg.findViewById(rGroupSeg.getCheckedRadioButtonId()));
+                    int indexGroupInPo = rGroupInPo.indexOfChild(rGroupInPo.findViewById(rGroupInPo.getCheckedRadioButtonId()));
+                    int indexNPass = Integer.parseInt(eTextNPass.getText().toString());
+                    int indexGroupCondP = rGroupCondP.indexOfChild(rGroupCondP.findViewById(rGroupCondP.getCheckedRadioButtonId()));
+
+
+
+
+                    if(rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat6 || rGroupCat.getCheckedRadioButtonId() == R.id.radioButtonTipCat7 ){
+
+                        if (rGroupTVeic.getCheckedRadioButtonId() == -1){
+                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                        } else {
+
+                            int indexGroupTVeic = rGroupTVeic.indexOfChild(rGroupTVeic.findViewById(rGroupTVeic.getCheckedRadioButtonId()));
+
+
+                            if(rGroupTVeic.getCheckedRadioButtonId() == R.id.radioButtonTVeic5){
+                                if (eTextVEsp.getText().toString().equals("")){
+                                    Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                                } else {
+
+                                    int indexVEsp = Integer.parseInt(eTextVEsp.getText().toString());
+
+                                    if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
+
+                                        if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                            Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                                        } else {
+
+                                            int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                            int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                            VeicIntervenienteTipoEspecialMercPerigosa vitemp = new VeicIntervenienteTipoEspecialMercPerigosa(
+                                                    indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                    indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                    indexGroupCondP, indexGroupTVeic, indexVEsp, indexGroupCADR, indexCADR);
+
+                                            veicinterveniente.add(0,vitemp);
+                                            parentActivity.setvInterv(veicinterveniente);
+                                            parentActivity.goToNatAciFragment();
+
+                                        }
+
+                                    } else {
+
+                                        VeicIntervenienteTipoEspecial vite = new VeicIntervenienteTipoEspecial(
+                                                indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                indexGroupCondP, indexGroupTVeic, indexVEsp);
+
+                                        veicinterveniente.add(0,vite);
+                                        parentActivity.setvInterv(veicinterveniente);
+                                        parentActivity.goToNatAciFragment();
+
+
+
+                                    }
+
+
+                                }
+
+                            }else {
+
+
+                                if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
+
+                                    if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                        Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                                    } else {
+                                        int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                        int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                        VeicIntervenienteTipoMercPerigosa vitmp = new VeicIntervenienteTipoMercPerigosa(
+                                                indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                indexGroupCondP, indexGroupTVeic, indexGroupCADR, indexCADR);
+
+                                        veicinterveniente.add(0,vitmp);
+                                        parentActivity.setvInterv(veicinterveniente);
+                                        parentActivity.goToNatAciFragment();
+
+                                    }
+
+                                } else {
+
+                                    VeicIntervenienteTipo vit = new VeicIntervenienteTipo(
+                                            indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                            indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                            indexGroupCondP, indexGroupTVeic);
+
+                                    veicinterveniente.add(0,vit);
+                                    parentActivity.setvInterv(veicinterveniente);
+                                    parentActivity.goToNatAciFragment();
+
+
+
+                                }
+
+                            }
+                        }
+
+
+
+
+                    } else {
+
+
+                        if (rGroupTMerc.getCheckedRadioButtonId() == R.id.radioButtonTipTMerc1) {
+
+                            if (eTextCADR.getText().toString().equals("") || rGroupCADR.getCheckedRadioButtonId() == -1 ){
+                                Toast.makeText(parentActivity, "Todos os campos devem estar preenchidos.", Toast.LENGTH_LONG).show();
+
+                            } else {
+                                int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
+                                int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                VeicIntervinienteMercPerigosa vimp = new VeicIntervinienteMercPerigosa(
+                                        indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                        indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                        indexGroupCondP, indexGroupCADR, indexCADR);
+
+                                veicinterveniente.add(0,vimp);
+                                parentActivity.setvInterv(veicinterveniente);
+                                parentActivity.goToNatAciFragment();
+
+                            }
+
+                        } else {
+
+                            VeicInterveniente vi = new VeicInterveniente(indexGroupFuga, indexGroupCat, indexGroupTDS,
+                                    indexADM,  indexGroupIP, indexGroupTMerc, indexGroupCL, indexGroupPneu, indexGroupTaco,
+                                    indexGroupSeg, indexGroupInPo, indexNPass, indexGroupCondP);
+
+                            veicinterveniente.add(0,vi);
+                            parentActivity.setvInterv(veicinterveniente);
+                            parentActivity.goToNatAciFragment();
+
+                        }
+
+                    }
+
+
+
+
+
+                }
+
+
+
             }
         });
 
