@@ -227,24 +227,20 @@ public class VeicInt1 extends Fragment {
                 } else{
                     textViewLig.setVisibility(View.GONE);
                     rGroupTVeic.setVisibility(View.GONE);
+
+                    if(checkedId == R.id.radioButtonTipCat7){
+                        textViewPes.setVisibility(View.VISIBLE);
+                        rGroupTVeic.setVisibility(View.VISIBLE);
+                    } else{
+                        textViewPes.setVisibility(View.GONE);
+                        rGroupTVeic.setVisibility(View.GONE);
+                    }
                 }
+
+
             }
         });
 
-
-
-        rGroupCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if(checkedId == R.id.radioButtonTipCat7){
-                    textViewPes.setVisibility(View.VISIBLE);
-                    rGroupTVeic.setVisibility(View.VISIBLE);
-                } else{
-                    textViewPes.setVisibility(View.GONE);
-                    rGroupTVeic.setVisibility(View.GONE);
-                }
-            }
-        });
 
 
 
