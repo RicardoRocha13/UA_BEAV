@@ -102,20 +102,33 @@ public class VeicInt1 extends Fragment {
             ((RadioButton)rGroupCondP.getChildAt(veicinterveniente.get(0).condutorPresente)).setChecked(true);
 
 
-            if(veicinterveniente.get(0).categoriaClasse==5 || veicinterveniente.get(0).categoriaClasse==5){
+            if(veicinterveniente.get(0).categoriaClasse==6){
                 VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
                 ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
+
+
+                textViewPes.setVisibility(View.VISIBLE);
+                rGroupTVeic.setVisibility(View.VISIBLE);
+
+
 
                 if(((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo==4){
                     VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
                     eTextVEsp.setText(String.valueOf(vite.especial));
 
 
+                    textViewVEsp.setVisibility(View.VISIBLE);
+                    eTextVEsp.setVisibility(View.VISIBLE);
 
                     if(veicinterveniente.get(0).mercadoriasPerigosas==0){
                         VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
                         ((RadioButton)rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
                         eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
+
+                        rGroupCADR.setVisibility(View.VISIBLE);
+                        textViewADR.setVisibility(View.VISIBLE);
+                        textViewMAT.setVisibility(View.VISIBLE);
+                        eTextCADR.setVisibility(View.VISIBLE);
 
                     }
 
@@ -127,16 +140,79 @@ public class VeicInt1 extends Fragment {
                     VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
                     ((RadioButton)rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
                     eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
+
+                    rGroupCADR.setVisibility(View.VISIBLE);
+                    textViewADR.setVisibility(View.VISIBLE);
+                    textViewMAT.setVisibility(View.VISIBLE);
+                    eTextCADR.setVisibility(View.VISIBLE);
                 }
 
 
             }
 
 
+
+
+            if(veicinterveniente.get(0).categoriaClasse==5){
+                VeicIntervenienteTipo vit = ((VeicIntervenienteTipo) veicinterveniente.get(0));
+                ((RadioButton) rGroupTVeic.getChildAt(vit.tipo)).setChecked(true);
+
+                textViewLig.setVisibility(View.VISIBLE);
+                rGroupTVeic.setVisibility(View.VISIBLE);
+
+
+
+                if(((VeicIntervenienteTipo) veicinterveniente.get(0)).tipo==4){
+                    VeicIntervenienteTipoEspecial vite = ((VeicIntervenienteTipoEspecial) veicinterveniente.get(0));
+                    eTextVEsp.setText(String.valueOf(vite.especial));
+
+
+                    textViewVEsp.setVisibility(View.VISIBLE);
+                    eTextVEsp.setVisibility(View.VISIBLE);
+
+                    if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                        VeicIntervenienteTipoEspecialMercPerigosa vitemp = ((VeicIntervenienteTipoEspecialMercPerigosa) veicinterveniente.get(0));
+                        ((RadioButton)rGroupCADR.getChildAt(vitemp.certificadoADR)).setChecked(true);
+                        eTextCADR.setText(String.valueOf(vitemp.materiaObjetoPerigoso));
+
+                        rGroupCADR.setVisibility(View.VISIBLE);
+                        textViewADR.setVisibility(View.VISIBLE);
+                        textViewMAT.setVisibility(View.VISIBLE);
+                        eTextCADR.setVisibility(View.VISIBLE);
+
+                    }
+
+
+                }
+
+
+                if(veicinterveniente.get(0).mercadoriasPerigosas==0){
+                    VeicIntervenienteTipoMercPerigosa vitmp = ((VeicIntervenienteTipoMercPerigosa) veicinterveniente.get(0));
+                    ((RadioButton)rGroupCADR.getChildAt(vitmp.certificadoADR)).setChecked(true);
+                    eTextCADR.setText(String.valueOf(vitmp.materiaObjetoPerigoso));
+
+                    rGroupCADR.setVisibility(View.VISIBLE);
+                    textViewADR.setVisibility(View.VISIBLE);
+                    textViewMAT.setVisibility(View.VISIBLE);
+                    eTextCADR.setVisibility(View.VISIBLE);
+                }
+
+
+            }
+
+
+
+
+
             if(veicinterveniente.get(0).mercadoriasPerigosas==0){
                 VeicIntervinienteMercPerigosa mp = ((VeicIntervinienteMercPerigosa) veicinterveniente.get(0));
                 ((RadioButton)rGroupCADR.getChildAt(mp.certificadoADR)).setChecked(true);
                 eTextCADR.setText(String.valueOf(mp.materiaObjetoPerigoso));
+
+                rGroupCADR.setVisibility(View.VISIBLE);
+                textViewADR.setVisibility(View.VISIBLE);
+                textViewMAT.setVisibility(View.VISIBLE);
+                eTextCADR.setVisibility(View.VISIBLE);
             }
 
 
