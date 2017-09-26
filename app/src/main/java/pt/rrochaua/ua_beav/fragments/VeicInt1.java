@@ -276,9 +276,29 @@ public class VeicInt1 extends Fragment {
                                             int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
                                             int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
 
+                                            VeicIntervenienteTipoEspecialMercPerigosa vitemp = new VeicIntervenienteTipoEspecialMercPerigosa(
+                                                    indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                    indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                    indexGroupCondP, indexGroupTVeic, indexVEsp, indexGroupCADR, indexCADR);
+
+                                            veicinterveniente.add(0,vitemp);
+                                            parentActivity.setvInterv(veicinterveniente);
+                                            parentActivity.goToCondInt1Fragment();
+
+
                                         }
 
                                     } else {
+
+                                        VeicIntervenienteTipoEspecial vite = new VeicIntervenienteTipoEspecial(
+                                                indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                indexGroupCondP, indexGroupTVeic, indexVEsp);
+
+                                        veicinterveniente.add(0,vite);
+                                        parentActivity.setvInterv(veicinterveniente);
+                                        parentActivity.goToCondInt1Fragment();
+
 
 
                                     }
@@ -298,10 +318,27 @@ public class VeicInt1 extends Fragment {
                                         int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
                                         int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
 
+                                        VeicIntervenienteTipoMercPerigosa vitmp = new VeicIntervenienteTipoMercPerigosa(
+                                                indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                                indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                                indexGroupCondP, indexGroupTVeic, indexGroupCADR, indexCADR);
+
+                                        veicinterveniente.add(0,vitmp);
+                                        parentActivity.setvInterv(veicinterveniente);
+                                        parentActivity.goToCondInt1Fragment();
+
                                     }
 
                                 } else {
 
+                                    VeicIntervenienteTipo vit = new VeicIntervenienteTipo(
+                                            indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                            indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                            indexGroupCondP, indexGroupTVeic);
+
+                                    veicinterveniente.add(0,vit);
+                                    parentActivity.setvInterv(veicinterveniente);
+                                    parentActivity.goToCondInt1Fragment();
 
 
 
@@ -324,6 +361,15 @@ public class VeicInt1 extends Fragment {
                             } else {
                                 int indexGroupCADR = rGroupCADR.indexOfChild(rGroupCADR.findViewById(rGroupCADR.getCheckedRadioButtonId()));
                                 int indexCADR = Integer.parseInt(eTextCADR.getText().toString());
+
+                                VeicIntervinienteMercPerigosa vimp = new VeicIntervinienteMercPerigosa(
+                                        indexGroupFuga, indexGroupCat, indexGroupTDS, indexADM,  indexGroupIP, indexGroupTMerc,
+                                        indexGroupCL, indexGroupPneu, indexGroupTaco,  indexGroupSeg, indexGroupInPo, indexNPass,
+                                        indexGroupCondP, indexGroupCADR, indexCADR);
+
+                                veicinterveniente.add(0,vimp);
+                                parentActivity.setvInterv(veicinterveniente);
+                                parentActivity.goToCondInt1Fragment();
 
                             }
 
