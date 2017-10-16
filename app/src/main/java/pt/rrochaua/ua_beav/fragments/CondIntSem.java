@@ -63,6 +63,9 @@ public class CondIntSem extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_cond_int_sem, container, false);
 
+        //teste
+        System.out.println("############### CICLO ##############");
+
         final RadioGroup rGroupVI = (RadioGroup) v.findViewById(R.id.radioGroupVI);
         final RadioGroup rGroupCondP = (RadioGroup) v.findViewById(R.id.radioGroupCondP);
         final RadioGroup rGroupSex = (RadioGroup) v.findViewById(R.id.radioGroupSex);

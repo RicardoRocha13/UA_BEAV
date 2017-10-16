@@ -43,7 +43,9 @@ public class Menu extends Fragment {
         btnForm1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 parentActivity.goToForm1Fragment();
+
             }
         });
 

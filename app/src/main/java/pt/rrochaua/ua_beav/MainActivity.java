@@ -44,6 +44,7 @@ import pt.rrochaua.ua_beav.fragments.Form2;
 import pt.rrochaua.ua_beav.fragments.FotoEsquema;
 import pt.rrochaua.ua_beav.fragments.Mapa;
 import pt.rrochaua.ua_beav.fragments.Menu;
+import pt.rrochaua.ua_beav.fragments.Menu_fragment;
 import pt.rrochaua.ua_beav.fragments.NatAci;
 import pt.rrochaua.ua_beav.fragments.VeicInt1;
 import pt.rrochaua.ua_beav.models.CircExternas1;
@@ -74,7 +75,8 @@ public class MainActivity extends AppCompatActivity
         ConsPass.OnConsPassListener,
         ConsPeo.OnConsPeoListener,
         NatAci.OnNatAciListener,
-        VeicInt1.OnVeicInt1Listener {
+        VeicInt1.OnVeicInt1Listener,
+        Menu_fragment.OnMenu_fragmentListener{
 
     ArrayList<Uri> mArrayUri;
 
@@ -89,6 +91,27 @@ public class MainActivity extends AppCompatActivity
 
     //variaveis para guardar
     int numbCond;
+
+    ArrayList<Integer> menuButtons = new ArrayList<>();
+    ArrayList<Integer> menuButtons2 = new ArrayList<>();
+
+    public ArrayList<Integer> getMenuButtons() {
+        return menuButtons;
+    }
+
+    public void setMenuButtons(ArrayList<Integer> menuButtons) {
+        this.menuButtons = menuButtons;
+    }
+
+    public ArrayList<Integer> getMenuButtons2() {
+        return menuButtons2;
+    }
+
+    public void setMenuButtons2(ArrayList<Integer> menuButtons2) {
+        this.menuButtons2 = menuButtons2;
+    }
+
+
     //Form1
     ArrayList<Form1Model> form1 = new ArrayList<>();
 
@@ -233,6 +256,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         goToMenuFragment();
+        menuButtons.add(0);
+        menuButtons2.add(0);
     }
 
     @Override
@@ -421,6 +446,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
+
     //Listener do GPS
     private class MyLocationListener implements LocationListener {
 
@@ -524,7 +551,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
     //Secção Fragments
     @Override
     public void goToMenuFragment() {
@@ -594,6 +620,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void goToVeicInt1Fragment() {
         Util.switchFragment(getFragmentManager(), "VeicInt1", VeicInt1.newInstance());
+    }
+
+    @Override
+    public void goToMenu_fragmentFragment() {
+        Util.switchFragment(getFragmentManager(), "Menu", Menu_fragment.newInstance());
     }
 
 

@@ -255,7 +255,14 @@ public class Form1 extends Fragment {
                         if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
                             parentActivity.goToCircExt1Fragment();
                         }else{
-                            parentActivity.goToCondIntSemFragment();
+                            //parentActivity.goToCondIntSemFragment();
+                            parentActivity.getMenuButtons2().set(0, 1);
+                            for ( int i =0; i< Integer.parseInt(eTnVeic.getText().toString()); i++){
+                                parentActivity.getMenuButtons().add(1);
+                                parentActivity.getMenuButtons2().add(0);
+                            }
+
+                            parentActivity.goToMenu_fragmentFragment();
                         }
 
                     }
@@ -274,7 +281,8 @@ public class Form1 extends Fragment {
                 if(rGTipoAcide.getCheckedRadioButtonId() == R.id.radioButtonTDA2){
                     parentActivity.goToCircExt1Fragment();
                 }else{
-                    parentActivity.goToCondIntSemFragment();
+
+                    //parentActivity.goToCondIntSemFragment();
                 }
             }
         });
