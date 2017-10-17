@@ -356,6 +356,12 @@
                     android:layout_height="wrap_content"
                     android:text="Outros" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonSin6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inexistente" />
+
 
             </RadioGroup>
 
@@ -386,7 +392,7 @@
                     android:id="@+id/radioButtonMarLum2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sol endandeante" />
+                    android:text="Sol encandeante" />
 
                 <RadioButton
                     android:id="@+id/radioButtonMarLum3"

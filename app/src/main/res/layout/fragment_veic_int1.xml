@@ -219,6 +219,12 @@
                     android:layout_height="wrap_content"
                     android:text="Veículo especial" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonTVeic6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
 
             </RadioGroup>
 
@@ -272,13 +278,20 @@
                     android:layout_height="wrap_content"
                     android:text="Público" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonTipTDS3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
+
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="\nAno de Matrícula"
+                android:text="\nAno de Matrícula (0000 se desconhecido)"
                 android:textColor="@color/UAgreenLetters"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -325,6 +338,13 @@
                     android:layout_height="wrap_content"
                     android:text="Sem validade" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonTipIP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
+
             </RadioGroup>
 
             <TextView
@@ -354,6 +374,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTipTMerc3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
 
             </RadioGroup>
 
@@ -471,6 +497,12 @@
                     android:layout_height="wrap_content"
                     android:text="Com lotação excedida" />
 
+                <RadioButton
+                    android:id="@+id/radioButtonCL6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
             </RadioGroup>
 
             <TextView
@@ -501,6 +533,14 @@
                     android:text="Com deficiência" />
 
 
+
+                <RadioButton
+                    android:id="@+id/radioButtonOneu3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
+
             </RadioGroup>
 
 
@@ -523,13 +563,21 @@
                     android:id="@+id/radioButtonTaco1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sem tacógrafo ou destivado" />
+                    android:text="Sem tacógrafo ou desativado" />
 
                 <RadioButton
                     android:id="@+id/radioButtonTaco2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Com tacógrafo" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonTaco3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
+
 
             </RadioGroup>
 
@@ -565,6 +613,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Isento" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButtonSeg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desconhecido" />
 
             </RadioGroup>
 
@@ -642,6 +697,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Não" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCondP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sem dados" />
 
             </RadioGroup>
 
