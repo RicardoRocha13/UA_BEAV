@@ -60,6 +60,7 @@ public class Menu_fragment extends Fragment {
                     ll.addView(btn);
                     break;
                 case 1:
+                    //just to commit
                     Button btn2 = new Button(v.getContext());
                     btn2.setId(i);
                     btn2.setText("Veiculo" + i);
