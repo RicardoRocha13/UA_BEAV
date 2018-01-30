@@ -257,12 +257,15 @@ public class Form1 extends Fragment {
                         }else{
                             //parentActivity.goToCondIntSemFragment();
                             parentActivity.getMenuButtons2().set(0, 1);
-                            for ( int i =0; i< Integer.parseInt(eTnVeic.getText().toString()); i++){
+                           /* for ( int i =0; i< Integer.parseInt(eTnVeic.getText().toString()); i++){
                                 parentActivity.getMenuButtons().add(1);
                                 parentActivity.getMenuButtons2().add(0);
                             }
-
                             parentActivity.goToMenu_fragmentFragment();
+*/
+
+                            parentActivity.goToCondIntSemFragment();
+
                         }
 
                     }
